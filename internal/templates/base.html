@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{.Title}}</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/static/css/main.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="/" class="logo">
+        <img src="/static/images/logo-shiny.png" alt="Marault Intelligence Logo" />
+        <span>Marault Intelligence</span>
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="/services">Services</a>
+      <a href="/approach">The Marault Approach</a>
+      <a href="/team">Executive Team</a>
+      <a href="/contact">Contact</a>
+      <a href="/inquire" class="nav-cta">Inquire</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  {{template "content" .}}
+</main>
+
+<footer class="site-footer">
+  <p>© Marault Intelligence</p>
+</footer>
+
+</body>
+</html>
+
+
+
+

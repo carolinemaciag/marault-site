@@ -1,0 +1,13 @@
+# OS files
+.DS_Store
+
+# Editor settings
+.vscode/
+
+# Go build output
+bin/
+*.exe
+*.out
+
+# Environment variables
+.env
