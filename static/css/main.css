@@ -4,8 +4,7 @@
 :root {
   --navy-dark: #0b1c2d;
   --navy-mid: #0f2438;
-  --gold-primary: #dcc9a3;   /* champagne gold */
-  --gold-soft: #ede6d6;
+  --gold-primary: #dcc9a3;
   --text-light: #f7f5f0;
   --text-muted: #dcdcdc;
 }
@@ -26,12 +25,13 @@ body {
 }
 
 /* =========================
-   HEADER / NAV
+   HEADER / NAV (LOCKED)
 ========================= */
 .site-header {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 88px;
   z-index: 100;
   background: linear-gradient(
     to bottom,
@@ -44,99 +44,57 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 88px;
   padding: 0 60px;
-  height: 88px; /* fixed header height */
 }
 
-/* LOGO GROUP */
 .logo {
   display: flex;
   align-items: center;
-  gap: 0px; /* controlled, predictable spacing */
   text-decoration: none;
 }
 
-/* SHIELD ICON */
 .logo img {
-  height: 160px; /* optimal size relative to header */
+  height: 64px;        /* 🔒 prevents zoom */
   width: auto;
   display: block;
-
-  margin-left: -0px;   /* ⬅️ pulls text closer to shield */
-  position: relative;
-  top: 8px;            /* ⬅️ lowers text slightly */
 }
 
-/* BRAND NAME */
 .logo span {
   font-family: "DM Serif Display", serif;
-  font-size: 1.15rem;
-  font-weight: 400;
+  font-size: 1.05rem;
   letter-spacing: 0.08em;
-  color: #e1b94f;
   text-transform: uppercase;
-
-  /* Optical fixes */
-  margin-left: -20px;   /* ⬅️ pulls text closer to shield */
-  position: relative;
-  top: 0px;            /* ⬅️ lowers text slightly */
+  color: #e1b94f;
+  margin-left: 12px;
 }
 
-/* NAV LINKS */
 .nav-right a {
   margin-left: 30px;
   text-decoration: none;
   font-family: "DM Serif Display", serif;
   font-size: 0.95rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
   color: var(--text-light);
-  transition: color 0.2s ease;
-}
-
-.nav-right a:hover {
-  color: var(--gold-primary);
-}
-
-/* CTA */
-.nav-cta {
-  padding: 10px 22px;
-  border: 1px solid var(--gold-primary);
-  color: var(--gold-primary);
-  transition: all 0.25s ease;
-}
-
-.nav-cta:hover {
-  background: var(--gold-primary);
-  color: var(--navy-dark);
-}
-
-/* Subtle logo hover */
-.logo:hover span {
-  opacity: 0.9;
 }
 
 /* =========================
-   HERO (VIDEO)
+   HERO (UNCHANGED)
 ========================= */
 .hero {
   position: relative;
   height: 100vh;
-  overflow: hidden;
   padding-top: 120px;
+  overflow: hidden;
 }
 
-/* Background video */
 .hero video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
 }
 
-/* Overlay for readability */
 .hero::after {
   content: "";
   position: absolute;
@@ -145,10 +103,8 @@ body {
     rgba(11, 28, 45, 0.65),
     rgba(11, 28, 45, 0.85)
   );
-  z-index: 1;
 }
 
-/* Hero content */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -161,42 +117,148 @@ body {
 .hero h1 {
   font-family: "DM Serif Display", serif;
   font-size: 3.9rem;
-  font-weight: 400;
-  line-height: 1.25;
   margin-bottom: 26px;
-  color: var(--text-light);
 }
 
 .hero p {
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.65;
   max-width: 680px;
   margin: 0 auto 42px;
+  font-size: 1.05rem;
   color: var(--text-muted);
 }
 
 /* =========================
-   BUTTONS
+   BUTTON
 ========================= */
 .btn-primary {
   display: inline-block;
   background: var(--gold-primary);
   color: var(--navy-dark);
   padding: 14px 36px;
-  font-weight: 500;
   text-decoration: none;
-  border: none;
 }
 
 /* =========================
-   FOOTER
+   WHAT WE DO — LIGHT BG + PANEL
 ========================= */
-.site-footer {
-  padding: 40px 60px;
-  font-size: 0.85rem;
-  color: #9aa4b2;
+.light-section {
+  background: #f6f5f2;
+  padding: 140px 0;
+}
+
+.services-panel {
+  max-width: 1320px;
+  margin: 0 auto;
+  background: linear-gradient(
+    160deg,
+    var(--navy-mid),
+    var(--navy-dark)
+  );
+  border-radius: 40px;
+  padding: 100px 80px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+}
+
+.services-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* TEXT */
+.services-text h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 24px;
+}
+
+.services-intro {
+  max-width: 520px;
+  margin-bottom: 64px;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.service-item {
+  display: flex;
+  gap: 22px;
+}
+
+.service-accent {
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--gold-primary),
+    transparent
+  );
+}
+
+.service-item h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.service-item p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+/* IMAGE */
+.services-visual img {
+  width: 100%;
+  height: auto;
+  margin-top: -60px;   /* ⬆ lifts image */
+  filter: drop-shadow(0 40px 70px rgba(0,0,0,0.35));
+}
+
+/* =========================
+   GAINS (UNCHANGED)
+========================= */
+.gains {
+  padding: 140px 0;
   background: var(--navy-dark);
 }
+
+.gains-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .services-split {
+    grid-template-columns: 1fr;
+  }
+
+  .services-panel {
+    padding: 80px 40px;
+  }
+
+  .services-visual img {
+    margin-top: 0;
+  }
+}
+
+
+
+
 
 
