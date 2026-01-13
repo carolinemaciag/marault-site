@@ -21,7 +21,7 @@ body {
   background: var(--navy-dark);
   color: var(--text-light);
   font-family: "Inter", sans-serif;
-  line-height: 1.6;
+  line-height: 1.65; /* slightly airier */
 }
 
 /* =========================
@@ -55,9 +55,8 @@ body {
 }
 
 .logo img {
-  height: 64px;        /* 🔒 prevents zoom */
+  height: 84px;
   width: auto;
-  display: block;
 }
 
 .logo span {
@@ -71,10 +70,10 @@ body {
 
 .nav-right a {
   margin-left: 30px;
-  text-decoration: none;
   font-family: "DM Serif Display", serif;
   font-size: 0.95rem;
   color: var(--text-light);
+  text-decoration: none;
 }
 
 /* =========================
@@ -123,7 +122,7 @@ body {
 .hero p {
   max-width: 680px;
   margin: 0 auto 42px;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
 }
 
@@ -139,7 +138,7 @@ body {
 }
 
 /* =========================
-   WHAT WE DO — LIGHT BG + PANEL
+   WHAT WE DO — PANEL
 ========================= */
 .light-section {
   background: #f6f5f2;
@@ -149,13 +148,9 @@ body {
 .services-panel {
   max-width: 1320px;
   margin: 0 auto;
-  background: linear-gradient(
-    160deg,
-    var(--navy-mid),
-    var(--navy-dark)
-  );
+  background: linear-gradient(160deg, var(--navy-mid), var(--navy-dark));
   border-radius: 40px;
-  padding: 100px 80px;
+  padding: 110px 90px; /* slightly larger */
   box-shadow: 0 40px 80px rgba(0,0,0,0.25);
 }
 
@@ -167,63 +162,157 @@ body {
 .services-split {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 80px;
+  gap: 90px;
   align-items: flex-start;
 }
 
-/* TEXT */
+/* =========================
+   INTRO TEXT (BIGGER)
+========================= */
 .services-text h2 {
   font-family: "DM Serif Display", serif;
-  font-size: 2.8rem;
-  margin-bottom: 24px;
+  font-size: 3.1rem; /* ⬆ */
+  margin-bottom: 26px;
 }
 
 .services-intro {
-  max-width: 520px;
-  margin-bottom: 64px;
-  font-size: 1.05rem;
+  max-width: 560px;
+  margin-bottom: 72px;
+  font-size: 1.15rem; /* ⬆ */
   font-weight: 300;
   color: var(--text-muted);
 }
 
-.services-list {
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
+/* =========================
+   INTRO IMAGE (BIGGER)
+========================= */
+.services-visual img {
+  width: 100%;
+  max-width: 520px; /* ⬆ */
+  height: auto;
+  margin-top: -40px;
+  filter: drop-shadow(0 40px 70px rgba(0,0,0,0.35));
 }
 
-.service-item {
-  display: flex;
-  gap: 22px;
+/* =========================
+   SERVICE ROWS
+========================= */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: center;
+  gap: 48px;
+  margin-top: 56px;
 }
 
-.service-accent {
+.service-image {
+  display: flex;
+  align-items: center;
+}
+
+/* ⬆ IMAGE SCALE */
+.service-row img {
+  max-width: 460px; /* ⬆ from 380 */
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35));
+}
+
+/* =========================
+   SERVICE TEXT (BIGGER)
+========================= */
+.service-text {
+  max-width: 460px;
+}
+
+.service-text h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.85rem; /* ⬆ */
+  margin-bottom: 14px;
+}
+
+.service-text p {
+  font-size: 1.1rem; /* ⬆ */
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+/* =========================
+   DIVIDER
+========================= */
+.service-divider {
   width: 2px;
+  height: 80px;
   background: linear-gradient(
     to bottom,
     var(--gold-primary),
     transparent
   );
+  justify-self: center;
 }
 
-.service-item h3 {
-  font-family: "DM Serif Display", serif;
-  font-size: 1.15rem;
-  margin-bottom: 8px;
+/* =========================
+   SCROLL FADE-IN ANIMATION
+========================= */
+
+/* Initial hidden state */
+.service-row {
+  opacity: 0;
+  transition: opacity 1.9s ease-out;
 }
 
-.service-item p {
-  font-size: 0.95rem;
-  font-weight: 300;
-  color: var(--text-muted);
+/* When revealed */
+.service-row.is-visible {
+  opacity: 1;
 }
 
-/* IMAGE */
-.services-visual img {
-  width: 100%;
-  height: auto;
-  margin-top: -60px;   /* ⬆ lifts image */
-  filter: drop-shadow(0 40px 70px rgba(0,0,0,0.35));
+/* Optional refinement: text fades in slightly after image */
+.service-row .service-text {
+  transition: opacity 1.9s ease-out 0.15s;
+}
+
+/* Intro section fade-in */
+.service-intro {
+  opacity: 0;
+  transition: opacity 1.9s ease-out;
+}
+
+.service-intro.is-visible {
+  opacity: 1;
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 1024px) {
+  .services-split {
+    grid-template-columns: 1fr;
+  }
+
+  .services-panel {
+    padding: 80px 40px;
+  }
+
+  .services-visual img {
+    margin-top: 0;
+    max-width: 100%;
+  }
+
+  .service-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .service-divider {
+    display: none;
+  }
+
+  .service-row img {
+    margin: 0 auto;
+  }
 }
 
 /* =========================
@@ -241,21 +330,38 @@ body {
 }
 
 /* =========================
-   RESPONSIVE
+   FINAL VERTICAL TIGHTENING
 ========================= */
-@media (max-width: 1024px) {
-  .services-split {
-    grid-template-columns: 1fr;
-  }
 
-  .services-panel {
-    padding: 80px 40px;
-  }
-
-  .services-visual img {
-    margin-top: 0;
-  }
+/* Reduce spacing between each service row */
+.service-row {
+  margin-top: 22px; /* was ~56px */
 }
+
+/* Slightly shorter divider for visual compression */
+.service-divider {
+  height: 84px; /* was 80px */
+}
+
+/* Tighten body copy just a touch */
+.service-text p {
+  line-height: 1.15; /* was ~1.65 */
+}
+
+/* Slightly reduce intro-to-first-row gap */
+.services-intro {
+  margin-bottom: 36px; /* was ~72px */
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

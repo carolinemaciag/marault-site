@@ -1,7 +1,7 @@
 {{define "content"}}
 
 <!-- =========================
-     HERO SECTION
+     HERO SECTION (UNCHANGED)
 ========================= -->
 <section class="hero">
   <video autoplay muted loop playsinline>
@@ -24,12 +24,13 @@
 </section>
 
 <!-- =========================
-     WHAT WE DO — LIGHT BG + PANEL
+     WHAT WE DO — INTRO (UNCHANGED)
 ========================= -->
 <section class="light-section">
   <div class="services-panel">
 
-    <div class="services-inner services-split">
+    <div class="services-inner services-split service-intro">
+
 
       <!-- LEFT: TEXT -->
       <div class="services-text">
@@ -39,70 +40,96 @@
           We help leaders make confident, data-driven decisions by transforming complex,
           fragmented information into clear insight and strategic direction.
         </p>
-
-        <div class="services-list">
-
-          <div class="service-item">
-            <span class="service-accent"></span>
-            <div>
-              <h3>Analytics Foundations</h3>
-              <p>
-                We define meaningful metrics, clean and structure your data, and establish
-                a reliable source of truth you can trust.
-              </p>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <span class="service-accent"></span>
-            <div>
-              <h3>Executive Reporting</h3>
-              <p>
-                Custom dashboards and reporting that provide ongoing visibility into
-                performance—without overwhelming teams with noise.
-              </p>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <span class="service-accent"></span>
-            <div>
-              <h3>Revenue & Customer Intelligence</h3>
-              <p>
-                Deep analysis of revenue streams, customer behavior, and growth drivers
-                to identify opportunities and risks.
-              </p>
-            </div>
-          </div>
-
-          <div class="service-item">
-            <span class="service-accent"></span>
-            <div>
-              <h3>Forecasting & Decision Support</h3>
-              <p>
-                Forward-looking models and scenario analysis to help leaders plan
-                confidently and act decisively.
-              </p>
-            </div>
-          </div>
-
-        </div>
       </div>
 
       <!-- RIGHT: IMAGE -->
       <div class="services-visual">
-        <img
-          src="/static/images/homepage1.png"
-          alt="Data-driven decision making illustration"
-        />
+        <img src="/static/images/homepage1.png"
+             alt="Data-driven decision making illustration">
       </div>
 
     </div>
+
+    <!-- =========================
+         SERVICES — ALTERNATING
+    ========================= -->
+    <div class="services-alternating">
+
+      <!-- Analytics Foundations -->
+      <div class="service-row" data-side="left">
+        <div class="service-image">
+          <img src="/static/images/homepage2.png" alt="Analytics Foundations">
+        </div>
+
+        <span class="service-divider"></span>
+
+        <div class="service-text">
+          <h3>Analytics Foundations</h3>
+          <p>
+            We define meaningful metrics, clean and structure your data, and establish
+            a reliable source of truth you can trust.
+          </p>
+        </div>
+      </div>
+
+      <!-- Executive Reporting -->
+      <div class="service-row" data-side="right">
+        <div class="service-image">
+          <img src="/static/images/homepage3.png" alt="Executive Reporting">
+        </div>
+
+        <span class="service-divider"></span>
+
+        <div class="service-text">
+          <h3>Executive Reporting</h3>
+          <p>
+            Custom dashboards and reporting that provide ongoing visibility into
+            performance—without overwhelming teams with noise.
+          </p>
+        </div>
+      </div>
+
+      <!-- Revenue & Customer Intelligence -->
+      <div class="service-row" data-side="left">
+        <div class="service-image">
+          <img src="/static/images/homepage4.png" alt="Revenue & Customer Intelligence">
+        </div>
+
+        <span class="service-divider"></span>
+
+        <div class="service-text">
+          <h3>Revenue & Customer Intelligence</h3>
+          <p>
+            Deep analysis of revenue streams, customer behavior, and growth drivers
+            to identify opportunities and risks.
+          </p>
+        </div>
+      </div>
+
+      <!-- Forecasting & Decision Support -->
+      <div class="service-row" data-side="right">
+        <div class="service-image">
+          <img src="/static/images/homepage5.png" alt="Forecasting & Decision Support">
+        </div>
+
+        <span class="service-divider"></span>
+
+        <div class="service-text">
+          <h3>Forecasting & Decision Support</h3>
+          <p>
+            Forward-looking models and scenario analysis to help leaders plan
+            confidently and act decisively.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
 <!-- =========================
-     WHAT OUR CLIENTS GAIN
+     WHAT OUR CLIENTS GAIN (UNCHANGED)
 ========================= -->
 <section class="gains">
   <div class="gains-inner">
@@ -111,40 +138,33 @@
     <div class="gains-grid">
       <div class="gain">
         <h3>Clear Direction</h3>
-        <p>
-          We translate complexity into clarity, enabling leaders to act decisively without
-          second-guessing their data.
-        </p>
+        <p>We translate complexity into clarity.</p>
       </div>
 
       <div class="gain">
         <h3>Confident Decisions</h3>
-        <p>
-          Our work equips decision-makers with insight they can trust—grounded in rigor,
-          not assumptions.
-        </p>
+        <p>Insight grounded in rigor, not assumptions.</p>
       </div>
 
       <div class="gain">
         <h3>Strategic Focus</h3>
-        <p>
-          We help clients move beyond reactive analysis toward forward-looking,
-          strategic planning.
-        </p>
+        <p>Move from reactive analysis to planning.</p>
       </div>
 
       <div class="gain">
         <h3>Measured Impact</h3>
-        <p>
-          Our analytics are designed to inform action, measure performance,
-          and support sustainable growth.
-        </p>
+        <p>Analytics designed to inform action.</p>
       </div>
     </div>
   </div>
 </section>
 
 {{end}}
+
+
+
+
+
 
 
 
