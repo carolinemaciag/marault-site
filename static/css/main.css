@@ -212,11 +212,19 @@ body {
 
 /* ⬆ IMAGE SCALE */
 .service-row img {
-  max-width: 460px; /* ⬆ from 380 */
+  max-width: 460px;
   width: 100%;
   height: auto;
+  transform: translateY(22px); /* ⬅ pulls image DOWN */
   filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35));
 }
+
+/* Slightly boost later illustrations to normalize visual weight */
+.service-row:nth-of-type(3) img,
+.service-row:nth-of-type(4) img {
+  transform: translateY(22px) scale(1.1);
+}
+
 
 /* =========================
    SERVICE TEXT (BIGGER)
@@ -241,15 +249,20 @@ body {
    DIVIDER
 ========================= */
 .service-divider {
-  width: 2px;
-  height: 80px;
+  width: 3px;
+  height: 220px;
   background: linear-gradient(
     to bottom,
     var(--gold-primary),
+    rgba(220, 201, 163, 0.4),
     transparent
   );
-  justify-self: center;
+
+  /* 🔑 THIS IS THE FIX */
+  align-self: center;
+  margin-bottom: 12px;
 }
+
 
 /* =========================
    SCROLL FADE-IN ANIMATION
@@ -353,13 +366,62 @@ body {
   margin-bottom: 36px; /* was ~72px */
 }
 
+/*==============
+What our clients gain
+==============*/
+.client-gains {
+  background: var(--navy-dark);
+  padding: 140px 0;
+}
 
+.client-gains-outer {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #f7f5f0; /* off-white */
+  border-radius: 40px;
+  padding: 24px;
+}
 
+.client-gains-inner {
+  border: 2px solid var(--gold-primary);
+  border-radius: 32px;
+  padding: 72px 72px 80px;
+  background: #f7f5f0;
+}
 
+.client-gains-title {
+  font-family: "DM Serif Display", serif;
+  font-size: 42px;
+  color: var(--navy-dark);
+  margin-bottom: 64px;
+}
 
+.gains-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 72px 96px;
+}
 
+.gain-item img {
+  width: 120px;
+  margin-bottom: 24px;
+}
 
+.gain-item h3 {
+  font-size: 22px;
+  color: var(--navy-dark);
+  margin-bottom: 12px;
+}
 
+.gain-item p {
+  font-size: 16px;
+  color: #2a3a4a;
+  line-height: 1.5;
+}
+
+.gain-item {
+  text-align: center;
+}
 
 
 
