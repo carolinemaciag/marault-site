@@ -8,7 +8,10 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
 
   <!-- Styles -->
   <link rel="stylesheet" href="/static/css/main.css" />
@@ -16,6 +19,9 @@
 
 <body>
 
+<!-- =========================
+     HEADER / NAV
+========================= -->
 <header class="site-header">
   <nav class="nav">
     <div class="nav-left">
@@ -35,23 +41,104 @@
   </nav>
 </header>
 
+<!-- =========================
+     PAGE CONTENT
+========================= -->
 <main>
   {{template "content" .}}
 </main>
 
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="footer-separator"></div>
+
 <footer class="site-footer">
-  <p>© Marault Intelligence</p>
+
+  <!-- ===== Top CTA Band ===== -->
+  <div class="footer-cta">
+    <div class="footer-cta-inner">
+      <div class="footer-cta-text">
+        <h3>Marault Intelligence</h3>
+        <p>Clarity in Analysis. Confidence in Action.</p>
+      </div>
+
+      <div class="footer-cta-action">
+        <a href="/inquire" class="footer-cta-button">Inquire</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Navigation Grid ===== -->
+  <div class="footer-main">
+    <div class="footer-grid">
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services#analytics-foundations">Analytics Foundations</a></li>
+          <li><a href="/services#executive-reporting">Executive Reporting</a></li>
+          <li><a href="/services#revenue-intelligence">Revenue &amp; Customer Intelligence</a></li>
+          <li><a href="/services#forecasting">Forecasting &amp; Decision Support</a></li>
+          <li><a href="/services#web-design">Web Design &amp; Digital Experience</a></li>
+        </ul>
+      </div>
+
+      <!-- Approach -->
+      <div class="footer-col">
+        <h4>Approach</h4>
+        <ul>
+          <li><a href="/approach">The Marault Approach</a></li>
+          <li><a href="/approach#engagement-model">Engagement Model</a></li>
+          <li><a href="/approach#data-philosophy">Data Philosophy</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/executive-team">Executive Team</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Inquire -->
+      <div class="footer-col footer-inquire">
+        <h4>Inquire</h4>
+        <p>
+          Start a conversation about your data, strategy,
+          or digital presence.
+        </p>
+        <a href="/inquire" class="footer-inquire-link">
+          Get in touch →
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  
+
+  <!-- ===== Legal / Brand ===== -->
+  <div class="footer-legal">
+    <div class="footer-legal-inner">
+      <span>© 2026 Marault Intelligence</span>
+      <span>All rights reserved.</span>
+    </div>
+  </div>
+
 </footer>
 
 <!-- =========================
-     SCRIPTS (ADD HERE)
+     SCRIPTS
 ========================= -->
 <script src="/static/js/network.js"></script>
 <script src="/static/js/scroll-fade.js"></script>
 
 </body>
 </html>
-
-
 
 
