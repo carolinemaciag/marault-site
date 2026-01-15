@@ -148,24 +148,38 @@ body {
 /* =========================
    BUTTON
 ========================= */
-.btn-primary {
+
+/* Global INQUIRE button — used in header, hero, footer */
+.btn-inquire {
   position: relative;
   display: inline-block;
 
   font-family: "Castoro Titling", serif;
-  text-transform: uppercase;
+  font-size: 0.95rem;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
 
-  background: transparent; /* KEY CHANGE */
+  padding: 12px 28px;
   color: var(--gold-primary);
-
-  padding: 14px 36px;
   text-decoration: none;
 
   border: 1px solid var(--gold-primary);
-  outline: 1px solid var(--gold-primary);
-  outline-offset: 6px; /* slightly larger for the big CTA */
 }
+
+/* Inner rectangle */
+.btn-inquire::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--gold-primary);
+  pointer-events: none;
+}
+
+/* Hover state */
+.btn-inquire:hover {
+  background: rgba(220, 201, 163, 0.08);
+}
+
 
 
 /* =========================
@@ -539,6 +553,29 @@ body {
   align-items: center;
 }
 
+/* ===== FOOTER CTA BRAND LOCKUP ===== */
+
+.footer-cta-brand {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Stack text vertically */
+.footer-cta-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo matches combined height of title + tagline */
+.footer-cta-logo {
+  height: 92px;
+  width: auto;
+  opacity: 0.98;
+}
+
+
+
 .footer-cta-text h3 {
   font-family: "Castoro Titling", serif;
   font-size: 2rem;
@@ -657,16 +694,20 @@ body {
 
 /* ===== FOOTER BRAND LOGO ===== */
 
-.footer-brand {
+.footer-brand-inline {
   display: flex;
-  justify-content: center;
-  padding: 5px 0 5px; /* breathing room above legal */
+  align-items: center;
+  gap: 18px;
 }
 
-.footer-logo {
-  width: 180px;
-  max-width: 60%;
-  opacity: 0.98;
+.footer-logo-inline {
+  height: 110px;  /* matches title + tagline height */
+  width: auto;
+  flex-shrink: 0;
+}
+
+.footer-cta-text h3 {
+  margin: 0;
 }
 
 
@@ -709,3 +750,5 @@ body {
     gap: 10px;
   }
 }
+
+
