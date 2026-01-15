@@ -417,32 +417,36 @@ body {
 ============================== */
 
 .client-gains {
-  background: var(--navy-dark);
+  background: #f7f5f0; /* same off-white as What We Do */
   padding: 140px 0;
 }
+
 
 .client-gains-outer {
   max-width: 1100px;
   margin: 0 auto;
-  background: #f7f5f0;
-  border-radius: 35px;
-  padding: 24px;
+  background: transparent;
+  padding: 0;
 }
 
 .client-gains-inner {
   position: relative;
-  background: #f7f5f0;
+  background: linear-gradient(
+    180deg,
+    #0f2438,
+    #0b1c2d
+  );
   border-radius: 32px;
   padding: 38px 62px 70px;
 
-  /* Main gold frame */
-  border: 5px solid var(--gold-primary);
+  border: 4px solid var(--gold-primary);
 
-  /* Subtle depth */
   box-shadow:
     inset 0 0 0 1px rgba(220, 201, 163, 0.35),
-    0 20px 40px rgba(11, 28, 45, 0.15);
+    0 35px 70px rgba(11, 28, 45, 0.55),
+    0 15px 30px rgba(11, 28, 45, 0.35);
 }
+
 
 /* Inner ornamental line */
 .client-gains-inner::before {
@@ -467,9 +471,9 @@ body {
 
 /* Title */
 .client-gains-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 42px;
-  color: var(--navy-dark);
+  color: #f7f5f0;
   margin-bottom: 36px;
   text-align: center;
 }
@@ -503,44 +507,53 @@ body {
 
 /* Headings */
 .gain-item h3 {
-  font-family: "Inter", sans-serif;
+  font-family: "Castoro Titling", serif;
   font-weight: 600;
+  color: #f7f5f0;
 }
 
 /* Body text */
 .gain-item p {
   font-size: 20px;
-  color: #2a3a4a;
+  color: rgba(247, 245, 240, 0.9);
   line-height: 1.55;
   margin: 0;
 }
 
 /* =========================
-   FOOTER (REFINED + STABLE)
+   FOOTER — GRADIENT LUXE
 ========================= */
 
 .site-footer {
-  background: #f7f5f0; /* off-white */
-  color: var(--navy-dark);
+  background: rgba(11, 28, 45, 0.68);   /* ⬅ was 0.78 */
+  backdrop-filter: blur(18px);         /* ⬅ slightly stronger blur */
+  -webkit-backdrop-filter: blur(18px);
+
+  color: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-/* ===== GOLD SEPARATOR ===== */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
-.footer-separator {
-  height: 12px;
   background: linear-gradient(
-    to right,
-    transparent,
-    var(--gold-primary),
-    transparent
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.15)
   );
+
+  pointer-events: none;
 }
 
-/* ===== CTA BAND ===== */
+
+/* ===== TOP CTA BAND ===== */
 
 .footer-cta {
-  padding: 60px 0 50px;
-  border-bottom: 1px solid rgba(11, 28, 45, 0.12);
+  padding: 72px 0 64px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-cta-inner {
@@ -553,7 +566,7 @@ body {
   align-items: center;
 }
 
-/* ===== FOOTER CTA BRAND LOCKUP ===== */
+/* ===== BRAND LOCKUP ===== */
 
 .footer-cta-brand {
   display: flex;
@@ -561,49 +574,67 @@ body {
   gap: 28px;
 }
 
-/* Stack text vertically */
+.footer-cta-logo {
+  height: 96px;
+  width: auto;
+  flex-shrink: 0;
+}
+
 .footer-cta-text {
   display: flex;
   flex-direction: column;
 }
 
-/* Logo matches combined height of title + tagline */
-.footer-cta-logo {
-  height: 92px;
-  width: auto;
-  opacity: 0.98;
-}
-
-
-
+/* Gold gradient brand text */
 .footer-cta-text h3 {
   font-family: "Castoro Titling", serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   letter-spacing: 0.08em;
-  color: var(--navy-dark);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
+
+  background: linear-gradient(
+    120deg,
+    #f3e3c2,
+    #dcc9a3,
+    #f7eed8
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-cta-text p {
   font-size: 1.05rem;
-  color: rgba(11, 28, 45, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   margin: 0;
 }
 
+/* ===== INQUIRE BUTTON ===== */
+
 .footer-cta-button {
-  display: inline-block;
-  padding: 16px 42px;
-  background: var(--gold-primary);
-  color: var(--navy-dark);
-  text-decoration: none;
+  padding: 14px 36px;
+  border: 1.5px solid var(--gold-primary);
+  background: transparent;
+  color: var(--gold-primary);
+
   font-family: "Playfair Display", serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all 0.25s ease;
 }
 
-/* ===== MAIN GRID ===== */
+.footer-cta-button:hover {
+  background: var(--gold-primary);
+  color: #0b1c2d;
+}
+
+/* ===== MAIN NAV GRID ===== */
 
 .footer-main {
-  padding: 50px 0 30px;
+  padding: 64px 0 48px;
 }
 
 .footer-grid {
@@ -616,36 +647,40 @@ body {
   gap: 70px;
 }
 
-/* 🔑 COLUMN LAYOUT CONTROL (FIXES ALIGNMENT) */
-
 .footer-col {
   display: flex;
   flex-direction: column;
   gap: 22px;
 }
 
-/* ===== COLUMN HEADINGS (NAVY PILLS) ===== */
-
+/* Column headings */
 .footer-col h4 {
-  display: inline-flex;          /* ⬅ better than inline-block */
+  display: inline-flex;
   align-items: center;
 
-  font-family: "Playfair Display", serif;
-  font-size: 1.05rem;
+  font-family: "Castoro Titling", serif;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 
-  padding: 6px 14px;             /* ⬅ slightly tighter */
-  background: var(--navy-dark);
-  color: #f7f5f0;
+  padding: 7px 16px;
 
+  background: linear-gradient(
+    120deg,
+    #f3e3c2,
+    #dcc9a3,
+    #f7eed8
+  );
+
+  color: #0b1c2d;
   border-radius: 999px;
-  letter-spacing: 0.04em;        /* ⬅ reduced from 0.06em */
+
   margin: 0;
-  width: fit-content;            /* ⬅ key: stops any stretch */
+  width: fit-content;
 }
 
 
-/* ===== LINKS ===== */
-
+/* Links */
 .footer-col ul {
   list-style: none;
   padding: 0;
@@ -653,81 +688,44 @@ body {
 
   display: flex;
   flex-direction: column;
-  gap: 16px;   /* ⬅ controls vertical spacing cleanly */
-}
-
-
-.footer-col li {
-  margin: 0;
+  gap: 14px;
 }
 
 .footer-col a {
-  font-size: 1rem;
-  color: var(--navy-dark);
+  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
-  line-height: 1.6;
+  font-size: 0.98rem;
 }
 
 .footer-col a:hover {
+  color: #ffffff;
   text-decoration: underline;
 }
 
-/* ===== INQUIRE COLUMN ===== */
-
+/* Optional descriptive column (non-link) */
 .footer-inquire p {
-  font-size: 1rem;
-  color: rgba(11, 28, 45, 0.85);
-  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.98rem;
   line-height: 1.6;
 }
-
-.footer-inquire-link {
-  font-family: "Playfair Display", serif;
-  font-size: 1.05rem;
-  color: var(--navy-dark);
-  text-decoration: none;
-}
-
-.footer-inquire-link:hover {
-  text-decoration: underline;
-}
-
-/* ===== FOOTER BRAND LOGO ===== */
-
-.footer-brand-inline {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
-.footer-logo-inline {
-  height: 110px;  /* matches title + tagline height */
-  width: auto;
-  flex-shrink: 0;
-}
-
-.footer-cta-text h3 {
-  margin: 0;
-}
-
 
 /* ===== LEGAL ===== */
 
 .footer-legal {
-  border-top: 1px solid rgba(11, 28, 45, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .footer-legal-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 60px 60px;
+  padding: 28px 60px 40px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  font-size: 0.9rem;
-  color: rgba(11, 28, 45, 0.6);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* ===== MOBILE ===== */
@@ -741,7 +739,7 @@ body {
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 50px;
   }
 
   .footer-legal-inner {
@@ -750,5 +748,3 @@ body {
     gap: 10px;
   }
 }
-
-
