@@ -20,8 +20,8 @@ body {
   margin: 0;
   background: var(--navy-dark);
   color: var(--text-light);
-  font-family: "Playfair Display", serif;
-  line-height: 1.65; /* slightly airier */
+  font-family: "Gudea", sans-serif;
+  line-height: 1.65;
 }
 
 /* =========================
@@ -55,25 +55,43 @@ body {
 }
 
 .logo img {
-  height: 84px;
+  height: 82px;
   width: auto;
 }
 
 .logo span {
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 1.05rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #e1b94f;
-  margin-left: 12px;
+  background: linear-gradient(to right, #c8b379, #f7f5f0 50%, #c8b379 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-left: -8px;
 }
 
 .nav-right a {
   margin-left: 30px;
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 0.95rem;
   color: var(--text-light);
   text-decoration: none;
+}
+
+.nav-right .nav-cta:hover {
+  background: rgba(220, 201, 163, 0.08);
+}
+.nav-right .nav-cta {
+  position: relative;
+  padding: 8px 18px;
+
+  border: 1px solid var(--gold-primary);
+  outline: 1px solid var(--gold-primary);
+  outline-offset: 4px;
+
+  color: var(--gold-primary);
 }
 
 /* =========================
@@ -114,7 +132,7 @@ body {
 }
 
 .hero h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 3.9rem;
   text-transform: uppercase;
   margin-bottom: 26px;
@@ -131,14 +149,24 @@ body {
    BUTTON
 ========================= */
 .btn-primary {
-  font-family: "Playfair Display", serif;
+  position: relative;
   display: inline-block;
-  background: var(--gold-primary);
-  color: var(--navy-dark);
+
+  font-family: "Castoro Titling", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  background: transparent; /* KEY CHANGE */
+  color: var(--gold-primary);
+
   padding: 14px 36px;
   text-decoration: none;
-  text-transform: uppercase;
+
+  border: 1px solid var(--gold-primary);
+  outline: 1px solid var(--gold-primary);
+  outline-offset: 6px; /* slightly larger for the big CTA */
 }
+
 
 /* =========================
    WHAT WE DO — PANEL
@@ -173,7 +201,7 @@ body {
    INTRO TEXT (BIGGER)
 ========================= */
 .services-text h2 {
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 3.1rem; /* ⬆ */
   margin-bottom: 26px;
   text-transform: uppercase;
@@ -238,9 +266,9 @@ body {
 }
 
 .service-text h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.85rem; /* ⬆ */
-  margin-bottom: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .service-text p {
@@ -461,9 +489,8 @@ body {
 
 /* Headings */
 .gain-item h3 {
-  font-size: 22px;
-  color: var(--navy-dark);
-  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
 }
 
 /* Body text */
@@ -513,7 +540,7 @@ body {
 }
 
 .footer-cta-text h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Castoro Titling", serif;
   font-size: 2rem;
   letter-spacing: 0.08em;
   color: var(--navy-dark);
