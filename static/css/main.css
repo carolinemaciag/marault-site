@@ -552,7 +552,7 @@ body {
 /* ===== TOP CTA BAND ===== */
 
 .footer-cta {
-  padding: 72px 0 64px;
+  padding: 18px 0 14px; /* tighter vertical rhythm */
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -571,13 +571,14 @@ body {
 .footer-cta-brand {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 14px; /* slightly tighter */
 }
 
 .footer-cta-logo {
-  height: 96px;
+  height: 200px;          /* larger, more authoritative */
   width: auto;
   flex-shrink: 0;
+  transform: translateY(4px); /* optical alignment with text */
 }
 
 .footer-cta-text {
@@ -590,14 +591,15 @@ body {
   font-family: "Castoro Titling", serif;
   font-size: 2.2rem;
   letter-spacing: 0.08em;
-  margin: 0 0 10px;
+  margin: 0 0 0px;
 
   background: linear-gradient(
-    120deg,
-    #f3e3c2,
-    #dcc9a3,
-    #f7eed8
+  90deg,
+  #e8c887 0%,
+  #f7eed8 50%,
+  #e8c887 100%
   );
+
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -605,9 +607,21 @@ body {
 
 .footer-cta-text p {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0;
+  margin-top: 0px;              /* tighter spacing */
+  margin-bottom: 0;
+
+  background: linear-gradient(
+    90deg,
+    #dcc9a3 0%,
+    #f7eed8 50%,
+    #dcc9a3 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
 
 /* ===== INQUIRE BUTTON ===== */
 
