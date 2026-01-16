@@ -689,3 +689,167 @@ body {
     gap: 10px;
   }
 }
+
+/* =========================
+   APPROACH HERO (IMAGE PANEL)
+========================= */
+
+.approach-hero {
+  padding: 0;
+  margin-bottom: 120px;
+}
+
+/* INNER RECTANGLE WITH IMAGE */
+.approach-hero-inner {
+  position: relative;
+
+  max-width: 1100px;
+  margin: 0 auto;
+
+  padding: 160px 80px;
+
+  background-image: url("/static/images/approach1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.45);
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.approach-hero-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    rgba(11, 28, 45, 0.78),
+    rgba(11, 28, 45, 0.88)
+  );
+
+  border-radius: 28px;
+  z-index: 1;
+}
+
+/* TEXT LAYER */
+.approach-hero-inner h1,
+.approach-hero-inner p {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* TITLE */
+.approach-hero-inner h1 {
+  font-family: "Castoro Titling", serif;
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+
+/* SUBTITLE */
+.approach-hero-inner p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+}
+
+
+/* =========================
+   APPROACH PAGE WRAPPER
+========================= */
+
+.approach-page {
+  background: #f7f5f0; /* off-white */
+  padding: 140px 0;
+}
+
+.approach-page {
+  background: #f7f5f0; /* off-white */
+  padding: 140px 0;
+}
+
+/* =========================
+   APPROACH PANEL (NAVY CARD)
+========================= */
+
+.approach-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  background: linear-gradient(
+    180deg,
+    var(--navy-mid),
+    var(--navy-dark)
+  );
+
+  border-radius: 40px;
+  padding: 120px 100px;
+
+  position: relative;
+
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(220, 201, 163, 0.25);
+}
+
+/* Inner gold border */
+.approach-panel::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+
+  border: 1.5px solid var(--gold-primary);
+  border-radius: 30px;
+
+  pointer-events: none;
+}
+
+/* =========================
+   APPROACH SECTIONS
+========================= */
+
+.approach-section {
+  padding: 80px 0;
+}
+
+.approach-alt {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 80px 60px;
+}
+
+.approach-section h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.4rem;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+.approach-section p {
+  max-width: 760px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.approach-closing {
+  margin-top: 48px;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--gold-primary);
+}
+
+@media (max-width: 900px) {
+  .approach-hero-inner {
+    padding: 120px 36px;
+  }
+
+  .approach-hero-inner h1 {
+    font-size: 2.6rem;
+  }
+}

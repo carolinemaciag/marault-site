@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(
-    ".service-intro, .service-row, .gain-item"
+    ".service-intro, .service-row, .gain-item, .fade-in"
   );
 
   if (!elements.length) return;
