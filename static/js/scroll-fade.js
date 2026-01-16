@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(
-    ".service-intro, .service-row"
+    ".service-intro, .service-row, .gain-item"
   );
 
   if (!elements.length) return;
@@ -15,13 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.2,
-      rootMargin: "0px 0px -80px 0px"
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px 0px"
     }
   );
 
   elements.forEach(el => observer.observe(el));
 });
+
+
+
+
+
 
 
 
