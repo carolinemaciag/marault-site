@@ -29,6 +29,18 @@ func main() {
 	log.Fatal(err)
 }
 
+func servicesHandler(w http.ResponseWriter, r *http.Request) {
+	http.NotFound(w, r)
+}
+
+func teamHandler(w http.ResponseWriter, r *http.Request) {
+	http.NotFound(w, r)
+}
+
+func contactHandler(w http.ResponseWriter, r *http.Request) {
+	http.NotFound(w, r)
+}
+
 // =========================
 // HOME PAGE
 // =========================
