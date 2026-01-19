@@ -80,6 +80,51 @@ body {
   text-decoration: none;
 }
 
+.nav-right a:first-child {
+  position: relative;
+  left: -8px; /* adjust: try -4px to -8px */
+}
+
+/* =========================
+   NAV LINK HOVER EFFECT
+========================= */
+
+.nav-right a {
+  position: relative;
+  padding-bottom: 6px;
+  transition: color 0.25s ease;
+}
+
+/* Gold underline */
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(
+    90deg,
+    #c8b379,
+    #f7f5f0 50%,
+    #c8b379
+  );
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Hover state */
+.nav-right a:hover {
+  color: #f2dfb8;
+}
+
+.nav-right a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+
 .nav-right .nav-cta:hover {
   background: rgba(220, 201, 163, 0.08);
 }
@@ -92,6 +137,11 @@ body {
   outline-offset: 4px;
 
   color: var(--gold-primary);
+}
+
+/* Do not underline CTA */
+.nav-right .nav-cta::after {
+  display: none;
 }
 
 /* =========================
