@@ -442,10 +442,6 @@ body {
   line-height: 1.55;
 }
 
-/* =========================
-   FOOTER (UNCHANGED)
-========================= */
-/* keep your footer exactly as you had it */
 
 /* =========================
    FOOTER — GRADIENT LUXE
@@ -976,10 +972,24 @@ body {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-
 .comparison-right h3 {
-  color: var(--gold-primary);
+  background: linear-gradient(
+    90deg,
+    #e8c887 0%,
+    #f7eed8 50%,
+    #e8c887 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;          /* fallback */
+  color: transparent;             /* fallback */
+
+  letter-spacing: 0.14em;
+  font-weight: 600;
 }
+
 
 .comparison-column ul {
   list-style: none;
@@ -990,7 +1000,7 @@ body {
 .comparison-column li {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #2b2b2b;
+  color: #2f2f2f; /* matches left heading tone */
   margin-bottom: 18px;
   position: relative;
   padding-left: 18px;
@@ -1004,36 +1014,38 @@ body {
   color: rgba(0, 0, 0, 0.35);
 }
 
+.comparison-left h3 {
+  color: #2f2f2f; /* off-black, readable but soft */
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
 /* =========================
-   COMPARISON — VISUAL DIFFERENTIATION
+   COMPARISON — VISUAL DIFFERENTIATION (REFINED)
 ========================= */
 
-/* --- Right column: subtle surface lift --- */
-.comparison-right {
-  background: linear-gradient(
-    180deg,
-    rgba(247, 245, 240, 0.85),
-    rgba(242, 239, 232, 0.95)
-  );
-  padding: 52px 52px;
-  border-left: 1px solid rgba(220, 201, 163, 0.45);
+/* Conventional: restrained, neutral */
+.comparison-left {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(120, 120, 120, 0.35);
+  border-radius: 18px;
+  padding: 52px 48px;
 }
 
-/* Slight elevation without "card" feeling */
+/* Marault: elevated, premium */
 .comparison-right {
+  background: linear-gradient(180deg, #0f2438, #0b1c2d);
+  border: 3px solid var(--gold-primary);
+  border-radius: 20px;
+  padding: 56px 56px;
+  position: relative;
+
   box-shadow:
-    0 12px 28px rgba(11, 28, 45, 0.08);
+    inset 0 0 0 1px rgba(220, 201, 163, 0.35),
+    0 22px 48px rgba(11, 28, 45, 0.35);
 }
 
-/* --- Headings --- */
-.comparison-left h3 {
-  color: #6f6f6f;
-}
 
-.comparison-right h3 {
-  color: var(--gold-primary);
-  letter-spacing: 0.12em;
-}
 
 /* =========================
    BULLET LANGUAGE
@@ -1042,19 +1054,25 @@ body {
 /* Left: neutral em-dash */
 .comparison-left li::before {
   content: "—";
-  color: rgba(0, 0, 0, 0.35);
+  color: #2f2f2f;
 }
 
-/* Right: directional arrow */
+/* Right: gold diamond bullet */
 .comparison-right li::before {
-  content: "›";
-  color: var(--gold-primary);
-  font-weight: 600;
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: linear-gradient(145deg, #f2dfb8, #b89a5a);
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  transform: rotate(45deg);
 }
+
 
 /* Slightly stronger contrast on Marault text */
 .comparison-right li {
-  color: #1f1f1f;
+  color: #f7f5f0; /* off-white for navy background */
   margin-bottom: 16px;
 }
 
