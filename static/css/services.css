@@ -1,0 +1,195 @@
+/* =========================================================
+   SERVICES PAGE — MODULE CSS
+   Safe, standalone, no global side effects
+========================================================= */
+
+/* =========================
+   SERVICES — HERO (matched to Executive)
+========================= */
+
+.services-hero {
+  position: relative;
+  width: 100%;
+  height: 68vh;
+
+  background-image: url("/static/images/lighthouse4.png");
+  background-repeat: no-repeat;
+
+  /* KEY: horizontal-only slack */
+  background-size: 104% auto;
+  background-position: 60% center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.services-hero-content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.services-hero-title {
+  margin: 0 auto;
+  max-width: 720px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  line-height: 1.25;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: rgba(247, 245, 240, 0.95);
+  text-shadow:
+  0 0 8px rgba(220, 201, 163, 0.35),
+  0 0 18px rgba(220, 201, 163, 0.25),
+  0 0 32px rgba(220, 201, 163, 0.18),
+  0 8px 22px rgba(0, 0, 0, 0.45);
+  margin-right: 5.35em;
+  margin-top: -1.35em;
+}
+
+
+.services-hero-title .hero-line {
+  display: block;
+}
+
+.services-hero-title .hero-line--primary {
+  white-space: nowrap;
+  font-size: 1.15em;
+  margin-bottom: none;
+}
+
+.services-hero-title .hero-line--secondary {
+  font-size: 0.72em;
+  opacity: 0.9;
+  margin-left: 5.35em;
+}
+
+
+/* =========================
+   SERVICES INTRO — EDITORIAL
+========================= */
+
+.services-intro-section {
+  background: #f7f5f0;
+  padding: 160px 0 180px;
+}
+
+.services-intro-block {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.services-intro-block h1 {
+  font-family: "Castoro Titling", serif;
+  font-size: clamp(3.2rem, 5vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 45, 0.95);
+
+  margin-bottom: 36px;
+}
+
+.services-intro-rule {
+  width: 180px;
+  height: 2px;
+  margin-bottom: 48px;
+
+  background: linear-gradient(
+    to right,
+    rgba(220, 201, 163, 0.95),
+    transparent
+  );
+}
+
+.services-intro-block p {
+  max-width: 720px;
+  font-size: 1.35rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.78);
+  margin-bottom: 26px;
+}
+
+
+
+
+/* =========================
+   SERVICE TILES
+========================= */
+
+.services-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 44px 64px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-tile {
+  display: grid;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  justify-items: center;
+  text-align: center;
+}
+
+.service-tile-icon {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  transition: transform 200ms ease;
+}
+
+.service-tile:hover .service-tile-icon {
+  transform: translateY(-4px);
+}
+
+.service-tile-title {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.15rem;
+  color: rgba(247, 245, 240, 0.92);
+  max-width: 20ch;
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .services-tiles {
+    grid-template-columns: repeat(2, 140px);
+  }
+
+  .services-hero {
+    padding: 100px 24px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .services-tiles {
+    grid-template-columns: 1fr;
+  }
+
+  .services-hero-title {
+    font-size: 2.6rem;
+  }
+}
+

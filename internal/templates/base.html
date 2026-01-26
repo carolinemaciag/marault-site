@@ -9,13 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-  href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Gudea:wght@400;700&family=Inter:wght@400;500;600&display=swap"
-  rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Gudea:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
   />
-
 
   <!-- Styles -->
   <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="stylesheet" href="/static/css/services.css?v=20260122" />
 </head>
 
 <body>
@@ -25,6 +25,7 @@
 ========================= -->
 <header class="site-header">
   <nav class="nav">
+
     <div class="nav-left">
       <a href="/" class="logo">
         <img src="/static/images/logo-shiny.png" alt="Marault Intelligence Logo" />
@@ -33,22 +34,57 @@
     </div>
 
     <div class="nav-right">
+
       <a href="/">HOME</a>
-      <a href="/services">SERVICES</a>
+
+      <!-- Services dropdown -->
+      <div class="nav-item has-dropdown">
+        <a href="/services" class="nav-link services-link">SERVICES</a>
+
+        <button
+          class="nav-caret"
+          type="button"
+          aria-expanded="false"
+          aria-label="Open Services menu"
+        >
+          ▾
+        </button>
+
+        <div class="dropdown" role="menu" aria-label="Services menu">
+
+          <div class="dropdown-group-label">Business Intelligence</div>
+
+          <a class="dropdown-link" href="/services/data-visibility-audit">Data Visibility Audit</a>
+          <a class="dropdown-link" href="/services/executive-dashboards-reporting">Executive Dashboards &amp; Reporting</a>
+          <a class="dropdown-link" href="/services/revenue-customer-analytics">Revenue &amp; Customer Analytics</a>
+          <a class="dropdown-link" href="/services/forecasting-decision-modeling">Forecasting &amp; Decision Modeling</a>
+          <a class="dropdown-link" href="/services/private-client-analytics">Private Client Analytics</a>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="dropdown-group-label">Web</div>
+
+          <a class="dropdown-link" href="/services/custom-website-build">Custom Website Build</a>
+          <a class="dropdown-link" href="/services/template-based-build">Template-Based Build</a>
+          <a class="dropdown-link" href="/services/website-redesign">Website Redesign</a>
+          <a class="dropdown-link" href="/services/ux-ui-design">UX / UI Design</a>
+        </div>
+      </div>
+
       <a href="/approach">THE MARAULT APPROACH</a>
       <a href="/executive-team">EXECUTIVE TEAM</a>
       <a href="/contact">CONTACT</a>
       <a href="/inquire" class="nav-cta">INQUIRE</a>
+
     </div>
   </nav>
 </header>
 
-
 <!-- =========================
      PAGE CONTENT
 ========================= -->
-<main>
-  {{template "content" .}}
+<main class="page">
+  {{ template "content" . }}
 </main>
 
 <!-- =========================
@@ -63,7 +99,6 @@
   <div class="footer-cta">
     <div class="footer-cta-inner">
 
-      <!-- Brand Lockup -->
       <div class="footer-cta-brand">
         <img
           src="/static/images/logo-shiny.png"
@@ -77,7 +112,6 @@
         </div>
       </div>
 
-      <!-- Inquire Button -->
       <div class="footer-cta-action">
         <a href="/inquire" class="btn-inquire">Inquire</a>
       </div>
@@ -85,14 +119,12 @@
     </div>
   </div>
 
-  <!-- Decorative Divider -->
   <div class="footer-divider"></div>
 
   <!-- ===== Navigation Grid ===== -->
   <div class="footer-main">
     <div class="footer-grid">
 
-      <!-- Services -->
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
@@ -104,7 +136,6 @@
         </ul>
       </div>
 
-      <!-- Approach -->
       <div class="footer-col">
         <h4>Approach</h4>
         <ul>
@@ -114,7 +145,6 @@
         </ul>
       </div>
 
-      <!-- Company -->
       <div class="footer-col">
         <h4>Company</h4>
         <ul>
@@ -123,7 +153,6 @@
         </ul>
       </div>
 
-      <!-- Inquire -->
       <div class="footer-col footer-inquire">
         <h4>Inquire</h4>
         <p>
@@ -137,10 +166,8 @@
     </div>
   </div>
 
-  <!-- Decorative Divider -->
   <div class="footer-divider"></div>
 
-  <!-- ===== Legal ===== -->
   <div class="footer-legal">
     <div class="footer-legal-inner">
       © 2026 Marault Intelligence. All rights reserved.
@@ -149,15 +176,16 @@
 
 </footer>
 
-
 <!-- =========================
      SCRIPTS
 ========================= -->
 <script src="/static/js/network.js"></script>
 <script src="/static/js/scroll-fade.js"></script>
+<script src="/static/js/nav.js"></script>
 
 </body>
 </html>
+
 
 
 

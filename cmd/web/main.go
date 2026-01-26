@@ -6,23 +6,62 @@ import (
 	"net/http"
 )
 
+/* =========================
+   GENERIC SERVICE PAGE HANDLER
+========================= */
+func servicePageHandler(templateFile string, title string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		tmpl, err := template.ParseFiles(
+			"./internal/templates/base.html",
+			"./internal/templates/"+templateFile,
+		)
+		if err != nil {
+			log.Println(err)
+			http.Error(w, "Server error", http.StatusInternalServerError)
+			return
+		}
+
+		data := struct {
+			Title string
+		}{
+			Title: title,
+		}
+
+		if err := tmpl.Execute(w, data); err != nil {
+			log.Println(err)
+		}
+	}
+}
+
 func main() {
 	mux := http.NewServeMux()
 
-	// =========================
-	// Static files (CSS, JS, images)
-	// =========================
+	/* =========================
+	   Static files
+	========================= */
 	fileServer := http.FileServer(http.Dir("./static"))
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
-	// =========================
-	// Routes
-	// =========================
+	/* =========================
+	   Core pages
+	========================= */
 	mux.HandleFunc("/", homeHandler)
 	mux.HandleFunc("/approach", approachHandler)
-	mux.HandleFunc("/services", servicesHandler)
 	mux.HandleFunc("/executive-team", executiveTeamHandler)
 	mux.HandleFunc("/contact", contactHandler)
+
+	/* =========================
+	   Services
+	========================= */
+	mux.HandleFunc("/services", servicesHandler)
+
+	mux.HandleFunc(
+		"/services/data-visibility-audit",
+		servicePageHandler(
+			"data_visibility_audit.html",
+			"Data Visibility Audit | Marault Intelligence",
+		),
+	)
 
 	log.Println("Starting server on :4000")
 	log.Fatal(http.ListenAndServe(":4000", mux))
@@ -32,7 +71,7 @@ func main() {
    HOME PAGE (ROOT ONLY)
 ========================= */
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	// CRITICAL: prevent "/" from catching everything
+	// Prevent "/" from catching all routes
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
 		return
@@ -110,15 +149,37 @@ func executiveTeamHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 /* =========================
-   PLACEHOLDERS
+   SERVICES OVERVIEW
 ========================= */
 func servicesHandler(w http.ResponseWriter, r *http.Request) {
-	http.NotFound(w, r)
+	tmpl, err := template.ParseFiles(
+		"./internal/templates/base.html",
+		"./internal/templates/services.html",
+	)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Server error", http.StatusInternalServerError)
+		return
+	}
+
+	data := struct {
+		Title string
+	}{
+		Title: "Services | Marault Intelligence",
+	}
+
+	if err := tmpl.Execute(w, data); err != nil {
+		log.Println(err)
+	}
 }
 
+/* =========================
+   CONTACT
+========================= */
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	http.NotFound(w, r)
 }
+
 
 
 
