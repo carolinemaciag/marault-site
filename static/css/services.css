@@ -10,9 +10,10 @@
 .services-hero {
   position: relative;
   width: 100%;
-  height: 68vh;
+  height: 82vh;
+  min-height: 720px;
 
-  background-image: url("/static/images/lighthouse4.png");
+  background-image: url("/static/images/service-hero.png");
   background-repeat: no-repeat;
 
   /* KEY: horizontal-only slack */
@@ -85,47 +86,312 @@
 
 .services-intro-section {
   background: #f7f5f0;
-  padding: 160px 0 180px;
+  padding: 160px 0 120px;
 }
 
 .services-intro-block {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 40px;
+  text-align: center;
 }
 
 .services-intro-block h1 {
   font-family: "Castoro Titling", serif;
-  font-size: clamp(3.2rem, 5vw, 4.6rem);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
   line-height: 1.05;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+
+  /* Deep navy (NOT gold) */
   color: rgba(11, 28, 45, 0.95);
 
-  margin-bottom: 36px;
+  /* Remove gold effects */
+  -webkit-text-stroke: none;
+  text-shadow: none;
+
+  margin: 0 auto 32px;
+  max-width: 920px;
 }
 
+
 .services-intro-rule {
-  width: 180px;
-  height: 2px;
-  margin-bottom: 48px;
+  width: 1120px;
+  height: 3px;
+
+  margin: 52px auto 40px;
 
   background: linear-gradient(
     to right,
-    rgba(220, 201, 163, 0.95),
+    transparent,
+    rgba(220, 201, 163, 0.9),
     transparent
   );
+
+  opacity: 0.9;
 }
 
 .services-intro-block p {
   max-width: 720px;
+  margin: 0 auto 26px; /* ✅ centers text block */
   font-size: 1.35rem;
   line-height: 1.85;
   color: rgba(11, 28, 45, 0.78);
-  margin-bottom: 26px;
+}
+
+/* =========================
+   SERVICES DETAILS FRAME
+========================= */
+
+.services-details-frame {
+  background: #f7f5f0; /* off-white, matches intro */
+  padding: 140px 0 160px;
+}
+
+.services-details-outer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* =========================
+   SERVICE DETAIL ROWS
+========================= */
+
+.services-audit,
+.services-revenue,
+.services-forecasting,
+.services-private,
+.services-web,
+.services-template,
+.services-redesign,
+.services-uxui {
+  margin-bottom: 140px;
+}
+
+.services-audit-grid,
+.services-revenue-grid,
+.services-forecasting-grid,
+.services-private-grid,
+.services-web-grid,
+.services-template-grid,
+.services-redesign-grid,
+.services-uxui-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 80px;
+}
+
+/* Flip layout for alternating rows */
+.services-audit--alt .services-audit-grid,
+.services-audit-grid--flip,
+.services-revenue-grid--flip,
+.services-forecasting-grid--flip,
+.services-private-grid--flip,
+.services-template-grid--flip,
+.services-redesign-grid--flip {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.services-audit-grid--flip > *:first-child {
+  order: 2;
+}
+
+.services-audit-grid--flip > *:last-child {
+  order: 1;
+}
+
+/* Titles */
+.services-details-frame h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.6rem;
+  line-height: 1.15;
+  color: #0b1c2d;
+  margin-bottom: 24px;
+}
+
+/* Body copy */
+.services-details-frame p {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.78);
+  max-width: 520px;
+}
+
+.services-details-frame img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.services-details-frame a {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: rgba(11, 28, 45, 0.06);
+  color: #0b1c2d;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 200ms ease;
+}
+
+.services-details-frame a:hover {
+  background: rgba(11, 28, 45, 0.12);
+}
+
+/* =========================
+   SERVICE GRID FLIP (FIXED)
+========================= */
+
+.services-audit-grid {
+  grid-template-areas: "media copy";
+}
+
+.services-audit-grid--flip {
+  grid-template-areas: "copy media";
+}
+
+/* Map children to areas */
+.services-audit-media {
+  grid-area: media;
+}
+
+.services-audit-copy {
+  grid-area: copy;
+}
+
+/* =========================
+   SERVICE IMAGE NORMALIZATION
+========================= */
+
+.services-audit-media,
+.services-revenue-media,
+.services-forecasting-media,
+.services-private-media,
+.services-web-media,
+.services-template-media,
+.services-redesign-media,
+.services-uxui-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 320px; /* controls row balance */
 }
 
 
+@media (max-width: 900px) {
+  .services-audit-grid,
+  .services-revenue-grid,
+  .services-forecasting-grid,
+  .services-private-grid,
+  .services-web-grid,
+  .services-template-grid,
+  .services-redesign-grid,
+  .services-uxui-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .services-details-frame p {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================
+   SERVICES — GRID
+========================= */
+
+.services-grid {
+  background: #f7f5f0;
+  padding: 80px 40px 140px;
+}
+
+.services-grid-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(520px, 1fr));
+  gap: 80px;
+
+  align-items: start;
+}
+
+.services-grid-head {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.services-grid-title {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  /* Champagne gold */
+  color: #f2dfb8;
+
+  /* Gold outline */
+  -webkit-text-stroke: 0.6px #b89a5a;
+
+  /* Soft glow */
+  text-shadow:
+    0 0 6px rgba(242, 223, 184, 0.35),
+    0 2px 10px rgba(184, 154, 90, 0.18);
+}
+
+.services-card {
+  background: radial-gradient(
+    circle at top,
+    #0f2438,
+    #0b1c2d 70%
+  );
+
+  border-radius: 28px;
+  padding: 64px 56px 72px;
+
+  border: 2px solid rgba(220, 201, 163, 0.55);
+
+  box-shadow:
+    0 28px 56px rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.services-card .services-tiles {
+  justify-items: center;
+}
+
+/* Center Private Client Analytics ONLY in BI card */
+.services-card--bi .service-tile:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
+
+.services-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 36px 64px rgba(0, 0, 0, 0.32),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.services-grid-group-title {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f2dfb8;
+  text-align: center;
+  margin-bottom: 56px;
+}
 
 
 /* =========================
@@ -135,8 +401,8 @@
 .services-tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 44px 64px;
-  max-width: 900px;
+  gap: 40px 48px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -147,6 +413,11 @@
   color: inherit;
   justify-items: center;
   text-align: center;
+  transition: transform 180ms ease;
+}
+
+.service-tile:hover {
+  transform: translateY(-2px);
 }
 
 .service-tile-icon {
@@ -154,6 +425,7 @@
   height: 150px;
   object-fit: contain;
   transition: transform 200ms ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 
 .service-tile:hover .service-tile-icon {
@@ -162,7 +434,8 @@
 
 .service-tile-title {
   font-family: "Castoro Titling", serif;
-  font-size: 1.15rem;
+  font-size: 1.18rem;
+  letter-spacing: 0.04em;
   color: rgba(247, 245, 240, 0.92);
   max-width: 20ch;
 }
@@ -174,12 +447,17 @@
 ========================= */
 
 @media (max-width: 900px) {
-  .services-tiles {
-    grid-template-columns: repeat(2, 140px);
+  .services-grid-inner {
+    grid-template-columns: 1fr;
+    gap: 64px;
   }
 
-  .services-hero {
-    padding: 100px 24px 0;
+  .services-grid {
+    padding: 120px 24px 140px;
+  }
+
+  .services-tiles {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
   }
 }
 
@@ -187,9 +465,6 @@
   .services-tiles {
     grid-template-columns: 1fr;
   }
-
-  .services-hero-title {
-    font-size: 2.6rem;
-  }
 }
+
 
