@@ -225,21 +225,98 @@
   display: block;
 }
 
+/* =========================
+   SERVICE DETAIL BUTTON — INQUIRE STYLE
+========================= */
+
 .services-details-frame a {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: rgba(11, 28, 45, 0.06);
-  color: #0b1c2d;
-  font-size: 0.9rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 36px;
+  padding: 14px 34px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.95px solid rgba(220, 201, 163, 0.85);
+  border-radius: 2px;
+
   text-decoration: none;
-  transition: background 200ms ease;
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease;
 }
 
-.services-details-frame a:hover {
-  background: rgba(11, 28, 45, 0.12);
+/* inner line */
+.services-details-frame a::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+
+  border: 1.55px solid rgba(220, 201, 163, 0.45);
+  pointer-events: none;
 }
+
+/* hover */
+.services-details-frame a:hover {
+  color: #0b1c2d;
+  background: rgba(220, 201, 163, 0.12);
+  border-color: rgba(220, 201, 163, 1);
+}
+
+
+/* =========================
+   SERVICE DETAIL CARD STYLE
+========================= */
+
+.services-audit,
+.services-revenue,
+.services-forecasting,
+.services-private,
+.services-web,
+.services-template,
+.services-redesign,
+.services-uxui {
+  position: relative;
+  padding: 72px 80px;
+  margin-bottom: 140px;
+
+  background: #fbfaf7; /* lighter than page, subtle contrast */
+  border-radius: 28px;
+
+  /* OUTER gold line */
+  border: 2.55px solid rgba(220, 201, 163, 0.55);
+}
+
+/* INNER gold line */
+.services-audit::before,
+.services-revenue::before,
+.services-forecasting::before,
+.services-private::before,
+.services-web::before,
+.services-template::before,
+.services-redesign::before,
+.services-uxui::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+
+  border-radius: 22px;
+  border: 2.05px solid rgba(220, 201, 163, 0.35);
+
+  pointer-events: none;
+}
+
+
 
 /* =========================
    SERVICE GRID FLIP (FIXED)
@@ -282,6 +359,9 @@
   min-height: 320px; /* controls row balance */
 }
 
+/* =========================
+  RESPONSIVE
+========================= */
 
 @media (max-width: 900px) {
   .services-audit-grid,
@@ -298,6 +378,20 @@
 
   .services-details-frame p {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-audit,
+  .services-revenue,
+  .services-forecasting,
+  .services-private,
+  .services-web,
+  .services-template,
+  .services-redesign,
+  .services-uxui {
+    padding: 56px 32px;
+    border-radius: 22px;
   }
 }
 
