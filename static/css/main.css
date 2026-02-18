@@ -191,10 +191,12 @@ body {
 
 .dropdown {
   position: absolute;
-  top: calc(100% + 6px); /* tighter attachment to nav */
-  left: 18px;
+  top: calc(100% + 6px);
+  left: -58px;
 
-  padding: 10px 18px;   /* ↓ less vertical, ↑ horizontal */
+  width: 420px;      /* 👈 Wider */
+  padding: 20px 28px;    /* Slightly more breathing room */
+
   border-radius: 16px;
   border: 1px solid rgba(237, 230, 214, 0.14);
   background: rgba(11, 28, 45, 0.98);
@@ -206,6 +208,9 @@ body {
   transition: 160ms ease;
   z-index: 2000;
 }
+
+
+
 
 /* Hover buffer so cursor can move down into dropdown */
 .has-dropdown::after {
@@ -220,14 +225,18 @@ body {
 
 .dropdown-link {
   display: block;
-  padding: 14px 14px;
-  border-radius: 12px;
+  position: relative;
+
+  padding: 14px 0;      /* no horizontal padding */
+  margin: 0;            /* remove any accidental shift */
+
   text-decoration: none;
   color: var(--text-light);
+
   font-family: "Inter", sans-serif;
   font-size: 0.95rem;
-  letter-spacing: 0;
-  margin-left: 0;
+
+  white-space: nowrap;
 }
 
 .dropdown-link:hover {
@@ -1542,4 +1551,6 @@ body {
     padding: 96px 24px;
   }
 }
+
+
 
