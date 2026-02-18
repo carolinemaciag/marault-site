@@ -50,13 +50,27 @@
 
 .inquire-section {
   background: #f7f5f0;
-  padding: 120px 0;
+  padding: 48px 0 120px;
 }
 
 .inquire-container {
   max-width: 980px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+/* =========================
+   INQUIRE FORM TITLE
+========================= */
+
+.inquire-form-title {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--navy-dark);
+  margin-bottom: 64px;
 }
 
 /* =========================
@@ -92,7 +106,7 @@
   background: transparent;
   padding: 12px 0;
   font-family: "Inter", sans-serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--navy-dark);
   transition: border-color 0.2s ease;
 }
@@ -118,11 +132,16 @@
   display: flex;
   align-items: center;
   gap: 10px;
+
   font-family: "Inter", sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.85rem;      /* smaller */
+  letter-spacing: 0.08em;  /* subtle refinement */
+  text-transform: uppercase;
+
   color: var(--navy-dark);
   cursor: pointer;
 }
+
 
 /* Clean gold checkbox styling */
 .services-checkbox-grid input[type="checkbox"] {
