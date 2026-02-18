@@ -176,10 +176,29 @@ func servicesHandler(w http.ResponseWriter, r *http.Request) {
 /* =========================
    CONTACT
 ========================= */
-func contactHandler(w http.ResponseWriter, r *http.Request) {
-	http.NotFound(w, r)
-}
 
+func contactHandler(w http.ResponseWriter, r *http.Request) {
+
+	tmpl, err := template.ParseFiles(
+		"./internal/templates/base.html",
+		"./internal/templates/contact.html",
+	)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Server error", http.StatusInternalServerError)
+		return
+	}
+
+	data := struct {
+		Title string
+	}{
+		Title: "Contact | Marault Intelligence",
+	}
+
+	if err := tmpl.Execute(w, data); err != nil {
+		log.Println(err)
+	}
+}
 
 
 
