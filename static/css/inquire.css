@@ -154,24 +154,53 @@
    SUBMIT BUTTON
 ========================= */
 
-.inquire-btn {
-  align-self: flex-start;
-  padding: 14px 40px;
-  border: 1px solid var(--gold-primary);
-  background: transparent;
-  font-family: "Inter", sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
+.inquire-form .inquire-submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  align-self: flex-start;   /* critical in flex column */
+
+  margin-top: 36px;
+  padding: 14px 34px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--navy-dark);
+
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.95px solid rgba(220, 201, 163, 0.85);
+  border-radius: 2px;
+
   cursor: pointer;
-  transition: all 0.25s ease;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease;
 }
 
-.inquire-btn:hover {
-  background: var(--gold-primary);
-  color: var(--navy-dark);
+/* Inner gold frame */
+.inquire-form .inquire-submit::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+
+  border: 1.55px solid rgba(220, 201, 163, 0.45);
+  pointer-events: none;
 }
+
+/* Hover */
+.inquire-form .inquire-submit:hover {
+  color: #0b1c2d;
+  background: rgba(220, 201, 163, 0.12);
+  border-color: rgba(220, 201, 163, 1);
+}
+
 
 /* =========================
    RESPONSIVE

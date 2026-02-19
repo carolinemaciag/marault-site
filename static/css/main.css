@@ -370,13 +370,30 @@ body {
 }
 
 .services-panel {
-  max-width: 1320px;
+  position: relative;
+  max-width: 1200px;
   margin: 0 auto;
-  background: linear-gradient(160deg, var(--navy-mid), var(--navy-dark));
-  border-radius: 40px;
-  padding: 110px 90px; /* slightly larger */
-  box-shadow: 0 40px 80px rgba(0,0,0,0.25);
+
+  padding: 90px 80px;
+
+  background: #fbfaf7; /* same as services cards */
+  border-radius: 28px;
+
+  border: 2.55px solid rgba(220, 201, 163, 0.55);
 }
+
+/* Inner gold line */
+.services-panel::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+
+  border-radius: 22px;
+  border: 2.05px solid rgba(220, 201, 163, 0.35);
+
+  pointer-events: none;
+}
+
 
 .services-inner {
   max-width: 1200px;
@@ -395,28 +412,38 @@ body {
 ========================= */
 .services-text h2 {
   font-family: "Castoro Titling", serif;
-  font-size: 3.1rem; /* ⬆ */
-  margin-bottom: 26px;
+  font-size: 3.1rem;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  color: rgba(11, 28, 45, 0.95); /* deep navy */
 }
 
 .services-intro {
   max-width: 560px;
   margin-bottom: 72px;
-  font-size: 1.15rem; /* ⬆ */
+  font-size: 1.15rem;
   font-weight: 300;
-  color: var(--text-muted);
+  line-height: 1.75;
+
+  color: rgba(11, 28, 45, 0.78); /* ← proper editorial navy */
 }
+
 
 /* =========================
    INTRO IMAGE (BIGGER)
 ========================= */
 .services-visual img {
   width: 100%;
-  max-width: 520px; /* ⬆ */
+  max-width: 520px;
   height: auto;
-  margin-top: -40px;
-  filter: drop-shadow(0 40px 70px rgba(0,0,0,0.35));
+  margin-top: -10px;
+
+  border-radius: 18px;   /* ← rounded corners */
+  display: block;
+
+  box-shadow: none;      /* remove shadow */
+  filter: none;          /* remove drop shadow */
 }
 
 /* =========================
@@ -459,15 +486,20 @@ body {
 }
 
 .service-text h3 {
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.25rem;  /* ⬆ increase size */
+  font-weight: 250;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #0b1c2d;
+  margin-bottom: 18px;
 }
 
 .service-text p {
   font-size: 1.1rem; /* ⬆ */
-  font-weight: 300;
-  color: var(--text-muted);
+  font-weight: 200;
+  color: rgba(11, 28, 45, 0.78);
 }
 
 /* =========================
@@ -475,7 +507,7 @@ body {
 ========================= */
 .service-divider {
   width: 3px;
-  height: 220px;
+  height: 280px;
   background: linear-gradient(
     to bottom,
     var(--gold-primary),

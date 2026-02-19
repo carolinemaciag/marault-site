@@ -179,32 +179,54 @@
 }
 
 
-
 /* =========================
-   SUBMIT BUTTON
+   CONTACT BUTTON — MATCH SERVICES EXACTLY
 ========================= */
 
-.contact-submit {
-  margin-top: 16px;
-  align-self: flex-start;
+.contact-submit-frame button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  padding: 12px 28px;
-  border: 1px solid var(--gold-primary);
-  background: transparent;
+  margin-top: 36px;
+  padding: 14px 34px;
 
   font-family: "Castoro Titling", serif;
-  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.9rem;
 
-  color: var(--gold-primary);
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.95px solid rgba(220, 201, 163, 0.85);
+  border-radius: 2px;
+
   cursor: pointer;
-  transition: all 0.25s ease;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease;
 }
 
-.contact-submit:hover {
-  background: rgba(220, 201, 163, 0.12);
+/* inner line */
+.contact-submit-frame button::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1.55px solid rgba(220, 201, 163, 0.45);
+  pointer-events: none;
 }
+
+/* hover */
+.contact-submit-frame button:hover {
+  color: #0b1c2d;
+  background: rgba(220, 201, 163, 0.12);
+  border-color: rgba(220, 201, 163, 1);
+}
+
 
 
 /* =========================
