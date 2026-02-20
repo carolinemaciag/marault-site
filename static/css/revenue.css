@@ -1,0 +1,362 @@
+/* =========================================================
+   REVENUE & CUSTOMER ANALYTICS — MODULE SYSTEM
+   Matches the Audit/Forecasting layout exactly
+   Scoped to .rev-page
+========================================================= */
+
+.rev-page{
+  background: #f7f5f0;
+}
+
+/* container */
+.rev-page .rev-container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 900px){
+  .rev-page .rev-container{ padding: 0 24px; }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.rev-page .rev-hero{
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 620px;
+  background-image: url("/static/images/revenue_analytics_hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.rev-page .rev-hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 28, 45, 0.80),
+    rgba(11, 28, 45, 0.55),
+    rgba(11, 28, 45, 0.88)
+  );
+  z-index: 1;
+}
+
+.rev-page .rev-hero-content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 920px;
+  padding: 0 24px;
+}
+
+.rev-page .rev-hero-title{
+  font-family: "Castoro Titling", serif;
+  font-size: clamp(3.1rem, 6vw, 4.4rem);
+  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  color: #f7f5f0;
+  margin: 0 0 18px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.rev-page .rev-hero-subtitle{
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: rgba(247, 245, 240, 0.9);
+  max-width: 760px;
+  margin: 0 auto 16px;
+}
+
+.rev-page .rev-hero-question{
+  font-size: 1.35rem;
+}
+
+.rev-page .rev-hero-rule{
+  width: min(720px, 72vw);
+  height: 3px;
+  margin: 28px auto 0;
+  background: linear-gradient(to right, transparent, rgba(220,201,163,0.95), transparent);
+}
+
+/* =========================
+   BASE
+========================= */
+
+.rev-page .rev-base{
+  padding: 110px 0 90px;
+}
+
+/* INTRO */
+
+.rev-page .rev-intro{
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.rev-page .rev-intro-title{
+  font-family: "Castoro Titling", serif;
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 22px;
+  color: rgba(11,28,45,0.95);
+}
+
+.rev-page .rev-intro-rule{
+  width: min(820px, 92%);
+  height: 3px;
+  margin: 26px auto 34px;
+  background: linear-gradient(to right, transparent, rgba(220,201,163,0.9), transparent);
+}
+
+.rev-page .rev-intro-card{
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fbfaf7;
+  border-radius: 28px;
+  border: 2px solid rgba(220,201,163,0.55);
+  position: relative;
+  padding: 52px 46px;
+}
+
+.rev-page .rev-intro-card::before{
+  content:"";
+  position:absolute;
+  inset: 14px;
+  border-radius: 22px;
+  border: 2px solid rgba(220,201,163,0.35);
+}
+
+.rev-page .rev-intro-card-inner{
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.rev-page .rev-intro-card p{
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: rgba(11,28,45,0.78);
+  margin: 0 0 18px;
+}
+
+/* =========================
+   CTA — GOLD DOUBLE FRAME
+========================= */
+
+.rev-page .rev-cta{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 22px;
+  padding: 14px 34px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.95px solid rgba(220, 201, 163, 0.85);
+  border-radius: 2px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    color 200ms ease,
+    border-color 200ms ease,
+    background 200ms ease;
+}
+
+/* inner gold frame */
+.rev-page .rev-cta::before{
+  content:"";
+  position:absolute;
+  inset: 5px;
+  border: 1.55px solid rgba(220, 201, 163, 0.45);
+  pointer-events: none;
+}
+
+/* hover */
+.rev-page .rev-cta:hover{
+  color: #0b1c2d;
+  background: rgba(220, 201, 163, 0.12);
+  border-color: rgba(220, 201, 163, 1);
+}
+
+/* optional inline spacing */
+.rev-page .rev-cta--inline{
+  margin-top: 18px;
+}
+
+/* =========================
+   SECTION + PILLS
+========================= */
+
+.rev-page .rev-section{
+  padding: 0 0 90px;
+}
+
+.rev-page .rev-section-head{
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 44px;
+}
+
+.rev-page .rev-section-head h2{
+  font-family: "Castoro Titling", serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  color: rgba(11, 28, 45, 0.95);
+}
+
+.rev-page .rev-section-head p{
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.72);
+  max-width: 760px;
+}
+
+.rev-page .rev-rule{
+  width: min(720px, 92%);
+  height: 3px;
+  margin: 26px auto 0;
+  background: linear-gradient(to right, transparent, rgba(220,201,163,0.9), transparent);
+}
+
+.rev-page .rev-pills{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.rev-page .rev-pill{
+  background: #fbfaf7;
+  border-radius: 22px;
+  padding: 28px;
+  border: 2px solid rgba(220,201,163,0.38);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.10);
+}
+
+.rev-page .rev-pill h3{
+  font-family: "Castoro Titling", serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  color: #0b1c2d;
+}
+
+.rev-page .rev-pill ul{
+  padding-left: 18px;
+  margin: 0;
+}
+
+.rev-page .rev-pill li{
+  color: #2b2b2b;
+}
+
+.rev-page .rev-pill li::marker{
+  color: rgba(11,28,45,0.6);
+}
+
+/* =========================
+   EXEC
+========================= */
+
+.rev-page .rev-exec{
+  padding: 0 0 110px;
+}
+
+.rev-page .rev-exec-card{
+  background: #fbfaf7;
+  border-radius: 28px;
+  border: 2.5px solid rgba(220,201,163,0.55);
+  padding: 72px 80px;
+}
+
+.rev-page .rev-exec-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.rev-page .rev-exec-copy h2{
+  font-family: "Castoro Titling", serif;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  color: #0b1c2d;
+  margin: 0 0 18px;
+}
+
+.rev-page .rev-exec-copy p,
+.rev-page .rev-exec-copy li{
+  color: #0b1c2d;
+}
+
+.rev-page .rev-exec-copy ul{
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.rev-page .rev-exec-media{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.rev-page .rev-exec-image-wrap{
+  width: 100%;
+  max-width: 420px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 2px solid rgba(220,201,163,0.55);
+  background: #fbfaf7;
+}
+
+.rev-page .rev-exec-image{
+  width: 100%;
+  display: block;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px){
+
+  .rev-page .rev-pills{
+    grid-template-columns: 1fr;
+  }
+
+  .rev-page .rev-exec-grid{
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .rev-page .rev-exec-card{
+    padding: 56px 32px;
+    border-radius: 22px;
+  }
+}
+
