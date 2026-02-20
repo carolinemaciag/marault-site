@@ -14,6 +14,7 @@ import (
 ========================= */
 func servicePageHandler(templateFile string, title string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+
 		tmpl, err := template.ParseFiles(
 			"./internal/templates/base.html",
 			"./internal/templates/"+templateFile,
@@ -26,8 +27,10 @@ func servicePageHandler(templateFile string, title string) http.HandlerFunc {
 
 		data := struct {
 			Title string
+			Page  string
 		}{
 			Title: title,
+			Page:  "services",
 		}
 
 		if err := tmpl.Execute(w, data); err != nil {
@@ -37,6 +40,7 @@ func servicePageHandler(templateFile string, title string) http.HandlerFunc {
 }
 
 func main() {
+
 	mux := http.NewServeMux()
 
 	/* =========================
@@ -72,10 +76,10 @@ func main() {
 }
 
 /* =========================
-   HOME PAGE (ROOT ONLY)
+   HOME PAGE
 ========================= */
 func homeHandler(w http.ResponseWriter, r *http.Request) {
-	// Prevent "/" from catching all routes
+
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
 		return
@@ -93,8 +97,10 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 
 	data := struct {
 		Title string
+		Page  string
 	}{
 		Title: "Marault Intelligence",
+		Page:  "home",
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
@@ -103,9 +109,10 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 /* =========================
-   THE MARAULT APPROACH
+   APPROACH PAGE
 ========================= */
 func approachHandler(w http.ResponseWriter, r *http.Request) {
+
 	tmpl, err := template.ParseFiles(
 		"./internal/templates/base.html",
 		"./internal/templates/approach.html",
@@ -118,8 +125,10 @@ func approachHandler(w http.ResponseWriter, r *http.Request) {
 
 	data := struct {
 		Title string
+		Page  string
 	}{
 		Title: "The Marault Approach | Marault Intelligence",
+		Page:  "approach",
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
@@ -131,6 +140,7 @@ func approachHandler(w http.ResponseWriter, r *http.Request) {
    EXECUTIVE TEAM
 ========================= */
 func executiveTeamHandler(w http.ResponseWriter, r *http.Request) {
+
 	tmpl, err := template.ParseFiles(
 		"./internal/templates/base.html",
 		"./internal/templates/executive.html",
@@ -143,8 +153,10 @@ func executiveTeamHandler(w http.ResponseWriter, r *http.Request) {
 
 	data := struct {
 		Title string
+		Page  string
 	}{
 		Title: "Executive Team | Marault Intelligence",
+		Page:  "executive",
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
@@ -156,6 +168,7 @@ func executiveTeamHandler(w http.ResponseWriter, r *http.Request) {
    SERVICES OVERVIEW
 ========================= */
 func servicesHandler(w http.ResponseWriter, r *http.Request) {
+
 	tmpl, err := template.ParseFiles(
 		"./internal/templates/base.html",
 		"./internal/templates/services.html",
@@ -168,8 +181,10 @@ func servicesHandler(w http.ResponseWriter, r *http.Request) {
 
 	data := struct {
 		Title string
+		Page  string
 	}{
 		Title: "Services | Marault Intelligence",
+		Page:  "services",
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
@@ -180,7 +195,6 @@ func servicesHandler(w http.ResponseWriter, r *http.Request) {
 /* =========================
    CONTACT
 ========================= */
-
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 
 	tmpl, err := template.ParseFiles(
@@ -195,8 +209,10 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 
 	data := struct {
 		Title string
+		Page  string
 	}{
 		Title: "Contact | Marault Intelligence",
+		Page:  "contact",
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
@@ -207,7 +223,6 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 /* =========================
    INQUIRE
 ========================= */
-
 func inquireHandler(w http.ResponseWriter, r *http.Request) {
 
 	if r.Method == http.MethodGet {
@@ -224,8 +239,10 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 
 		data := struct {
 			Title string
+			Page  string
 		}{
 			Title: "Inquire | Marault Intelligence",
+			Page:  "inquire",
 		}
 
 		tmpl.Execute(w, data)
@@ -249,7 +266,6 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		// Render thank you page
 		tmpl, _ := template.ParseFiles(
 			"./internal/templates/base.html",
 			"./internal/templates/thankyou.html",
@@ -257,14 +273,19 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 
 		data := struct {
 			Title string
+			Page  string
 		}{
 			Title: "Thank You | Marault Intelligence",
+			Page:  "thankyou",
 		}
 
 		tmpl.Execute(w, data)
 	}
 }
 
+/* =========================
+   EMAIL SENDER
+========================= */
 func sendInquiryEmail(name, email, company, services, message string) error {
 
 	from := "caroline@maraultintelligence.com"
@@ -291,6 +312,8 @@ func sendInquiryEmail(name, email, company, services, message string) error {
 
 	return smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, []byte(msg))
 }
+
+
 
 
 

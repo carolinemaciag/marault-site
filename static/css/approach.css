@@ -1,0 +1,486 @@
+/* =========================
+   APPROACH — HERO
+========================= */
+.page {
+  background: #f6f5f2;
+}
+
+.approach-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  background-image: url("/static/images/approach1.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.approach-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 28, 45, 0.55);
+}
+
+.approach-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 32px;
+}
+
+.approach-hero h1 {
+  font-family: "Castoro Titling", serif;
+  font-size: 3.6rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.approach-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* =========================
+   APPROACH — BODY
+========================= */
+
+.approach-section {
+  background: #f6f5f2;
+  padding: 40px 34px;
+}
+.approach-section + .approach-section {
+  padding-top: 16px;
+}
+
+.approach-block {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.approach-text {
+  margin-bottom: 32px;
+}
+
+.approach-lead {
+  font-size: 1.45rem;
+  line-height: 1.65;
+  margin-bottom: 36px;
+  color: #1a1a1a;
+}
+
+.approach-section h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0b1c2d;
+  margin-bottom: 36px;
+}
+
+
+
+.approach-section p {
+  font-size: 1.2rem;       /* was 1.15rem */
+  line-height: 1.85;       /* airier, more premium */
+  color: #2b2b2b;
+  margin-bottom: 24px;     /* slightly tighter */
+}
+
+.approach-icon {
+  width: 160px;
+  height: auto;
+  margin: 32px auto 0;   /* pulls icon closer to text */
+  display: block;
+}
+
+
+
+/* =========================
+   GOLD EDITORIAL DIVIDER
+========================= */
+
+.approach-divider {
+  width: 1120px;
+  height: 3px;
+
+  margin: 52px auto 2px; /* symmetric spacing */
+
+    background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.9),
+    transparent
+  );
+
+  opacity: 0.9;
+}
+
+.approach-closing {
+  margin-top: 48px;
+  font-style: italic;
+  color: #8f7a4d;
+}
+
+.approach-final {
+  padding-bottom: 0;
+}
+
+/* =========================
+   ENGAGEMENT EXPERIENCE
+========================= */
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 42px 60px;
+  margin-top: 48px;
+}
+
+.experience-item {
+  padding: 0;
+}
+
+.experience-item h3 {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  /* Slightly brighter champagne */
+  color: #f7e7c6;
+
+  /* Stronger metallic edge */
+  -webkit-text-stroke: 0.7px #b89a5a;
+
+  /* REMOVE glow entirely */
+  text-shadow: none;
+
+  margin-bottom: 36px;
+}
+
+.experience-item p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   APPROACH PANEL (HOMEPAGE STYLE — FIXED)
+========================= */
+
+.approach-panel {
+  background: linear-gradient(180deg, #0f2438, #0b1c2d);
+  border-radius: 36px;
+
+  /* Gold frame (homepage style) */
+  border: 4px solid var(--gold-primary);
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 201, 163, 0.35),
+    0 35px 70px rgba(11, 28, 45, 0.45);
+
+  padding: 72px 72px 80px;
+}
+
+.panel-divider {
+  width: 260px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.9),
+    transparent
+  );
+  margin: 48px auto 56px;
+}
+
+
+/* =========================
+   PANEL TYPOGRAPHY (OVERRIDES)
+   — THIS IS THE CRITICAL FIX
+========================= */
+
+.approach-panel h2 {
+  font-family: "Castoro Titling", serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  /* Slightly brighter champagne */
+  color: #f7e7c6;
+
+  /* Stronger metallic edge */
+  -webkit-text-stroke: 0.7px #b89a5a;
+
+  /* REMOVE glow entirely */
+  text-shadow: none;
+
+  margin-bottom: 36px;
+}
+
+
+/* Intro paragraph */
+.approach-panel-intro {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #f7f5f0;
+  max-width: 860px;
+  margin: 0 auto 56px;
+}
+
+/* Experience content text */
+.approach-panel .experience-item h3 {
+  color: #f7f5f0;
+}
+
+.approach-panel .experience-item p {
+  color: rgba(247, 245, 240, 0.88);
+}
+
+/* Force intro paragraph color inside the panel */
+.approach-panel .approach-text p {
+  color: #f7f5f0;
+}
+
+/* =========================
+   VISUAL BREAK BETWEEN PANEL + COMPARISON
+========================= */
+
+.approach-visual-break {
+  background: #f6f5f2; /* match light background */
+  padding: 40px 0 10px;
+  text-align: center;
+}
+
+.approach-break-image {
+  max-width: 380px;   /* adjust based on feel */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* =========================
+   APPROACH COMPARISON
+========================= */
+
+.approach-comparison {
+  background: #f7f5f0; /* same light tone as Decision-First section */
+}
+
+.comparison-intro {
+  max-width: 760px;
+  margin: 0 auto 64px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #2b2b2b;
+  text-align: center;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.comparison-column {
+  padding: 48px 44px;
+}
+
+.comparison-column h3 {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.comparison-left {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.comparison-right h3 {
+  background: linear-gradient(
+    90deg,
+    #e8c887 0%,
+    #f7eed8 50%,
+    #e8c887 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;          /* fallback */
+  color: transparent;             /* fallback */
+
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+
+
+.comparison-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comparison-column li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2f2f2f; /* matches left heading tone */
+  margin-bottom: 18px;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Subtle bullet marker */
+.comparison-column li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.comparison-left h3 {
+  color: #2f2f2f; /* off-black, readable but soft */
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+/* =========================
+   COMPARISON — VISUAL DIFFERENTIATION (REFINED)
+========================= */
+
+/* Conventional: restrained, neutral */
+.comparison-left {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(120, 120, 120, 0.35);
+  border-radius: 18px;
+  padding: 52px 48px;
+}
+
+/* Marault: elevated, premium */
+.comparison-right {
+  background: linear-gradient(180deg, #0f2438, #0b1c2d);
+  border: 3px solid var(--gold-primary);
+  border-radius: 20px;
+  padding: 56px 56px;
+  position: relative;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(220, 201, 163, 0.35),
+    0 22px 48px rgba(11, 28, 45, 0.35);
+}
+
+
+
+/* =========================
+   BULLET LANGUAGE
+========================= */
+
+/* Left: neutral em-dash */
+.comparison-left li::before {
+  content: "—";
+  color: #2f2f2f;
+}
+
+/* Right: gold diamond bullet */
+.comparison-right li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: linear-gradient(145deg, #f2dfb8, #b89a5a);
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  transform: rotate(45deg);
+}
+
+
+/* Slightly stronger contrast on Marault text */
+.comparison-right li {
+  color: #f7f5f0; /* off-white for navy background */
+  margin-bottom: 16px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  /* -------------------------
+     HERO / GLOBAL
+  ------------------------- */
+
+  .approach-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .approach-section {
+    padding: 90px 0;
+  }
+
+  .approach-icon {
+    width: 96px;
+  }
+
+  /* -------------------------
+     ENGAGEMENT PANEL
+  ------------------------- */
+
+  .approach-panel {
+    padding: 56px 36px 64px;
+  }
+
+  .panel-divider {
+    width: 160px;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  /* -------------------------
+     COMPARISON SECTION
+  ------------------------- */
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-column {
+    padding: 0;
+  }
+
+  .comparison-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 56px;
+    margin-bottom: 56px;
+  }
+
+  .comparison-intro {
+    margin-bottom: 48px;
+  }
+
+  /* Mobile: remove surface split, keep hierarchy */
+.comparison-right {
+  background: none;
+  box-shadow: none;
+  border-left: none;
+  padding: 0;
+}
+
+.comparison-right h3 {
+  margin-top: 48px;
+}
+}
