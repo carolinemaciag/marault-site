@@ -1,0 +1,592 @@
+/* =========================================================
+   CUSTOM WEBSITE BUILD — MODULE CSS
+   Theme-aligned with services page (cream + navy + gold)
+   Scoped to .custom-page (no global side effects)
+========================================================= */
+
+.custom-page{
+  background: #f7f5f0;
+}
+
+/* container used on this page */
+.custom-page .custom-container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 900px){
+  .custom-page .custom-container{ padding: 0 24px; }
+}
+
+/* HERO — match Services hero behavior exactly */
+.custom-page .custom-hero{
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 620px;
+
+  background-image: url("/static/images/custom_web_hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* stronger, cleaner overlay (prevents “blending”) */
+.custom-page .custom-hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 28, 45, 0.78),
+    rgba(11, 28, 45, 0.55),
+    rgba(11, 28, 45, 0.88)
+  );
+  z-index: 1;
+}
+
+.custom-page .custom-hero-content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 920px;
+  padding: 0 24px;
+}
+
+.custom-page .custom-hero-title{
+  font-family: "Castoro Titling", serif;
+  font-size: clamp(3.1rem, 6vw, 4.4rem);
+  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  color: #f7f5f0;
+  margin: 0 0 18px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+
+.custom-page .custom-hero-subtitle{
+  font-size: 1.25rem;
+  line-height: 1.85;
+  color: rgba(247, 245, 240, 0.9);
+  max-width: 720px;
+  margin: 0 auto 16px;
+}
+
+.custom-page .custom-hero-question{
+  font-size: 1.35rem;
+  color: rgba(247, 245, 240, 0.95);
+}
+
+.custom-page .custom-hero-rule{
+  width: min(720px, 72vw);
+  height: 3px;
+  margin: 28px auto 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.95),
+    transparent
+  );
+  opacity: 0.95;
+}
+
+/* =========================
+   CREAM BASE
+========================= */
+.custom-page .custom-base{
+  background: #f7f5f0;
+  padding: 110px 0 90px;
+}
+
+/* =========================
+   INTRO (services editorial vibe)
+========================= */
+.custom-page .custom-intro{
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.custom-page .custom-intro-title{
+  font-family: "Castoro Titling", serif;
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  line-height: 1.05;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 45, 0.95);
+  margin: 0 0 22px;
+}
+
+.custom-page .custom-intro-rule{
+  width: min(820px, 92%);
+  height: 3px;
+  margin: 26px auto 34px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(220, 201, 163, 0.9),
+    transparent
+  );
+}
+
+.custom-page .custom-intro-card{
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fbfaf7;
+  border-radius: 28px;
+  border: 2px solid rgba(220, 201, 163, 0.55);
+  position: relative;
+  padding: 52px 46px;
+}
+
+.custom-page .custom-intro-card::before{
+  content:"";
+  position:absolute;
+  inset: 14px;
+  border-radius: 22px;
+  border: 2px solid rgba(220, 201, 163, 0.35);
+  pointer-events:none;
+}
+
+.custom-page .custom-intro-card-inner{
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.custom-page .custom-intro-card p{
+  margin: 0 0 18px;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.78);
+}
+
+.custom-page .custom-cta{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 22px;
+  padding: 14px 34px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: #c9b27c;
+  background: transparent;
+
+  border: 1.95px solid rgba(220, 201, 163, 0.85);
+  border-radius: 2px;
+
+  text-decoration: none;
+  transition: color 200ms ease, border-color 200ms ease, background 200ms ease;
+}
+
+.custom-page .custom-cta::before{
+  content:"";
+  position:absolute;
+  inset: 5px;
+  border: 1.55px solid rgba(220, 201, 163, 0.45);
+  pointer-events:none;
+}
+
+.custom-page .custom-cta:hover{
+  color: #0b1c2d;
+  background: rgba(220, 201, 163, 0.12);
+  border-color: rgba(220, 201, 163, 1);
+}
+
+/* =========================
+   SECTION HEAD
+========================= */
+.custom-page .custom-section{
+  padding: 0 0 90px;
+}
+
+.custom-page .custom-section-head{
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 44px;
+}
+
+.custom-page .custom-section-head h2{
+  font-family: "Castoro Titling", serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  color: rgba(11, 28, 45, 0.95);
+}
+
+.custom-page .custom-section-head p{
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.72);
+  max-width: 760px;
+}
+
+.custom-page .custom-rule{
+  width: min(720px, 92%);
+  height: 3px;
+  margin: 26px auto 0;
+  background: linear-gradient(to right, transparent, rgba(220,201,163,0.9), transparent);
+}
+
+.custom-page .custom-section-head--left{
+  text-align: left;
+  margin: 0 0 36px;
+}
+
+.custom-page .custom-rule--left{
+  margin: 26px 0 0;
+}
+
+/* =========================
+   PILLS (gold wrap, hover)
+========================= */
+.custom-page .custom-pills{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.custom-page .custom-pill{
+  position: relative;
+  background: #fbfaf7;
+  border-radius: 22px;
+  padding: 28px 28px;
+  border: 2px solid rgba(220, 201, 163, 0.38);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.10);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  overflow: hidden;
+}
+
+.custom-page .custom-pill::before{
+  content:"";
+  position:absolute;
+  inset: 10px;
+  border-radius: 16px;
+  border: 2px solid rgba(220, 201, 163, 0.22);
+  pointer-events:none;
+  transition: inset 200ms ease, border-color 200ms ease;
+}
+
+.custom-page .custom-pill:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.14);
+  border-color: rgba(220, 201, 163, 0.62);
+}
+
+.custom-page .custom-pill:hover::before{
+  inset: 9px;
+  border-color: rgba(220, 201, 163, 0.35);
+}
+
+.custom-page .custom-pill h3{
+  margin: 0 0 12px;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 45, 0.95);
+}
+
+.custom-page .custom-pill ul{
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.custom-page .custom-pill li{
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(11, 28, 45, 0.74);
+}
+
+/* =========================
+   EXEC SECTION (services card shell)
+========================= */
+.custom-page .custom-exec{
+  padding: 0 0 110px;
+}
+
+.custom-page .custom-exec-card{
+  background: #fbfaf7;
+  border-radius: 28px;
+  border: 2.55px solid rgba(220, 201, 163, 0.55);
+  position: relative;
+  padding: 72px 80px;
+}
+
+.custom-page .custom-exec-card::before{
+  content:"";
+  position:absolute;
+  inset: 14px;
+  border-radius: 22px;
+  border: 2.05px solid rgba(220, 201, 163, 0.35);
+  pointer-events:none;
+}
+
+.custom-page .custom-exec-card-inner{ position: relative; z-index: 1; }
+
+.custom-page .custom-exec-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.custom-page .custom-exec-copy h2{
+  font-family: "Castoro Titling", serif;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  color: #0b1c2d;
+  margin: 0 0 18px;
+}
+
+.custom-page .custom-exec-copy p{
+  margin: 0 0 16px;
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: rgba(11, 28, 45, 0.78);
+  max-width: 52ch;
+}
+
+.custom-page .custom-exec-copy ul{
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.custom-page .custom-exec-copy li{
+  font-size: 1rem;
+  color: rgba(11, 28, 45, 0.75);
+}
+
+.custom-page .custom-exec-media{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+/* Replace placeholder with real image wrapper support */
+.custom-page .custom-exec-image-wrap{
+  width: 100%;
+  max-width: 420px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 2px solid rgba(220,201,163,0.55);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+  background: #fbfaf7;
+}
+
+.custom-page .custom-exec-image{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* keep placeholder class if you still use it anywhere */
+.custom-page .custom-visual-placeholder{
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(11,28,45,0.06), rgba(220,201,163,0.10));
+  border: 2px dashed rgba(220,201,163,0.55);
+}
+
+/* =========================
+   WHY MARAULT (navy band)
+========================= */
+.custom-page .custom-why{
+  background: #0b1c2d;
+  padding: 64px 0;
+}
+
+.custom-page .custom-why-inner{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+}
+
+.custom-page .custom-why-copy h3{
+  margin: 0 0 10px;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247,245,240,0.96);
+}
+
+.custom-page .custom-why-copy p{
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(247,245,240,0.78);
+  max-width: 70ch;
+}
+
+.custom-page .custom-cta--navy{
+  color: #f2dfb8;
+  border-color: rgba(242,223,184,0.75);
+}
+
+.custom-page .custom-cta--navy::before{
+  border-color: rgba(242,223,184,0.35);
+}
+
+.custom-page .custom-cta--navy:hover{
+  color: #0b1c2d;
+  background: rgba(242,223,184,0.12);
+  border-color: rgba(242,223,184,0.95);
+}
+
+/* =========================
+   CHECKLIST (services-like, chic)
+========================= */
+.custom-page .custom-checklist-wrap{
+  background: #f7f5f0;
+  padding: 100px 0 120px;
+}
+
+.custom-page .custom-checklist{
+  display: grid;
+  gap: 14px;
+}
+
+.custom-page .custom-check-row{
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 16px;
+  align-items: start;
+
+  background: #fbfaf7;
+  border: 2px solid rgba(220,201,163,0.30);
+  border-radius: 22px;
+  padding: 20px 20px;
+
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-page .custom-check-row::before{
+  content:"";
+  position:absolute;
+  inset: 10px;
+  border-radius: 16px;
+  border: 2px solid rgba(220,201,163,0.18);
+  pointer-events:none;
+}
+
+.custom-page .custom-check-row:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.14);
+  border-color: rgba(220,201,163,0.45);
+}
+
+.custom-page .custom-check-icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(220,201,163,0.45);
+  color: rgba(11,28,45,0.95);
+  font-weight: 900;
+  font-size: 1rem;
+  transform: translateY(2px);
+}
+
+.custom-page .custom-check-text h3{
+  margin: 0 0 6px;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(11,28,45,0.95);
+}
+
+.custom-page .custom-check-text p{
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: rgba(11,28,45,0.72);
+}
+
+/* =========================
+   OUR SERVICES — NAVY CARDS ON CREAM BACKGROUND
+   (Uses existing services.css cards; we only set the band + title color)
+========================= */
+.custom-page .custom-services-navy{
+  background: #f7f5f0 !important; /* cream band behind navy cards */
+  padding: 90px 40px 140px;
+}
+
+.custom-page .custom-services-navy .services-grid-inner{
+  max-width: 1240px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(520px, 1fr));
+  gap: 80px;
+
+  align-items: start;
+}
+
+/* Title readable on cream (override services gold stroke) */
+.custom-page .custom-services-navy .services-grid-title{
+  color: #0b1c2d;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  letter-spacing: 0.1em;
+}
+
+/* Optional: slightly stronger icon shadow against cream */
+.custom-page .custom-services-navy .service-tile-icon{
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.22));
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px){
+  .custom-page .custom-pills{ grid-template-columns: 1fr; }
+
+  .custom-page .custom-exec-grid{
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .custom-page .custom-exec-card{
+    padding: 56px 32px;
+    border-radius: 22px;
+  }
+
+  .custom-page .custom-services-navy{
+    padding: 90px 24px 140px;
+  }
+
+  .custom-page .custom-services-navy .services-grid-inner{
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+}
+
+
+

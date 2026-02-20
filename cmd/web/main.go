@@ -57,6 +57,7 @@ func main() {
 	mux.HandleFunc("/executive-team", executiveTeamHandler)
 	mux.HandleFunc("/contact", contactHandler)
 	mux.HandleFunc("/inquire", inquireHandler)
+	
 
 	/* =========================
 	   Services
@@ -79,9 +80,19 @@ func main() {
 	),
 )
 
+    mux.HandleFunc(
+	"/services/custom-website-build",
+	servicePageHandler(
+		"custom-website-build.html",
+		"Custom Website Build | Marault Intelligence",
+	),
+)
+
 	log.Println("Starting server on :4000")
 	log.Fatal(http.ListenAndServe(":4000", mux))
 }
+
+
 
 /* =========================
    HOME PAGE

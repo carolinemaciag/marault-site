@@ -277,6 +277,117 @@
 }
 
 /* =========================
+   PILLS (gold wrap, hover)
+========================= */
+.rev-page .rev-pills{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.rev-page .rev-pill{
+  position: relative;
+  background: #fbfaf7;
+  border-radius: 22px;
+  padding: 28px 28px;
+  border: 2px solid rgba(220, 201, 163, 0.38);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.10);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  overflow: hidden;
+}
+
+.rev-page .rev-pill::before{
+  content:"";
+  position:absolute;
+  inset: 10px;
+  border-radius: 16px;
+  border: 2px solid rgba(220, 201, 163, 0.22);
+  pointer-events:none;
+  transition: inset 200ms ease, border-color 200ms ease;
+}
+
+.rev-page .rev-pill:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.14);
+  border-color: rgba(220, 201, 163, 0.62);
+}
+
+.rev-page .rev-pill:hover::before{
+  inset: 9px;
+  border-color: rgba(220, 201, 163, 0.35);
+}
+
+.rev-page .rev-pill h3{
+  margin: 0 0 12px;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(11, 28, 45, 0.95);
+}
+
+.rev-page .rev-pill ul{
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.rev-page .rev-pill li{
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: rgba(11, 28, 45, 0.74);
+}
+
+/* =========================
+   WHY MARAULT (navy band)
+========================= */
+.rev-page .rev-why{
+  background: #0b1c2d;
+  padding: 64px 0;
+}
+
+.rev-page .rev-why-inner{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+}
+
+.rev-page .rev-why-copy h3{
+  margin: 0 0 10px;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247,245,240,0.96);
+}
+
+.rev-page .rev-why-copy p{
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(247,245,240,0.78);
+  max-width: 70ch;
+}
+
+.rev-page .rev-cta--navy{
+  color: #f2dfb8;
+  border-color: rgba(242,223,184,0.75);
+}
+
+.rev-page .rev-cta--navy::before{
+  border-color: rgba(242,223,184,0.35);
+}
+
+.rev-page .rev-cta--navy:hover{
+  color: #0b1c2d;
+  background: rgba(242,223,184,0.12);
+  border-color: rgba(242,223,184,0.95);
+}
+
+/* =========================
    EXEC
 ========================= */
 
