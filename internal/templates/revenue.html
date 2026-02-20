@@ -1,6 +1,6 @@
 {{define "page_css"}}
-  <link rel="stylesheet" href="/static/css/services.css?v=20260125">
   <link rel="stylesheet" href="/static/css/revenue.css?v=20260125">
+  <link rel="stylesheet" href="/static/css/service-panels.css?v=20260125">
 {{end}}
 
 {{define "content"}}
@@ -22,7 +22,7 @@
   </section>
 
   <!-- BASE -->
-  <section class="rev-base" id="included">
+  <section class="rev-base">
     <div class="rev-container">
 
       <!-- INTRO -->
@@ -172,20 +172,111 @@
     </div>
   </section>
 
-  <!-- SERVICES GRID (navy) -->
-  <section class="services-grid services-marault" aria-label="Our Services">
-    <div class="services-grid-inner">
-      <header class="services-grid-head">
-        <h2 class="services-grid-title">Our Services</h2>
-      </header>
-      <!-- keep your existing services groups exactly as-is -->
+  <!-- =========================
+     SERVICE PANELS
+========================= -->
+<section class="service-panels" aria-label="Our Services">
+  <div class="service-panels-inner">
+
+    <div class="service-panels-head">
+      <h2 class="service-panels-title">Our Services</h2>
     </div>
-  </section>
+
+    <!-- BUSINESS INTELLIGENCE -->
+    <div class="service-panel-card">
+      <h2 class="service-panel-group-title">Business Intelligence</h2>
+
+      <div class="service-panel-tiles">
+
+        <a href="/services/data-visibility-audit" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/datavisibilityaudit_services.png"
+               alt="Data Visibility Audit" />
+          <span class="service-panel-title">Data Visibility Audit</span>
+        </a>
+
+        <a href="/services/executive-dashboards-reporting" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/executive_services.png"
+               alt="Executive Dashboards & Reporting" />
+          <span class="service-panel-title">
+            Executive Dashboards &amp; Reporting
+          </span>
+        </a>
+
+        <a href="/services/revenue-customer-analytics" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/revenue.png"
+               alt="Revenue & Customer Analytics" />
+          <span class="service-panel-title">
+            Revenue &amp; Customer Analytics
+          </span>
+        </a>
+
+        <a href="/services/forecasting-decision-modeling" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/forecasting.png"
+               alt="Forecasting & Decision Modeling" />
+          <span class="service-panel-title">
+            Forecasting &amp; Decision Modeling
+          </span>
+        </a>
+
+        <a href="/services/private-client-analytics" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/private.png"
+               alt="Private Client Analytics" />
+          <span class="service-panel-title">
+            Private Client Analytics
+          </span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- WEB -->
+    <div class="service-panel-card">
+      <h2 class="service-panel-group-title">Web</h2>
+
+      <div class="service-panel-tiles">
+
+        <a href="/services/custom-website-build" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/custom.png"
+               alt="Custom Website Build" />
+          <span class="service-panel-title">Custom Website Build</span>
+        </a>
+
+        <a href="/services/template-based-build" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/template.png"
+               alt="Template-Based Build" />
+          <span class="service-panel-title">Template-Based Build</span>
+        </a>
+
+        <a href="/services/website-redesign" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/redesign.png"
+               alt="Website Redesign" />
+          <span class="service-panel-title">Website Redesign</span>
+        </a>
+
+        <a href="/services/ux-ui-design" class="service-panel-tile">
+          <img class="service-panel-icon"
+               src="/static/images/services/UXUI.png"
+               alt="UX / UI Design" />
+          <span class="service-panel-title">UX / UI Design</span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 
 </div>
 {{end}}
 
 {{define "page_js"}}
-  <script src="/static/js/services.js" defer></script>
 {{end}}
 

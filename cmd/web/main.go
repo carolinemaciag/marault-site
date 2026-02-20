@@ -71,6 +71,14 @@ func main() {
 		),
 	)
 
+	mux.HandleFunc(
+	"/services/revenue-customer-analytics",
+	servicePageHandler(
+		"revenue.html",
+		"Revenue & Customer Analytics | Marault Intelligence",
+	),
+)
+
 	log.Println("Starting server on :4000")
 	log.Fatal(http.ListenAndServe(":4000", mux))
 }
