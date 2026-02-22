@@ -95,7 +95,7 @@
 .service-panel-tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 40px 48px;
+  gap: 40px 40px;
   margin: 0 auto;
 }
 

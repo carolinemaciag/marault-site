@@ -67,7 +67,7 @@ func main() {
 	mux.HandleFunc(
 		"/services/data-visibility-audit",
 		servicePageHandler(
-			"data_visibility_audit.html",
+			"data-visibility-audit.html",
 			"Data Visibility Audit | Marault Intelligence",
 		),
 	)
@@ -87,6 +87,7 @@ func main() {
 		"Custom Website Build | Marault Intelligence",
 	),
 )
+
 
 	log.Println("Starting server on :4000")
 	log.Fatal(http.ListenAndServe(":4000", mux))
