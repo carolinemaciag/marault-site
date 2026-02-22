@@ -1,119 +1,120 @@
 {{define "page_css"}}
-  <link rel="stylesheet" href="/static/css/audit.css?v=20260221">
-  <link rel="stylesheet" href="/static/css/service-panels.css?v=20260221">
+  <link rel="stylesheet" href="/static/css/revenue.css?v=20260125">
+  <link rel="stylesheet" href="/static/css/service-panels.css?v=20260125">
 {{end}}
 
 {{define "content"}}
-
-<div class="dva-page">
+<div class="fc-page">
 
   <!-- HERO -->
-  <section class="dva-hero">
-    <div class="dva-hero-overlay"></div>
+  <section class="fc-hero">
+    <div class="fc-hero-overlay" aria-hidden="true"></div>
 
-    <div class="dva-hero-content">
-      <h1 class="dva-hero-title">Data Visibility Audit</h1>
+    <div class="fc-hero-content">
+      <h1 class="fc-hero-title">Forecasting &amp; Decision Modeling</h1>
 
-      <p class="dva-hero-subtitle">
-        Fix messy data and give owners real visibility. We define what matters,
-        clean and consolidate your data, and deliver one executive dashboard
-        with a clear insight summary.
+      <p class="fc-hero-subtitle fc-hero-question">
+        Are you planning with confidence—or reacting after the fact?
       </p>
+
+      <div class="fc-hero-rule" aria-hidden="true"></div>
     </div>
   </section>
 
   <!-- BASE -->
-  <section class="dva-base" id="included">
-    <div class="dva-container">
+  <section class="fc-base" id="included">
+    <div class="fc-container">
 
       <!-- INTRO -->
-      <section class="dva-intro">
-        <h2 class="dva-intro-title">Establish the source of truth</h2>
-        <div class="dva-intro-rule" aria-hidden="true"></div>
+      <section class="fc-section fc-intro">
+        <header class="fc-section-head">
+          <h2>Make trade-offs explicit</h2>
+          <div class="fc-rule" aria-hidden="true"></div>
+        </header>
 
-        <div class="dva-intro-card">
-          <div class="dva-intro-card-inner">
+        <div class="fc-intro-card">
+          <div class="fc-intro-card-inner">
 
             <p>
-              How confident are you in the numbers you’re using to make decisions?
-              When data is messy or inconsistent, teams slow down and leadership hesitates.
+              A useful forecast doesn’t just project a number—it clarifies choices.
+              We translate uncertainty into scenarios, constraints, and decision thresholds leaders can act on.
             </p>
 
             <p>
-              This audit defines what matters, cleans and consolidates your data, and delivers one executive dashboard
-              with a clear insight summary—what to watch and what to fix.
+              You get a model that is explainable, maintainable, and aligned to how your business actually operates—
+              not a black box that breaks when assumptions change.
             </p>
 
-            <a class="dva-cta" href="/inquire">Get Started →</a>
+            <a class="fc-cta" href="/inquire">Get Started →</a>
 
           </div>
         </div>
       </section>
 
       <!-- FEATURES -->
-      <section class="dva-section">
-        <header class="dva-section-head">
+      <section class="fc-section">
+        <header class="fc-section-head">
           <h2>What this engagement delivers</h2>
           <p>
-            A structured reset of your reporting foundation—so leadership can trust the numbers,
-            move faster, and stop debating definitions.
+            A defensible forecasting + decision system—so you can plan, prioritize,
+            and commit with clear ranges and rationale.
           </p>
-          <div class="dva-rule" aria-hidden="true"></div>
+          <div class="fc-rule" aria-hidden="true"></div>
         </header>
 
-        <div class="dva-pills">
+        <div class="fc-pills">
 
-          <div class="dva-pill">
-            <h3>KPI definition</h3>
+          <div class="fc-pill">
+            <h3>Forecast foundation</h3>
             <ul>
-              <li>Decision-grade definitions for what actually matters</li>
-              <li>Standardize metrics across teams and tools</li>
-              <li>Stop “which number is right” debates</li>
+              <li>Inputs, drivers, and assumptions made explicit</li>
+              <li>Ranges and confidence, not a single point estimate</li>
+              <li>Auditability: what changed and why</li>
             </ul>
           </div>
 
-          <div class="dva-pill">
-            <h3>Cleanup + consolidation</h3>
+          <div class="fc-pill">
+            <h3>Scenario planning</h3>
             <ul>
-              <li>Fix inconsistencies that distort reporting</li>
-              <li>Reduce duplicates and manual spreadsheet drift</li>
-              <li>Create a clean baseline for decisions</li>
+              <li>Base / upside / downside cases with clear triggers</li>
+              <li>Sensitivity checks to identify swing factors</li>
+              <li>Action plans tied to scenario conditions</li>
             </ul>
           </div>
 
-          <div class="dva-pill">
-            <h3>Inventory + lineage</h3>
+          <div class="fc-pill">
+            <h3>Decision model</h3>
             <ul>
-              <li>What exists, where it lives, how it flows</li>
-              <li>Surface broken joins, stale tables, rule conflicts</li>
-              <li>Make dependencies visible before they break</li>
+              <li>Trade-off framework to evaluate options consistently</li>
+              <li>Constraints, guardrails, and decision thresholds</li>
+              <li>Risk-aware recommendations (not gut feel)</li>
             </ul>
           </div>
 
-          <div class="dva-pill">
-            <h3>Quality + consistency scorecard</h3>
+          <div class="fc-pill">
+            <h3>Capacity + resourcing clarity</h3>
             <ul>
-              <li>Missing fields, inconsistent IDs, rule mismatches</li>
-              <li>Reliability issues prioritized by impact</li>
-              <li>Clear “fix first” list for stability</li>
+              <li>Headcount, spend, and throughput modeled against outcomes</li>
+              <li>What’s required to hit targets</li>
+              <li>Early indicators when plans drift off track</li>
             </ul>
           </div>
 
-          <div class="dva-pill">
-            <h3>Executive dashboard</h3>
+          <div class="fc-pill">
+            <h3>Unit economics + ROI</h3>
             <ul>
-              <li>One coherent view aligned to KPI definitions</li>
-              <li>Built for fast review and confident action</li>
-              <li>Designed to scale into deeper analytics</li>
+              <li>Margin-aware modeling</li>
+              <li>Payback, LTV/CAC, and investment trade-offs</li>
+              <li>Decision framing for capital allocation</li>
             </ul>
           </div>
 
-          <div class="dva-pill">
-            <h3>Stabilization plan</h3>
+          <div class="fc-pill">
+            <h3>Cadence + governance</h3>
             <ul>
-              <li>Fix list prioritized by business impact</li>
-              <li>30-day stabilization plan with owners + cadence</li>
-              <li>Lightweight governance to prevent drift</li>
+              <li>Monthly/quarterly update rhythm</li>
+              <li>Ownership and operating rules</li>
+              <li>Leadership narrative framework</li>
             </ul>
           </div>
 
@@ -121,34 +122,35 @@
       </section>
 
       <!-- EXEC -->
-      <section class="dva-exec">
-        <div class="dva-exec-card">
-          <div class="dva-exec-card-inner">
+      <section class="fc-section fc-exec">
+        <div class="fc-exec-card">
+          <div class="fc-exec-card-inner">
 
-            <div class="dva-exec-grid">
+            <div class="fc-exec-grid">
 
-              <div class="dva-exec-copy">
-                <h2>The Executive Dashboard View</h2>
+              <div class="fc-exec-copy">
+                <header class="fc-section-head">
+                  <h2>The Decision Brief View</h2>
+                </header>
 
                 <p>
                   Leaders need a view that can be scanned quickly and defended confidently.
-                  This deliverable turns messy reporting into a clean system: what’s trusted, what’s broken,
-                  and what to fix first.
+                  This format turns uncertainty into scenarios, key drivers, and recommended actions.
                 </p>
 
                 <ul>
-                  <li>Signal-first: what changed, why it matters, what to do next</li>
-                  <li>Definitions made explicit so metrics stop drifting</li>
-                  <li>Built to reduce noise—not add dashboards</li>
+                  <li>Signal-first: what changed, what it affects, what to decide</li>
+                  <li>Scenario ranges with drivers and triggers</li>
+                  <li>Built for commitment—not analysis theater</li>
                 </ul>
               </div>
 
-              <div class="dva-exec-media">
-                <div class="dva-exec-image-wrap">
+              <div class="fc-exec-media">
+                <div class="fc-exec-image-wrap">
                   <img
-                    src="/static/images/data_vis_audit_2.png"
-                    alt="Data visibility audit executive dashboard preview"
-                    class="dva-exec-image"
+                    src="/static/images/forecasting_page_2.png"
+                    alt="Forecasting and decision modeling preview"
+                    class="fc-exec-image"
                   />
                 </div>
               </div>
@@ -162,27 +164,21 @@
     </div>
   </section>
 
-
-<!-- WHY MARAULT -->
-  <section class="dva-why">
-    <div class="dva-container">
-      <div class="dva-why-inner">
-
-        <div class="dva-why-copy">
+  <!-- WHY MARAULT -->
+  <section class="fc-why">
+    <div class="fc-container">
+      <div class="fc-why-inner">
+        <div class="fc-why-copy">
           <h3>Why Marault Intelligence?</h3>
           <p>
-            We build disciplined systems that leadership can trust.
-            The goal is clarity, structure, and long-term confidence —
-            not just another dashboard.
+            We build with restraint and intention. The goal isn’t a flashy site—it’s a site that
+            communicates authority, stays clean over time, and makes it easy for high-quality clients to engage.
           </p>
         </div>
 
-        <div>
-          <a href="/inquire" class="dva-cta dva-cta--navy">
-            Get Started →
-          </a>
+        <div class="rev-why-cta">
+          <a href="/inquire" class="fc-cta fc-cta--navy">Get Started →</a>
         </div>
-
       </div>
     </div>
   </section>
@@ -293,6 +289,6 @@
 {{end}}
 
 {{define "page_js"}}
+  <script src="/static/js/services.js" defer></script>
 {{end}}
-
 

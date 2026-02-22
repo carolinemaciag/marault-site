@@ -88,6 +88,53 @@ func main() {
 	),
 )
 
+	mux.HandleFunc(
+	"/services/executive-dashboards-reporting",
+	servicePageHandler(
+		"executive-dashboards-reporting.html",
+		"Executive Dashboards & Reporting | Marault Intelligence",
+	),
+)
+
+	mux.HandleFunc(
+	"/services/forecasting-decision-modeling",
+	servicePageHandler(
+		"forecasting-decision-modeling.html",
+		"Forecasting & Decision Modeling | Marault Intelligence",
+	),
+)
+
+	mux.HandleFunc(
+	"/services/private-client-analytics",
+	servicePageHandler(
+		"private-client-analytics.html",
+		"Private Client Analytics | Marault Intelligence",
+	),
+)
+
+	mux.HandleFunc(
+	"/services/template-based-build",
+	servicePageHandler(
+		"template-based-build.html",
+		"Template-Based Build | Marault Intelligence",
+	),
+)
+
+    mux.HandleFunc(
+	"/services/website-redesign",
+	servicePageHandler(
+		"website-redesign.html",
+		"Website Redesign | Marault Intelligence",
+	),
+)
+
+	mux.HandleFunc(
+	"/services/ux-ui-design",
+	servicePageHandler(
+		"ux-ui-design.html",
+		"UX/UI Design | Marault Intelligence",
+	),
+)
 
 	log.Println("Starting server on :4000")
 	log.Fatal(http.ListenAndServe(":4000", mux))
