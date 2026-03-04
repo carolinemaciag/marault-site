@@ -239,14 +239,6 @@
   background: linear-gradient(to right, transparent, rgba(220,201,163,0.9), transparent);
 }
 
-.custom-page .custom-section-head--left{
-  text-align: left;
-  margin: 0 0 36px;
-}
-
-.custom-page .custom-rule--left{
-  margin: 26px 0 0;
-}
 
 /* =========================
    PILLS (gold wrap, hover)
@@ -316,7 +308,7 @@
    EXEC SECTION (services card shell)
 ========================= */
 .custom-page .custom-exec{
-  padding: 0 0 110px;
+  padding: 0 0 40px;
 }
 
 .custom-page .custom-exec-card{
@@ -459,7 +451,7 @@
 ========================= */
 .custom-page .custom-checklist-wrap{
   background: #f7f5f0;
-  padding: 100px 0 120px;
+  padding: 5px 0 120px;
 }
 
 .custom-page .custom-checklist{

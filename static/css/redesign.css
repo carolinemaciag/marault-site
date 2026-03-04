@@ -239,12 +239,12 @@
   background: linear-gradient(to right, transparent, rgba(220,201,163,0.9), transparent);
 }
 
-.redesign-page .redesign-section-head--left{
-  text-align: left;
-  margin: 0 0 36px;
+.redesign-page .redesign-section-head{
+  text-align: center;
+  margin: 0 auto 36px;
 }
 
-.redesign-page .redesign-rule--left{
+.redesign-page .redesign-rule{
   margin: 26px 0 0;
 }
 
@@ -316,7 +316,7 @@
    EXEC SECTION
 ========================= */
 .redesign-page .redesign-exec{
-  padding: 0 0 110px;
+  padding: 0 0 20px;
 }
 
 .redesign-page .redesign-exec-card{
@@ -448,8 +448,10 @@
 ========================= */
 .redesign-page .redesign-checklist-wrap{
   background: #f7f5f0;
-  padding: 100px 0 120px;
+  padding: 20px 0 120px; /* ↓ reduced top padding */
+
 }
+
 
 .redesign-page .redesign-checklist{
   display: grid;

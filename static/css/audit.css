@@ -244,43 +244,6 @@
   );
 }
 
-/* =========================
-   PILLS
-========================= */
-
-.dva-page .dva-pills{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.dva-page .dva-pill{
-  background: #fbfaf7;
-  border-radius: 22px;
-  padding: 28px;
-  border: 2px solid rgba(220,201,163,0.38);
-  box-shadow: 0 22px 48px rgba(0,0,0,0.10);
-}
-
-/* FIX: washed out text */
-.dva-page .dva-pill,
-.dva-page .dva-pill li{
-  color: rgba(11,28,45,0.92);
-}
-
-.dva-page .dva-pill h3{
-  font-family: "Castoro Titling", serif;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin: 0 0 12px;
-  color: rgba(11,28,45,0.95);
-}
-
-.dva-page .dva-pill ul{
-  padding-left: 18px;
-  margin: 0;
-}
 
 /* =========================
    PILLS (gold wrap, hover)
@@ -394,6 +357,84 @@
 .dva-page .dva-exec-image{
   width: 100%;
   display: block;
+}
+
+/* =========================
+   WALK AWAY CHECKLIST
+========================= */
+
+.dva-page .dva-checklist-wrap{
+  padding: 60px 0 120px;
+}
+
+.dva-page .dva-checklist{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.dva-page .dva-check-row{
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 16px;
+  align-items: start;
+
+  background: #fbfaf7;
+  border: 2px solid rgba(220,201,163,0.30);
+  border-radius: 22px;
+  padding: 22px 24px;
+
+  box-shadow: 0 20px 48px rgba(0,0,0,0.10);
+}
+
+.dva-page .dva-check-icon{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(220,201,163,0.45);
+  color: rgba(11,28,45,0.95);
+
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.dva-page .dva-check-text h3{
+  margin: 0 0 6px;
+
+  font-family: "Castoro Titling", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(11,28,45,0.95);
+}
+
+.dva-page .dva-check-text p{
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: rgba(11,28,45,0.72);
+}
+
+/* hover */
+.dva-page .dva-check-row{
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+.dva-page .dva-check-row:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.14);
+  border-color: rgba(220,201,163,0.55);
 }
 
 /* =========================

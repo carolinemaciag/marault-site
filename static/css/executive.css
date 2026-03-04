@@ -97,7 +97,7 @@
 /* BASE */
 .exec-page .ed-base{
   background: #f7f5f0;
-  padding: 110px 0 90px;
+  padding: 110px 0 90px; /* reduce bottom from 90 to 60 */
 }
 
 /* INTRO */
@@ -307,7 +307,7 @@
 
 /* EXEC */
 .exec-page .ed-exec{
-  padding: 0 0 110px;
+  padding: 0 0 20px;
 }
 
 .exec-page .ed-exec-card{
@@ -435,8 +435,9 @@
 /* CHECKLIST */
 .exec-page .ed-checklist-wrap{
   background: #f7f5f0;
-  padding: 100px 0 120px;
+  padding: 5px 0 120px;  /* was 40px */
 }
+
 
 .exec-page .ed-checklist{
   display: grid;
