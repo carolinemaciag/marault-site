@@ -85,13 +85,7 @@
   width: min(720px, 72vw);
   height: 3px;
   margin: 28px auto 0;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(220, 201, 163, 0.95),
-    transparent
-  );
-  opacity: 0.95;
+  background: linear-gradient(to right, transparent, rgba(220,201,163,0.95), transparent);
 }
 
 /* BASE */

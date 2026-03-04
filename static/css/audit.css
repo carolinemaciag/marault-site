@@ -164,20 +164,23 @@
 
 /* Longer gold divider */
 .dva-page .dva-intro-rule{
-  width: min(720px, 72%);
-  height: 2px;
-  margin: 26px auto 34px;
+  width: min(820px, 92%);
+  height: 3px;
+  margin: 22px auto 0;
+
   background: linear-gradient(
-    to right,
+    90deg,
     transparent,
-    rgba(220,201,163,0.95),
+    rgba(220,201,163,0.45),
+    #dcc9a3,
+    rgba(220,201,163,0.45),
     transparent
   );
 }
 
 .dva-page .dva-intro-card{
   max-width: 980px;
-  margin: 0 auto;
+  margin: 50px auto 0;   /* increase spacing above card */
   background: #fbfaf7;
   border-radius: 28px;
   border: 2px solid rgba(220,201,163,0.55);
@@ -233,13 +236,16 @@
 
 /* Longer divider */
 .dva-page .dva-rule{
-  width: min(720px, 72%);
-  height: 2px;
+  width: 720px;
+  height: 3px;
   margin: 18px auto 0;
+
   background: linear-gradient(
-    to right,
+    90deg,
     transparent,
-    rgba(220,201,163,0.95),
+    rgba(220,201,163,0.45),
+    #dcc9a3,
+    rgba(220,201,163,0.45),
     transparent
   );
 }

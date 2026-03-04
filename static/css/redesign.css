@@ -539,12 +539,6 @@
   align-items: start;
 }
 
-.redesign-page .redesign-services-cream .services-grid-title{
-  color: #0b1c2d;
-  -webkit-text-stroke: 0;
-  text-shadow: none;
-  letter-spacing: 0.1em;
-}
 
 .redesign-page .redesign-services-cream .service-tile-icon{
   filter: drop-shadow(0 10px 22px rgba(0,0,0,0.22));
