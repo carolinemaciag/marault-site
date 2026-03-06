@@ -19,12 +19,28 @@
   .uxui-page .uxui-container{ padding: 0 24px; }
 }
 
+
+
+/* =========================
+   BASE SECTION SPACING
+========================= */
+
+.uxui-page .uxui-base{
+  padding: 120px 0 80px;
+}
+
+.uxui-page .uxui-section{
+  margin-top: 80px;
+}
+
 /* HERO */
 .uxui-page .uxui-hero{
   position: relative;
+  z-index: 0;
+
   width: 100%;
-  height: 75vh;
-  min-height: 620px;
+  height: 65vh;
+  min-height: 520px;
 
   background-image: url("/static/images/UX_UI_hero.png");
   background-size: cover;
@@ -97,7 +113,7 @@
 /* BASE */
 .uxui-page .uxui-base{
   background: #f7f5f0;
-  padding: 110px 0 90px;
+  padding: 110px 0 5px;
 }
 
 /* INTRO */
@@ -232,13 +248,13 @@
   background: linear-gradient(to right, transparent, rgba(220,201,163,0.9), transparent);
 }
 
-.uxui-page .uxui-section-head--left{
-  text-align: left;
-  margin: 0 0 36px;
+.uxui-page .uxui-section-head{
+  text-align: center;
+  margin: 0 auto 44px;
 }
 
-.uxui-page .uxui-rule--left{
-  margin: 26px 0 0;
+.uxui-page .uxui-rule{
+  margin: 26px auto 0;
 }
 
 .uxui-page .uxui-pills{
@@ -304,7 +320,7 @@
 
 /* EXEC */
 .uxui-page .uxui-exec{
-  padding: 0 0 110px;
+  padding: 0 0 20px;
 }
 
 .uxui-page .uxui-exec-card{
@@ -384,50 +400,6 @@
   display: block;
 }
 
-/* WHY */
-.uxui-page .uxui-why{
-  background: #0b1c2d;
-  padding: 64px 0;
-}
-
-.uxui-page .uxui-why-inner{
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 32px;
-  align-items: center;
-}
-
-.uxui-page .uxui-why-copy h3{
-  margin: 0 0 10px;
-  font-family: "Castoro Titling", serif;
-  font-size: 1.6rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(247,245,240,0.96);
-}
-
-.uxui-page .uxui-why-copy p{
-  margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: rgba(247,245,240,0.78);
-  max-width: 70ch;
-}
-
-.uxui-page .uxui-cta--navy{
-  color: #f2dfb8;
-  border-color: rgba(242,223,184,0.75);
-}
-
-.uxui-page .uxui-cta--navy::before{
-  border-color: rgba(242,223,184,0.35);
-}
-
-.uxui-page .uxui-cta--navy:hover{
-  color: #0b1c2d;
-  background: rgba(242,223,184,0.12);
-  border-color: rgba(242,223,184,0.95);
-}
 
 /* CHECKLIST */
 .uxui-page .uxui-checklist-wrap{
@@ -502,6 +474,15 @@
   color: rgba(11,28,45,0.72);
 }
 
+.uxui-page .uxui-checklist-wrap .uxui-section-head{
+  text-align: center;
+  margin: 0 auto 40px;
+}
+
+.uxui-page .uxui-checklist-wrap .uxui-rule{
+  margin: 26px auto 0;
+}
+
 /* SERVICES BAND */
 .uxui-page .uxui-services-cream{
   background: #f7f5f0 !important;
@@ -519,15 +500,60 @@
   align-items: start;
 }
 
-.uxui-page .uxui-services-cream .services-grid-title{
-  color: #0b1c2d;
-  -webkit-text-stroke: 0;
-  text-shadow: none;
-  letter-spacing: 0.1em;
-}
+
 
 .uxui-page .uxui-services-cream .service-tile-icon{
   filter: drop-shadow(0 10px 22px rgba(0,0,0,0.22));
+}
+
+
+
+/* =========================
+   WHY MARAULT
+========================= */
+
+.uxui-page .uxui-why{
+  background: #0b1c2d;
+  padding: 64px 0;
+}
+
+.uxui-page .uxui-why-inner{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: center;
+}
+
+.uxui-page .uxui-why-copy h3{
+  margin: 0 0 10px;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247,245,240,0.96);
+}
+
+.uxui-page .uxui-why-copy p{
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(247,245,240,0.78);
+  max-width: 70ch;
+}
+
+.uxui-page .uxui-cta--navy{
+  color: #f2dfb8;
+  border-color: rgba(242,223,184,0.75);
+}
+
+.uxui-page .uxui-cta--navy::before{
+  border-color: rgba(242,223,184,0.35);
+}
+
+.uxui-page .uxui-cta--navy:hover{
+  color: #0b1c2d;
+  background: rgba(242,223,184,0.12);
+  border-color: rgba(242,223,184,0.95);
 }
 
 /* RESPONSIVE */

@@ -82,6 +82,22 @@
   margin: 0 auto 16px;
 }
 
+/* gold hero divider */
+.dva-page .dva-hero-rule{
+  width: 720px;
+  height: 2px;
+  margin: 26px auto 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(220,201,163,0.6),
+    #dcc9a3,
+    rgba(220,201,163,0.6),
+    transparent
+  );
+}
+
 /* =========================
    BASE
 ========================= */
