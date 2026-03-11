@@ -95,6 +95,7 @@
 }
 
 .contact-role {
+  font-family: "Castoro Titling", serif;
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -225,6 +226,35 @@
   color: #0b1c2d;
   background: rgba(220, 201, 163, 0.12);
   border-color: rgba(220, 201, 163, 1);
+}
+
+/* =========================
+   GENERAL INFO BLOCK
+========================= */
+
+.contact-label {
+  font-family: "Castoro Titling", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+  margin-bottom: 8px;
+}
+
+.contact-email {
+  font-size: 1.05rem;
+  color: #2b2b2b;
+  margin-bottom: 6px;
+}
+
+.contact-email a {
+  color: #2b2b2b;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.contact-email a:hover {
+  color: var(--gold-primary);
 }
 
 
