@@ -316,7 +316,7 @@ body {
 
 .hero h1 {
   font-family: "Castoro Titling", serif;
-  font-size: font-size: clamp(2.8rem, 6vw, 3.9rem);
+  font-size: clamp(3.2rem, 4vw, 3.9rem);
   text-transform: uppercase;
   margin-bottom: 26px;
 }
