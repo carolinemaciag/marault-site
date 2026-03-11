@@ -278,8 +278,13 @@ body {
 ========================= */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   overflow: hidden;
 }
 
@@ -306,13 +311,12 @@ body {
   z-index: 2;
   max-width: 900px;
   margin: 0 auto;
-  padding-top: 30vh;
   text-align: center;
 }
 
 .hero h1 {
   font-family: "Castoro Titling", serif;
-  font-size: 3.9rem;
+  font-size: font-size: clamp(2.8rem, 6vw, 3.9rem);
   text-transform: uppercase;
   margin-bottom: 26px;
 }
