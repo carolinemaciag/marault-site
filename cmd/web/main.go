@@ -57,6 +57,7 @@ func main() {
 	mux.HandleFunc("/executive-team", executiveTeamHandler)
 	mux.HandleFunc("/contact", contactHandler)
 	mux.HandleFunc("/inquire", inquireHandler)
+	mux.HandleFunc("/philosophy", philosophyHandler)
 	
 
 	/* =========================
@@ -224,6 +225,34 @@ func executiveTeamHandler(w http.ResponseWriter, r *http.Request) {
 	}{
 		Title: "Executive Team | Marault Intelligence",
 		Page:  "executive",
+	}
+
+	if err := tmpl.Execute(w, data); err != nil {
+		log.Println(err)
+	}
+}
+
+/* =========================
+   DATA PHILOSOPHY
+========================= */
+func philosophyHandler(w http.ResponseWriter, r *http.Request) {
+
+	tmpl, err := template.ParseFiles(
+		"./internal/templates/base.html",
+		"./internal/templates/philosophy.html",
+	)
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "Server error", http.StatusInternalServerError)
+		return
+	}
+
+	data := struct {
+		Title string
+		Page  string
+	}{
+		Title: "Data Philosophy | Marault Intelligence",
+		Page:  "philosophy",
 	}
 
 	if err := tmpl.Execute(w, data); err != nil {
