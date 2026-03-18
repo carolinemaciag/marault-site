@@ -142,4 +142,82 @@
     padding: 12px 20px;
     font-size: 0.9rem;
   }
+  
+  /* ===== CLIENT GAINS SECTION ===== */
+  .client-gains {
+    padding: 80px 40px;
+  }
+  
+  .client-gains h2 {
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+  }
+  
+  .gains-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .gain-card {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .gain-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .gain-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .gain-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  /* ===== EXECUTIVE TEAM IMAGES ===== */
+  .executive-team {
+    padding: 80px 40px;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .team-member img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  .team-member h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .team-member p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  /* ===== GENERAL IMAGE FIXES ===== */
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 }
