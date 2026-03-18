@@ -1,0 +1,145 @@
+/* =========================================
+   IPAD OPTIMIZATION (768px - 1024px)
+   Fixes navigation and layout spacing for iPad
+========================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* ===== HEADER / NAV ===== */
+  .site-header {
+    height: 80px;
+  }
+  
+  .nav {
+    height: 80px;
+    padding: 0 40px;
+  }
+  
+  .logo img {
+    height: 70px;
+  }
+  
+  .nav-right a {
+    margin-left: 20px;
+    font-size: 0.85rem;
+  }
+  
+  .nav-right a:first-child {
+    left: 0;
+  }
+  
+  .nav-right .nav-cta {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+  
+  /* ===== HERO SECTION ===== */
+  .hero {
+    height: 100vh;
+    padding-top: 100px;
+  }
+  
+  .hero-content {
+    padding-top: 25vh;
+  }
+  
+  .hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  /* ===== BUTTONS ===== */
+  .btn-inquire {
+    padding: 12px 26px;
+    font-size: 0.9rem;
+  }
+  
+  /* ===== SECTIONS ===== */
+  .light-section {
+    padding: 100px 40px;
+  }
+  
+  .section {
+    padding: 100px 40px;
+  }
+  
+  .services-panel {
+    padding: 0 40px;
+  }
+  
+  .service-row {
+    gap: 30px;
+    margin-bottom: 60px;
+    padding: 0;
+  }
+  
+  .service-row[data-side="left"],
+  .service-row[data-side="right"] {
+    flex-direction: row;
+  }
+  
+  .service-row[data-side="right"] {
+    flex-direction: row-reverse;
+  }
+  
+  .service-image {
+    width: 40%;
+    margin: 0;
+  }
+  
+  .service-text {
+    width: 60%;
+  }
+  
+  .service-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* ===== TYPOGRAPHY ===== */
+  h1, h2 {
+    font-size: 2.4rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* ===== CONTACT HERO ===== */
+  .contact-hero {
+    height: 75vh;
+  }
+  
+  .contact-hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .contact-hero-content {
+    padding: 0 30px;
+  }
+  
+  /* ===== FOOTER ===== */
+  .site-footer {
+    padding: 60px 40px;
+  }
+  
+  /* ===== DROPDOWNS ===== */
+  .dropdown {
+    min-width: 220px;
+  }
+  
+  .dropdown a {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
