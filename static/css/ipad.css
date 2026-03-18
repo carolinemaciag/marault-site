@@ -97,6 +97,18 @@
     padding: 0 40px;
   }
   
+  .services-split {
+    flex-direction: column;
+  }
+  
+  .services-split .services-text {
+    width: 100%;
+  }
+  
+  .services-split .services-visual {
+    display: none;
+  }
+  
   .service-row {
     gap: 30px;
     margin-bottom: 60px;
