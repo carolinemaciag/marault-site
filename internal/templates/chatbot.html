@@ -1,0 +1,55 @@
+<!-- Chatbot Widget -->
+<div id="chatbot-container" class="chatbot-closed">
+  <!-- Chat Window -->
+  <div id="chat-window" class="chat-window" role="complementary" aria-label="Chat assistant">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="chat-header-content">
+        <h3>muh·ROH</h3>
+        <p>Marault Intelligence Assistant</p>
+      </div>
+      <button id="close-chat" class="close-btn" aria-label="Close chat" type="button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Messages Container -->
+    <div id="chat-messages" class="chat-messages" role="log" aria-live="polite">
+      <div class="chat-message bot-message">
+        <div class="message-content">
+          <p>Hi! I'm muh·ROH, your Marault Intelligence assistant. Welcome! I'm here to help you explore our services and answer any questions. How can I assist you today?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-input-area">
+      <form id="chat-form" onsubmit="sendMessage(event)" role="search">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Type your message..."
+          autocomplete="off"
+          required
+          aria-label="Chat message input"
+        />
+        <button type="submit" class="send-btn" aria-label="Send message">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toggle Button -->
+  <button id="chat-toggle" class="chat-toggle-btn" aria-label="Open chat" type="button">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+</div>

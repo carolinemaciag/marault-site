@@ -81,6 +81,9 @@
 
   <!-- MOBILE CSS -->
 <link rel="stylesheet" href="/static/css/mobile-base.css?v=20260312-5" />
+
+<!-- Chatbot Styles -->
+<link rel="stylesheet" href="/static/css/chatbot.css" />
 </head>
 
 <body class="mobile-base">
@@ -245,6 +248,10 @@
 <script src="/static/js/network.js"></script>
 <script src="/static/js/scroll-fade.js"></script>
 <script src="/static/js/mobile-nav.js?v=20260312-4"></script>
+<script src="/static/js/chatbot.js"></script>
+
+<!-- Chatbot Widget -->
+{{ template "chatbot.html" }}
 
 {{ block "page_js" . }}{{ end }}
 

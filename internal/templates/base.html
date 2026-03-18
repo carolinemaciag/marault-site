@@ -82,6 +82,9 @@
   <link rel="stylesheet" href="/static/css/philosophy.css?v=20260312" />
   {{ end }}
   
+  <!-- Chatbot Styles -->
+  <link rel="stylesheet" href="/static/css/chatbot.css" />
+  
    {{ block "page_css" . }}{{ end }}
 
   
@@ -247,9 +250,14 @@
 <!-- =========================
      SCRIPTS
 ========================= -->
+
+<!-- Chatbot Widget -->
+{{ template "chatbot.html" }}
+
 <script src="/static/js/network.js"></script>
 <script src="/static/js/scroll-fade.js"></script>
 <script src="/static/js/nav.js"></script>
+<script src="/static/js/chatbot.js"></script>
 
 {{ block "page_js" . }}{{ end }}
 
