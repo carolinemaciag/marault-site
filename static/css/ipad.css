@@ -188,13 +188,14 @@
   
   .client-gains h2 {
     font-size: 2.2rem;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
   
   .gains-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 50px 40px;
+    max-width: 100%;
   }
   
   .gain-card {
@@ -204,19 +205,22 @@
   
   .gain-card img {
     width: 100%;
-    max-width: 200px;
+    max-width: 180px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    object-fit: contain;
   }
   
   .gain-card h3 {
     font-size: 1.3rem;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
   }
   
   .gain-card p {
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
   }
   
   /* ===== EXECUTIVE TEAM IMAGES ===== */
