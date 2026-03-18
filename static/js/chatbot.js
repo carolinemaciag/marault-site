@@ -61,52 +61,6 @@ function setupChatbot() {
     });
   }
 
-  container.addEventListener('click', (e) => {
-    const isMobile = window.innerWidth <= 480;
-    const isNearBottom = e.clientY > window.innerHeight - 80;
-    const isClosed = container.classList.contains('chatbot-closed');
-    
-    if (isMobile && isNearBottom && isClosed) {
-      e.preventDefault();
-      e.stopPropagation();
-      container.classList.remove('chatbot-closed');
-      container.classList.add('chat-open');
-      const saved = localStorage.getItem('marault_chat_history');
-      if (saved) {
-        chatHistory = JSON.parse(saved);
-        renderChatHistory();
-      }
-      setTimeout(() => {
-        const input = document.getElementById('chat-input');
-        if (input) input.focus();
-      }, 100);
-    }
-  });
-
-  // Also handle touchend for better mobile support
-  container.addEventListener('touchend', (e) => {
-    const isMobile = window.innerWidth <= 480;
-    const touch = e.changedTouches[0];
-    const isNearBottom = touch.clientY > window.innerHeight - 80;
-    const isClosed = container.classList.contains('chatbot-closed');
-    
-    if (isMobile && isNearBottom && isClosed) {
-      e.preventDefault();
-      e.stopPropagation();
-      container.classList.remove('chatbot-closed');
-      container.classList.add('chat-open');
-      const saved = localStorage.getItem('marault_chat_history');
-      if (saved) {
-        chatHistory = JSON.parse(saved);
-        renderChatHistory();
-      }
-      setTimeout(() => {
-        const input = document.getElementById('chat-input');
-        if (input) input.focus();
-      }, 100);
-    }
-  });
-
   if (closeBtn) {
     closeBtn.addEventListener('click', (e) => {
       e.preventDefault();
