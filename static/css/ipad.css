@@ -169,6 +169,24 @@
   /* ===== FOOTER ===== */
   .site-footer {
     padding: 60px 40px;
+    position: relative;
+    bottom: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Remove body padding that might be causing issues */
+  body {
+    padding-bottom: 0;
+  }
+  
+  /* Ensure sections don't have excessive bottom padding */
+  .contact-section,
+  .inquiry-section,
+  .executive-section,
+  .light-section,
+  .section {
+    padding-bottom: 80px;
   }
   
   /* ===== DROPDOWNS ===== */
