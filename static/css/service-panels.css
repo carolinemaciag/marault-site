@@ -94,7 +94,7 @@
 
 .service-panel-tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px 40px;
   margin: 0 auto;
 }
@@ -338,6 +338,121 @@
   }
 }
 
+/* =========================================
+   IPAD OVERRIDES
+========================================= */
+
+/* Portrait */
+@media (orientation: portrait) {
+  body.ipad-base .service-panels {
+    padding: 56px 20px 80px !important;
+  }
+
+  body.ipad-base .service-panels-inner {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  body.ipad-base .service-panel-card {
+    width: 92% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    padding: 34px 22px 38px !important;
+  }
+
+  body.ipad-base .service-panel-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 26px 18px !important;
+    justify-items: center !important;
+  }
+
+  body.ipad-base .service-panel-tile {
+    max-width: 180px !important;
+    margin: 0 auto !important;
+  }
+
+  body.ipad-base .service-panel-icon {
+    width: 118px !important;
+    height: 118px !important;
+    transform: none !important;
+  }
+
+  body.ipad-base .service-panel-title {
+    font-size: 0.82rem !important;
+    max-width: 12ch !important;
+  }
+
+  body.ipad-base .service-panel-card:first-of-type .service-panel-tile:last-child {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+  }
+}
+
+/* Landscape */
+@media (orientation: landscape) {
+  body.ipad-base .service-panels-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 60px !important;
+  }
+
+  body.ipad-base .service-panel-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 36px 32px !important;
+    justify-items: center !important;
+  }
+
+  body.ipad-base .service-panel-tile {
+    max-width: 220px !important;
+    margin: 0 auto !important;
+  }
+
+  body.ipad-base .service-panel-icon {
+    width: 130px !important;
+    height: 130px !important;
+    transform: none !important;
+  }
+
+  body.ipad-base .service-panel-title {
+    font-size: 1rem !important;
+    max-width: 14ch !important;
+  }
+
+  body.ipad-base .service-panel-card:first-of-type .service-panel-tile:last-child {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+  }
+}
+
+
+/* =========================
+   IPAD OVERRIDES — HIGH SPECIFICITY
+========================= */
+html body.ipad-base .service-panel-tiles {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 26px 18px !important;
+  justify-items: center !important;
+}
+
+html body.ipad-base .service-panel-tile {
+  max-width: 180px !important;
+  margin: 0 auto !important;
+}
+
+html body.ipad-base .service-panel-icon {
+  width: 118px !important;
+  height: 118px !important;
+  transform: none !important;
+}
+
+html body.ipad-base .service-panel-title {
+  font-size: 0.82rem !important;
+  max-width: 12ch !important;
+}
+
+html body.ipad-base .service-panel-card:first-of-type .service-panel-tile:last-child {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+}
 
 
 

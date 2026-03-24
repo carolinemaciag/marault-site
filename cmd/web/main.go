@@ -10,27 +10,31 @@ import (
 	"strings"
 )
 
+func isIPad(r *http.Request) bool {
+	ua := strings.ToLower(r.UserAgent())
+	return strings.Contains(ua, "ipad")
+}
+
 func isMobile(r *http.Request) bool {
 	ua := strings.ToLower(r.UserAgent())
-
 	mobileSignals := []string{
 		"iphone",
 		"android",
 		"mobile",
-		"ipad",
 		"ipod",
 	}
-
 	for _, s := range mobileSignals {
 		if strings.Contains(ua, s) {
 			return true
 		}
 	}
-
 	return false
 }
 
 func getBaseTemplate(r *http.Request) string {
+	if r.URL.Query().Get("device") == "ipad" {
+		return "./internal/templates/base-ipad.html"
+	}
 	if isMobile(r) {
 		return "./internal/templates/base-mobile.html"
 	}
@@ -1729,24 +1733,32 @@ func fuzzyMatch(text string, keyword string) bool {
 	return false
 }
 
+
+
 func main() {
-	mux := http.NewServeMux()
-
-	/* =========================
-	   Static files
-	========================= */
-	fileServer := http.FileServer(http.Dir("./static"))
-	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
-
-	/* =========================
-	   Core pages
-	========================= */
-	mux.HandleFunc("/", homeHandler)
-	mux.HandleFunc("/approach", approachHandler)
-	mux.HandleFunc("/executive-team", executiveTeamHandler)
-	mux.HandleFunc("/contact", contactHandler)
-	mux.HandleFunc("/inquire", inquireHandler)
-	mux.HandleFunc("/philosophy", philosophyHandler)
+    mux := http.NewServeMux()
+    /* =========================
+       Static files
+    ========================= */
+    fileServer := http.FileServer(http.Dir("./static"))
+    mux.Handle("/static/", http.StripPrefix("/static", fileServer))
+    /* =========================
+       Debug
+    ========================= */
+    mux.HandleFunc("/debug-ua", func(w http.ResponseWriter, r *http.Request) {
+        ua := r.UserAgent()
+        tmpl := getBaseTemplate(r)
+        fmt.Fprintf(w, "User-Agent: %s\n\nTemplate: %s", ua, tmpl)
+    })
+    /* =========================
+       Core pages
+    ========================= */
+    mux.HandleFunc("/", homeHandler)
+    mux.HandleFunc("/approach", approachHandler)
+    mux.HandleFunc("/executive-team", executiveTeamHandler)
+    mux.HandleFunc("/contact", contactHandler)
+    mux.HandleFunc("/inquire", inquireHandler)
+    mux.HandleFunc("/philosophy", philosophyHandler)
 
 	/* =========================
 	   API endpoints

@@ -1,283 +1,1753 @@
+/* =========================
+IPAD-ONLY SAFETY
+========================= */
+html.ipad-base {
+  background: #0b1c2d;
+  overscroll-behavior: none;
+}
+body.ipad-base {
+  background: #0b1c2d;
+  overscroll-behavior: none;
+}
+body.ipad-base .site-header {
+  display: none !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body.ipad-base {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-bottom: 200px;
+  -webkit-overflow-scrolling: touch;
+}
+body.ipad-base.ipad-menu-open {
+  overflow: hidden;
+}
+body.ipad-base * {
+  box-sizing: border-box;
+}
+body.ipad-base img,
+body.ipad-base video {
+  max-width: 100%;
+  height: auto;
+}
+
+.ipad-base .page,
+.ipad-base .hero,
+.ipad-base .hero-content,
+.ipad-base .light-section,
+.ipad-base .services-panel,
+.ipad-base .client-gains {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.ipad-base .site-footer {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden;
+  z-index: 100 !important;
+  padding-bottom: env(safe-area-inset-bottom);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: position;
+  pointer-events: auto;
+}
+
+/* Prevent hero layers from stealing taps */
+.ipad-base .hero video,
+.ipad-base .hero::after {
+  pointer-events: none;
+}
+
+/* =========================
+IPAD HEADER
+========================= */
+.ipad-site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 28, 45, 0.96),
+    rgba(11, 28, 45, 0.82)
+  );
+  border-bottom: none;
+}
+
+.ipad-nav {
+  position: relative;
+  z-index: 999999;
+  width: 100%;
+  max-width: 100%;
+  padding: 14px 24px 10px;
+}
+
+.ipad-nav-top {
+  position: relative;
+  z-index: 1000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.ipad-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 0;
+  gap: 10px;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.ipad-logo img {
+  height: 70px !important;
+  width: auto !important;
+  max-width: none !important;
+  flex-shrink: 0;
+  display: block;
+}
+
+.ipad-logo span {
+  display: block;
+  min-width: 0;
+  font-family: "Castoro Titling", serif;
+  font-size: 0.9rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: linear-gradient(to right, #c8b379, #f7f5f0 50%, #c8b379 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* =========================
+HAMBURGER
+========================= */
+.ipad-nav-toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  z-index: 1000001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  outline: none;
+  padding: 10px 6px 10px 10px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 6px;
+  touch-action: manipulation;
+}
+
+.ipad-nav-toggle:focus,
+.ipad-nav-toggle:active,
+.ipad-nav-toggle:hover {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.ipad-nav-toggle span {
+  width: 26px;
+  height: 2px;
+  background: #dcc9a3;
+  display: block;
+  border-radius: 999px;
+}
+
+/* =========================
+FULL SCREEN MENU
+========================= */
+.ipad-screen {
+  position: relative;
+  min-height: 100dvh;
+  background: #f7f5f0;
+  transform: translateX(0);
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+body.ipad-base.ipad-menu-open .ipad-screen {
+  transform: translateX(-18vw);
+}
+
+.ipad-nav-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 32px 40px;
+  background: linear-gradient(180deg, #0f2438, #0b1c2d);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition:
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease,
+    visibility 0s linear 0.42s;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.ipad-nav-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(0);
+  transition:
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease,
+    visibility 0s linear 0s;
+}
+
+.ipad-nav-menu > a,
+.ipad-nav-menu > .ipad-nav-item {
+  width: 100%;
+  max-width: 500px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.24s ease,
+    transform 0.24s ease;
+}
+
+.ipad-nav-menu.is-open > a,
+.ipad-nav-menu.is-open > .ipad-nav-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ipad-nav-menu.is-open > *:nth-child(1) { transition-delay: 0.05s; }
+.ipad-nav-menu.is-open > *:nth-child(2) { transition-delay: 0.09s; }
+.ipad-nav-menu.is-open > *:nth-child(3) { transition-delay: 0.13s; }
+.ipad-nav-menu.is-open > *:nth-child(4) { transition-delay: 0.17s; }
+.ipad-nav-menu.is-open > *:nth-child(5) { transition-delay: 0.21s; }
+.ipad-nav-menu.is-open > *:nth-child(6) { transition-delay: 0.25s; }
+
+.ipad-nav-menu > a {
+  display: block;
+  text-align: center;
+  font-family: "Castoro Titling", serif;
+  font-size: 1.08rem;
+  line-height: 1.4 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 10px 0 !important;
+  text-decoration: none;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+}
+
+/* =========================
+SERVICES DROPDOWN
+========================= */
+.ipad-nav-item {
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ipad-nav-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.ipad-nav-link {
+  font-family: "Castoro Titling", serif;
+  font-size: 1.08rem !important;
+  line-height: 1.35;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold-primary) !important;
+  text-align: center;
+  width: auto !important;
+}
+
+.ipad-nav-caret {
+  background: none;
+  border: none;
+  color: var(--gold-primary) !important;
+  font-size: 1.15rem !important;
+  cursor: pointer;
+  padding: 10px !important;
+  margin-left: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+
+.ipad-nav-item.open .ipad-nav-caret {
+  transform: rotate(180deg);
+}
+
+.ipad-nav-caret:active {
+  transform: scale(0.92);
+}
+
+.ipad-dropdown {
+  width: 100%;
+  max-width: 540px;
+  margin: 14px auto 6px;
+  padding: 4px 0 2px;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  row-gap: 0;
+  align-items: start;
+  text-align: left;
+  background: transparent !important;
+  border: none !important;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.32s ease,
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    padding 0.22s ease;
+}
+
+.ipad-nav-item.open .ipad-dropdown {
+  max-height: 480px;
+  opacity: 1;
+  transform: translateY(0);
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.ipad-dropdown-group-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(247, 245, 240, 0.58);
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.ipad-dropdown-divider {
+  display: none !important;
+}
+
+.ipad-dropdown-link {
+  display: block;
+  width: 100%;
+  padding: 7px 0 !important;
+  margin: 0 !important;
+  font-family: "Castoro Titling", serif;
+  font-size: 0.84rem !important;
+  line-height: 1.30;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-light) !important;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal !important;
+}
+
+.ipad-dropdown a:nth-of-type(1),
+.ipad-dropdown a:nth-of-type(2),
+.ipad-dropdown a:nth-of-type(3),
+.ipad-dropdown a:nth-of-type(4),
+.ipad-dropdown a:nth-of-type(5) {
+  grid-column: 1;
+}
+
+.ipad-dropdown a:nth-of-type(6),
+.ipad-dropdown a:nth-of-type(7),
+.ipad-dropdown a:nth-of-type(8),
+.ipad-dropdown a:nth-of-type(9) {
+  grid-column: 2;
+}
+
+/* =========================
+INQUIRE BUTTON
+========================= */
+.ipad-nav-cta.btn-inquire {
+  position: relative;
+  display: inline-block !important;
+  margin-top: 18px;
+  padding: 12px 32px !important;
+  font-family: "Castoro Titling", serif;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--gold-primary) !important;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  border: 1px solid var(--gold-primary) !important;
+  background: transparent !important;
+  min-width: auto !important;
+}
+
+.ipad-nav-cta.btn-inquire::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--gold-primary);
+  pointer-events: none;
+}
+
+.ipad-nav-cta.btn-inquire::before {
+  display: none !important;
+}
+
+.ipad-nav-cta.btn-inquire:active {
+  background: rgba(220, 201, 163, 0.08) !important;
+}
+
+/* =========================
+HAMBURGER TO X
+========================= */
+.ipad-nav-toggle span {
+  transition:
+    transform 0.28s ease,
+    opacity 0.2s ease;
+  transform-origin: center;
+}
+
+.ipad-nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.ipad-nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.ipad-nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================
+PAGE / CONTENT
+========================= */
+.ipad-page {
+  width: 100%;
+  max-width: 100%;
+  padding-top: 0 !important;
+  overflow-x: hidden;
+}
+
+/* =========================
+GOLD ACTIVE STATES
+========================= */
+.ipad-nav-menu a:active,
+.ipad-dropdown-link:active,
+.ipad-nav-link:active {
+  color: #dcc9a3 !important;
+}
+
+.ipad-nav-item.open > .ipad-nav-row .ipad-nav-link {
+  color: #dcc9a3 !important;
+}
+
+.ipad-nav-item.open .ipad-nav-caret {
+  color: #dcc9a3;
+}
+
+.ipad-nav-menu a,
+.ipad-dropdown-link,
+.ipad-nav-link,
+.ipad-nav-caret {
+  transition: color 0.2s ease;
+}
+
+.ipad-dropdown-link:active,
+.ipad-nav-menu a:active {
+  background: rgba(220, 201, 163, 0.08);
+}
+
+/* =========================
+BTN-INQUIRE (general)
+========================= */
+body.ipad-base .btn-inquire {
+  position: relative;
+  display: inline-block !important;
+  font-family: "Castoro Titling", serif;
+  font-size: 0.76rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 12px 28px !important;
+  color: var(--gold-primary) !important;
+  text-decoration: none;
+  border: 1px solid var(--gold-primary) !important;
+  background: transparent !important;
+  min-width: auto;
+  text-align: center;
+  white-space: nowrap;
+}
+
+body.ipad-base .btn-inquire::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--gold-primary);
+  pointer-events: none;
+}
+
+body.ipad-base .btn-inquire::before {
+  display: none !important;
+}
+
+/* =========================
+HERO
+========================= */
+body.ipad-base .hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.ipad-base .hero,
+body.ipad-base .page-hero,
+body.ipad-base .services-hero,
+body.ipad-base .dva-hero,
+body.ipad-base .rev-hero,
+body.ipad-base .executive-hero,
+body.ipad-base .forecast-hero,
+body.ipad-base .private-hero,
+body.ipad-base .template-hero,
+body.ipad-base .custom-hero,
+body.ipad-base .redesign-hero,
+body.ipad-base .uxui-hero,
+body.ipad-base .approach-hero,
+body.ipad-base .pc-hero,
+body.ipad-base .fc-hero,
+body.ipad-base .ed-hero {
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  min-height: 72svh !important;
+  height: 72svh !important;
+  max-height: none !important;
+  overflow: hidden !important;
+}
+
+body.ipad-base .hero video,
+body.ipad-base .page-hero img,
+body.ipad-base .hero img,
+body.ipad-base .services-hero img,
+body.ipad-base .dva-hero img,
+body.ipad-base .rev-hero img,
+body.ipad-base .executive-hero img,
+body.ipad-base .forecast-hero img,
+body.ipad-base .private-hero img,
+body.ipad-base .template-hero img,
+body.ipad-base .custom-hero img,
+body.ipad-base .redesign-hero img,
+body.ipad-base .uxui-hero img,
+body.ipad-base .approach-hero img,
+body.ipad-base .pc-hero img,
+body.ipad-base .fc-hero img,
+body.ipad-base .ed-hero img,
+body.ipad-base .page-hero video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+body.ipad-base .hero-content,
+body.ipad-base .dva-hero-content,
+body.ipad-base .rev-hero-content,
+body.ipad-base .executive-hero-content,
+body.ipad-base .forecast-hero-content,
+body.ipad-base .private-hero-content,
+body.ipad-base .template-hero-content,
+body.ipad-base .custom-hero-content,
+body.ipad-base .redesign-hero-content,
+body.ipad-base .uxui-hero-content,
+body.ipad-base .approach-hero-content,
+body.ipad-base .pc-hero-content,
+body.ipad-base .fc-hero-content,
+body.ipad-base .ed-hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 130px 28px 56px !important;
+  text-align: center !important;
+}
+
+/* =========================
+HERO TITLES
+========================= */
+body.ipad-base .hero h1,
+body.ipad-base .page-hero h1,
+body.ipad-base .services-hero h1,
+body.ipad-base .approach-hero h1,
+body.ipad-base .dva-page .dva-hero-title,
+body.ipad-base .rev-page .rev-hero-title,
+body.ipad-base .executive-page .executive-hero-title,
+body.ipad-base .forecast-page .forecast-hero-title,
+body.ipad-base .private-page .private-hero-title,
+body.ipad-base .template-page .template-hero-title,
+body.ipad-base .custom-page .custom-hero-title,
+body.ipad-base .redesign-page .redesign-hero-title,
+body.ipad-base .uxui-page .uxui-hero-title,
+body.ipad-base .pc-page .pc-hero-title,
+body.ipad-base .fc-page .fc-hero-title,
+body.ipad-base .exec-page .ed-hero-title {
+  font-size: 2.6rem !important;
+  line-height: 1.12 !important;
+  letter-spacing: 0.02em !important;
+  max-width: 80% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+body.ipad-base .hero p,
+body.ipad-base .page-hero p,
+body.ipad-base .services-hero p,
+body.ipad-base .dva-page .dva-hero-subtitle,
+body.ipad-base .rev-page .rev-hero-subtitle,
+body.ipad-base .executive-page .executive-hero-subtitle,
+body.ipad-base .forecast-page .forecast-hero-subtitle,
+body.ipad-base .private-page .private-hero-subtitle,
+body.ipad-base .template-page .template-hero-subtitle,
+body.ipad-base .custom-page .custom-hero-subtitle,
+body.ipad-base .redesign-page .redesign-hero-subtitle,
+body.ipad-base .uxui-page .uxui-hero-subtitle,
+body.ipad-base .pc-page .pc-hero-subtitle,
+body.ipad-base .fc-page .fc-hero-subtitle,
+body.ipad-base .exec-page .ed-hero-subtitle {
+  font-size: 1.1rem !important;
+  line-height: 1.55 !important;
+  max-width: 72% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* =========================
+LAYOUT — FORCE SINGLE COLUMN
+========================= */
+body.ipad-base .services-split,
+body.ipad-base .service-row,
+body.ipad-base .services-grid,
+body.ipad-base .services-tiles,
+body.ipad-base .comparison-grid,
+body.ipad-base .experience-grid,
+body.ipad-base .gains-grid {
+  grid-template-columns: 1fr !important;
+}
+
+body.ipad-base .services-visual {
+  display: none !important;
+}
+
+body.ipad-base .service-divider {
+  display: none !important;
+}
+
+/* =========================
+LIGHT SECTION / CONTENT
+========================= */
+body.ipad-base .light-section {
+  padding: 56px 28px;
+}
+
+body.ipad-base .services-panel {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px 24px;
+  border-radius: 18px;
+}
+
+body.ipad-base .services-text h2 {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+body.ipad-base .services-intro {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+body.ipad-base .service-row {
+  grid-template-columns: 1fr;
+  gap: 18px;
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* =========================
+CLIENT GAINS
+========================= */
+body.ipad-base .client-gains {
+  padding: 0 28px 56px;
+}
+
+body.ipad-base .client-gains-inner {
+  width: 100%;
+  max-width: 100%;
+  padding: 30px 24px 36px;
+  border-radius: 20px;
+}
+
+body.ipad-base .client-gains-title {
+  text-align: center;
+  font-size: 1.7rem;
+  line-height: 1.25;
+}
+
+body.ipad-base .gains-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+body.ipad-base .gain-item {
+  text-align: center;
+}
+
+/* =========================
+FOOTER
+========================= */
+body.ipad-base .footer-cta-inner {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+body.ipad-base .footer-cta-brand {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+body.ipad-base .footer-cta-logo {
+  height: 78px;
+  transform: none;
+}
+
+body.ipad-base .footer-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+body.ipad-base .footer-col {
+  align-items: center;
+}
+
+body.ipad-base .footer-legal-inner {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+/* =========================
+SCROLL FADE
+========================= */
+body.ipad-base .service-intro,
+body.ipad-base .service-row,
+body.ipad-base .gain-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+body.ipad-base .service-intro.is-visible,
+body.ipad-base .service-row.is-visible,
+body.ipad-base .gain-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+SERVICE PANELS
+========================= */
+body.ipad-base .service-panels {
+  padding: 80px 32px 100px !important;
+  background: #f7f5f0 !important;
+}
+
+body.ipad-base .service-panels-inner {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 40px !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+}
+
+body.ipad-base .service-panel-card {
+  background: radial-gradient(circle at top, #0f2438, #0b1c2d 70%) !important;
+  border-radius: 28px !important;
+  padding: 56px 40px 64px !important;
+  border: 2px solid rgba(220, 201, 163, 0.55) !important;
+  box-shadow:
+    0 28px 56px rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+  width: 100% !important;
+}
+
+body.ipad-base .service-panel-group-title {
+  font-family: "Castoro Titling", serif !important;
+  font-size: 1.3rem !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #dcc9a3 !important;
+  text-align: center !important;
+  margin: 0 0 48px !important;
+}
+
+body.ipad-base .service-panel-tiles {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 36px 32px !important;
+  width: 100% !important;
+  justify-items: center !important;
+  align-items: start !important;
+}
+
+body.ipad-base .service-panel-tile {
+  display: grid !important;
+  gap: 12px !important;
+  justify-items: center !important;
+  align-content: start !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 220px !important;
+  margin: 0 auto !important;
+}
+
+body.ipad-base .service-panel-icon {
+  width: 130px !important;
+  height: 130px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+body.ipad-base .service-panel-title {
+  font-family: "Castoro Titling", serif !important;
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.04em !important;
+  color: rgba(247, 245, 240, 0.92) !important;
+  text-align: center !important;
+  max-width: 14ch !important;
+  margin: 0 auto !important;
+}
+
+body.ipad-base .service-panel-group:first-child .service-panel-tile:last-child {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+  max-width: 220px !important;
+}
+
+/* =========================
+EXEC CARD SECTIONS
+========================= */
+body.ipad-base [class$="-exec-card"] {
+  background: #fbfaf7 !important;
+  border-radius: 28px !important;
+  border: 2px solid rgba(220, 201, 163, 0.55) !important;
+  padding: 56px 40px !important;
+  position: relative !important;
+}
+
+body.ipad-base [class$="-exec-card"]::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border-radius: 22px;
+  border: 2px solid rgba(220, 201, 163, 0.35);
+  pointer-events: none;
+}
+
+body.ipad-base [class$="-exec-grid"] {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+body.ipad-base [class$="-exec-copy"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  color: rgba(11, 28, 45, 0.92) !important;
+}
+
+body.ipad-base [class$="-exec-copy"] h2 {
+  text-align: center !important;
+  margin: 0 0 22px !important;
+}
+
+body.ipad-base [class$="-exec-copy"] p {
+  max-width: 92% !important;
+  margin: 0 auto 22px !important;
+  text-align: center !important;
+  line-height: 1.85 !important;
+  color: rgba(11, 28, 45, 0.92) !important;
+}
+
+body.ipad-base [class$="-exec-image-wrap"] {
+  width: 92% !important;
+  max-width: 480px !important;
+  aspect-ratio: 16 / 9 !important;
+  margin: -18px auto 8px !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  border: none !important;
+}
+
+body.ipad-base [class$="-exec-image"] {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* =========================
+WHY MARAULT SECTIONS
+========================= */
+body.ipad-base .dva-why-inner,
+body.ipad-base .ed-why-inner,
+body.ipad-base .fc-why-inner,
+body.ipad-base .pc-why-inner,
+body.ipad-base .template-why-inner,
+body.ipad-base .custom-why-inner,
+body.ipad-base .redesign-why-inner,
+body.ipad-base .rev-why-inner,
+body.ipad-base .uxui-why-inner {
+  grid-template-columns: 1fr !important;
+  gap: 22px !important;
+  text-align: center !important;
+  align-items: center !important;
+}
+
+body.ipad-base .dva-why-inner > div:last-child,
+body.ipad-base .ed-why-inner > div:last-child,
+body.ipad-base .fc-why-inner > div:last-child,
+body.ipad-base .pc-why-inner > div:last-child,
+body.ipad-base .template-why-inner > div:last-child,
+body.ipad-base .custom-why-inner > div:last-child,
+body.ipad-base .redesign-why-inner > div:last-child,
+body.ipad-base .rev-why-inner > div:last-child,
+body.ipad-base .uxui-why-inner > div:last-child {
+  margin-top: 12px !important;
+  justify-self: center !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* =========================
+APPROACH PAGE
+========================= */
+body.ipad-base .approach-hero {
+  min-height: 72svh !important;
+  height: 72svh !important;
+}
+
+body.ipad-base .approach-panel {
+  background: linear-gradient(180deg, #0f2438, #0b1c2d) !important;
+  border: 3px solid var(--gold-primary) !important;
+  border-radius: 28px;
+  padding: 40px 32px 48px;
+}
+
+body.ipad-base .comparison-grid {
+  grid-template-columns: 1fr !important;
+  gap: 24px;
+}
+
+body.ipad-base .comparison-column,
+body.ipad-base .comparison-left,
+body.ipad-base .comparison-right {
+  padding: 28px 24px;
+}
+
+body.ipad-base .comparison-right {
+  background: linear-gradient(180deg, #0f2438, #0b1c2d) !important;
+  border: 3px solid var(--gold-primary) !important;
+  border-radius: 20px !important;
+}
+
+body.ipad-base .comparison-left {
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 1.5px solid rgba(120, 120, 120, 0.22) !important;
+  border-radius: 20px !important;
+}
+
+body.ipad-base .experience-grid {
+  grid-template-columns: 1fr !important;
+  gap: 32px;
+}
+
+/* =========================
+PHILOSOPHY PAGE
+========================= */
+body.ipad-base .philosophy-hero {
+  position: relative !important;
+  width: 100% !important;
+  min-height: 68svh !important;
+  height: 68svh !important;
+  margin-top: 0 !important;
+  overflow: hidden !important;
+}
+
+body.ipad-base .philosophy-hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 120px 28px 48px !important;
+  text-align: center !important;
+}
+
+/* =========================
+SERVICES PAGE SECTIONS
+========================= */
+body.ipad-base .services-audit-media,
+body.ipad-base .services-revenue-media,
+body.ipad-base .services-forecasting-media,
+body.ipad-base .services-private-media,
+body.ipad-base .services-web-media,
+body.ipad-base .services-template-media,
+body.ipad-base .services-redesign-media,
+body.ipad-base .services-uxui-media {
+  display: none !important;
+}
+
+body.ipad-base .services-audit-grid,
+body.ipad-base .services-audit-grid--flip,
+body.ipad-base .services-revenue-grid,
+body.ipad-base .services-forecasting-grid,
+body.ipad-base .services-private-grid,
+body.ipad-base .services-web-grid,
+body.ipad-base .services-template-grid,
+body.ipad-base .services-redesign-grid,
+body.ipad-base .services-uxui-grid {
+  display: block !important;
+  grid-template-columns: 1fr !important;
+}
+
+body.ipad-base .services-audit,
+body.ipad-base .services-revenue,
+body.ipad-base .services-forecasting,
+body.ipad-base .services-private,
+body.ipad-base .services-web,
+body.ipad-base .services-template,
+body.ipad-base .services-redesign,
+body.ipad-base .services-uxui {
+  padding: 40px 28px !important;
+  margin-bottom: 28px !important;
+  border-radius: 22px !important;
+}
+
+/* =========================
+CHECKLIST SECTIONS
+========================= */
+body.ipad-base .ed-checklist-wrap,
+body.ipad-base .dva-checklist-wrap,
+body.ipad-base .rev-checklist-wrap,
+body.ipad-base .pc-checklist-wrap,
+body.ipad-base .custom-checklist-wrap,
+body.ipad-base .template-checklist-wrap,
+body.ipad-base .redesign-checklist-wrap,
+body.ipad-base .uxui-checklist-wrap {
+  padding-top: 0px !important;
+  padding-bottom: 100px !important;
+}
+
+body.ipad-base .ed-section-head h2,
+body.ipad-base .dva-section-head h2,
+body.ipad-base .rev-section-head h2,
+body.ipad-base .pc-section-head h2,
+body.ipad-base .custom-section-head h2,
+body.ipad-base .template-section-head h2,
+body.ipad-base .redesign-section-head h2,
+body.ipad-base .uxui-section-head h2 {
+  font-size: 2.2rem !important;
+  margin-bottom: 8px !important;
+}
+
 /* =========================================
-   IPAD OPTIMIZATION (768px - 1024px)
-   Fixes navigation and layout spacing for iPad
+   IPAD — PORTRAIT ORIENTATION FIXES
+   Mirrors mobile-base.css layout exactly
+========================================= */
+@media (orientation: portrait) {
+
+  /* =========================
+     HOME — WHAT WE DO SECTION
+  ========================= */
+  body.ipad-base .light-section {
+    padding: 44px 16px 52px !important;
+  }
+
+  body.ipad-base .services-panel {
+    padding: 24px 16px !important;
+    border-radius: 20px !important;
+  }
+
+  body.ipad-base .services-panel::before {
+    inset: 8px !important;
+    border-radius: 14px !important;
+  }
+
+  body.ipad-base .services-split {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  body.ipad-base .services-visual {
+    display: none !important;
+  }
+
+  body.ipad-base .services-text h2 {
+    text-align: left !important;
+    font-size: 1.6rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 12px !important;
+  }
+
+  body.ipad-base .services-intro {
+    text-align: left !important;
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 8px !important;
+    max-width: 100% !important;
+  }
+
+  /* Service rows — gold bordered cards like mobile */
+  body.ipad-base .service-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 18px !important;
+    padding: 20px 16px !important;
+    background: #fbfaf7 !important;
+    border: 1.5px solid rgba(220, 201, 163, 0.35) !important;
+    border-radius: 18px !important;
+    text-align: left !important;
+  }
+
+  body.ipad-base .service-divider {
+    display: none !important;
+  }
+
+  body.ipad-base .service-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 2px !important;
+  }
+
+  body.ipad-base .service-row img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 260px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  body.ipad-base .service-text {
+    max-width: 100% !important;
+  }
+
+  body.ipad-base .service-text h3 {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.05em !important;
+    margin-bottom: 10px !important;
+    text-align: left !important;
+  }
+
+  body.ipad-base .service-text p {
+    font-size: 0.97rem !important;
+    line-height: 1.62 !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+  }
+
+  /* =========================
+     HOME — CLIENT GAINS
+  ========================= */
+  body.ipad-base .client-gains {
+    padding: 0 16px 56px !important;
+  }
+
+  body.ipad-base .client-gains-inner {
+    padding: 26px 18px 32px !important;
+    border-radius: 20px !important;
+  }
+
+  body.ipad-base .client-gains-title {
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+  }
+
+  body.ipad-base .gains-grid {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+  }
+
+  body.ipad-base .gain-item {
+    text-align: center !important;
+  }
+
+  body.ipad-base .gain-item p br {
+    display: none !important;
+  }
+
+  /* =========================
+     FOOTER — SINGLE COLUMN LIKE MOBILE
+  ========================= */
+  body.ipad-base .footer-cta-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    text-align: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.ipad-base .footer-cta-brand {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  body.ipad-base .footer-cta-logo {
+    height: 78px !important;
+    transform: none !important;
+  }
+
+  body.ipad-base .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    text-align: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.ipad-base .footer-col {
+    align-items: center !important;
+  }
+
+  body.ipad-base .footer-legal-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    text-align: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* =========================
+     SCROLL FADE
+  ========================= */
+  body.ipad-base .service-intro,
+  body.ipad-base .service-row,
+  body.ipad-base .gain-item {
+    opacity: 0 !important;
+    transform: translateY(22px) !important;
+    transition:
+      opacity 0.8s ease-out,
+      transform 0.8s ease-out !important;
+  }
+
+  body.ipad-base .service-intro.is-visible,
+  body.ipad-base .service-row.is-visible,
+  body.ipad-base .gain-item.is-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+}
+
+/* =========================================
+   IPAD — LANDSCAPE ORIENTATION
+   Matches desktop (main.css) layout
+========================================= */
+@media (orientation: landscape) {
+
+  /* =========================
+     WHAT WE DO PANEL
+  ========================= */
+  body.ipad-base .light-section {
+    background: #f6f5f2;
+    padding: 100px 0 !important;
+  }
+
+  body.ipad-base .services-panel {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto !important;
+    padding: 72px 60px !important;
+    background: #fbfaf7 !important;
+    border-radius: 28px !important;
+    border: 2.55px solid rgba(220, 201, 163, 0.55) !important;
+  }
+
+  body.ipad-base .services-panel::before {
+    content: "";
+    position: absolute;
+    inset: 14px !important;
+    border-radius: 22px !important;
+    border: 2.05px solid rgba(220, 201, 163, 0.35) !important;
+    pointer-events: none;
+  }
+
+  body.ipad-base .services-split {
+    display: grid !important;
+    grid-template-columns: 1.1fr 0.9fr !important;
+    gap: 60px !important;
+    align-items: flex-start !important;
+  }
+
+  body.ipad-base .services-visual {
+    display: block !important;
+  }
+
+  body.ipad-base .services-visual img {
+    width: 100% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    border-radius: 18px !important;
+    display: block !important;
+  }
+
+  body.ipad-base .services-text h2 {
+    font-family: "Castoro Titling", serif !important;
+    font-size: 2.4rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    color: rgba(11, 28, 45, 0.95) !important;
+    text-align: left !important;
+  }
+
+  body.ipad-base .services-intro {
+    max-width: 560px !important;
+    margin-bottom: 48px !important;
+    font-size: 1.05rem !important;
+    line-height: 1.75 !important;
+    color: rgba(11, 28, 45, 0.78) !important;
+    text-align: left !important;
+  }
+
+  body.ipad-base .service-row {
+    display: grid !important;
+    grid-template-columns: 1fr 40px 1fr !important;
+    align-items: center !important;
+    gap: 40px !important;
+    margin-top: 48px !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    text-align: left !important;
+  }
+
+  body.ipad-base .service-divider {
+    display: block !important;
+    width: 3px !important;
+    height: 280px !important;
+    background: linear-gradient(
+      to bottom,
+      var(--gold-primary),
+      rgba(220, 201, 163, 0.4),
+      transparent
+    ) !important;
+    align-self: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  body.ipad-base .service-row img {
+    max-width: 400px !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: translateY(22px) !important;
+    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35)) !important;
+    margin: 0 !important;
+  }
+
+  body.ipad-base .service-text h3 {
+    font-family: "Castoro Titling", serif !important;
+    font-size: 1.15rem !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    color: #0b1c2d !important;
+    margin-bottom: 14px !important;
+    text-align: left !important;
+  }
+
+  body.ipad-base .service-text p {
+    font-size: 1rem !important;
+    color: rgba(11, 28, 45, 0.78) !important;
+    text-align: left !important;
+  }
+
+  /* =========================
+     CLIENT GAINS
+  ========================= */
+  body.ipad-base .client-gains {
+    background: #f7f5f0 !important;
+    padding: 30px 0 100px !important;
+  }
+
+  body.ipad-base .client-gains-inner {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    padding: 38px 48px 60px !important;
+    background: linear-gradient(180deg, #0f2438, #0b1c2d) !important;
+    border-radius: 32px !important;
+    border: 4px solid var(--gold-primary) !important;
+    box-shadow:
+      inset 0 0 0 1px rgba(220, 201, 163, 0.35),
+      0 35px 70px rgba(11, 28, 45, 0.55) !important;
+  }
+
+  body.ipad-base .client-gains-title {
+    font-family: "Castoro Titling", serif !important;
+    font-size: 2.4rem !important;
+    text-align: center !important;
+    margin-bottom: 36px !important;
+  }
+
+  body.ipad-base .gains-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 40px 60px !important;
+  }
+
+  body.ipad-base .gain-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 14px !important;
+  }
+
+  body.ipad-base .gain-item img {
+    max-width: 320px !important;
+    min-height: 200px !important;
+    object-fit: contain !important;
+  }
+
+  body.ipad-base .gain-item p br {
+    display: block !important;
+  }
+
+  /* =========================
+     FOOTER
+  ========================= */
+  body.ipad-base .footer-cta {
+    padding: 18px 0 14px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  body.ipad-base .footer-cta-inner {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0 !important;
+    text-align: left !important;
+  }
+
+  body.ipad-base .footer-cta-brand {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px !important;
+  }
+
+  body.ipad-base .footer-cta-logo {
+    height: 120px !important;
+    transform: translateY(4px) !important;
+  }
+
+  body.ipad-base .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr 1fr 1.2fr !important;
+    gap: 40px !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    text-align: left !important;
+  }
+
+  body.ipad-base .footer-col {
+    align-items: flex-start !important;
+  }
+
+  body.ipad-base .footer-legal-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 28px 40px 40px !important;
+    text-align: left !important;
+  }
+
+}
+
+/* =========================================
+   IPAD — SERVICE PANELS FIX (BOTH ORIENTATIONS)
+   Forces 2-column tile grid matching iPhone
 ========================================= */
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  /* ===== HEADER / NAV ===== */
-  .site-header {
-    height: 75px;
+/* Portrait — match iPhone style */
+@media (orientation: portrait) {
+
+  body.ipad-base .service-panels {
+    background: #f7f5f0 !important;
+    padding: 56px 20px 80px !important;
   }
-  
-  .nav {
-    height: 75px;
-    padding: 0 20px;
-    gap: 8px;
+
+  body.ipad-base .service-panels-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
   }
-  
-  .logo {
-    flex-shrink: 0;
+
+  body.ipad-base .service-panels-head {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    margin-bottom: 8px !important;
   }
-  
-  .logo img {
-    height: 60px;
+
+  body.ipad-base .service-panels-title {
+    font-size: 1.85rem !important;
+    letter-spacing: 0.08em !important;
+    margin: 0 auto !important;
   }
-  
-  .logo span {
-    font-size: 0.8rem;
-    margin-left: -4px;
+
+  body.ipad-base .service-panel-card {
+    background: radial-gradient(circle at top, #0f2438, #0b1c2d 70%) !important;
+    border-radius: 24px !important;
+    padding: 34px 22px 38px !important;
+    border: 2px solid rgba(220, 201, 163, 0.55) !important;
+    width: 92% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
   }
-  
-  .nav-right {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+
+  body.ipad-base .service-panel-group-title {
+    font-size: 1.1rem !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 28px !important;
+    text-align: center !important;
+    color: #dcc9a3 !important;
   }
-  
-  .nav-right a {
-    margin-left: 0;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-    padding: 0;
+
+  body.ipad-base .service-panel-tiles {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 26px 18px !important;
+    width: 100% !important;
+    justify-items: center !important;
+    align-items: start !important;
   }
-  
-  .nav-right a:first-child {
-    left: 0;
+
+  body.ipad-base .service-panel-tile {
+    display: grid !important;
+    gap: 10px !important;
+    justify-items: center !important;
+    align-content: start !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 180px !important;
+    margin: 0 auto !important;
   }
-  
-  .nav-right .nav-cta {
-    padding: 5px 10px;
-    font-size: 0.75rem;
-    border: 1px solid var(--gold-primary);
-    outline: 1px solid var(--gold-primary);
-    outline-offset: 2px;
-    flex-shrink: 0;
+
+  body.ipad-base .service-panel-icon {
+    width: 118px !important;
+    height: 118px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    transform: none !important;
   }
-  
-  /* ===== HERO SECTION ===== */
-  .hero {
-    height: 100vh;
-    padding-top: 100px;
+
+  body.ipad-base .service-panel-title {
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    color: rgba(247, 245, 240, 0.96) !important;
+    max-width: 12ch !important;
+    margin: 0 auto !important;
   }
-  
-  .hero-content {
-    padding-top: 25vh;
+
+  /* Center last BI tile */
+  body.ipad-base .service-panel-card:first-of-type .service-panel-tile:last-child {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    max-width: 180px !important;
   }
-  
-  .hero h1 {
-    font-size: 3.2rem;
-    margin-bottom: 20px;
+
+}
+
+/* Landscape — also fix tiles to 2-column */
+@media (orientation: landscape) {
+
+  body.ipad-base .service-panels {
+    background: #f7f5f0 !important;
+    padding: 80px 40px 100px !important;
   }
-  
-  .hero p {
-    font-size: 1rem;
-    margin-bottom: 30px;
+
+  body.ipad-base .service-panels-inner {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 60px !important;
+    max-width: 1240px !important;
+    margin: 0 auto !important;
   }
-  
-  /* ===== BUTTONS ===== */
-  .btn-inquire {
-    padding: 12px 26px;
-    font-size: 0.9rem;
+
+  body.ipad-base .service-panels-head {
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    margin-bottom: 40px !important;
   }
-  
-  /* ===== SECTIONS ===== */
-  .light-section {
-    padding: 100px 40px;
+
+  body.ipad-base .service-panels-title {
+    font-size: 2.4rem !important;
+    letter-spacing: 0.1em !important;
   }
-  
-  .section {
-    padding: 100px 40px;
+
+  body.ipad-base .service-panel-card {
+    padding: 56px 40px 64px !important;
+    border-radius: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
-  
-  .services-panel {
-    padding: 0 40px;
+
+  body.ipad-base .service-panel-group-title {
+    font-size: 1.4rem !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 48px !important;
   }
-  
-  .services-split {
-    flex-direction: column;
+
+  body.ipad-base .service-panel-tiles {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 36px 32px !important;
+    width: 100% !important;
+    justify-items: center !important;
+    align-items: start !important;
   }
-  
-  .services-split .services-text {
-    width: 100%;
+
+  body.ipad-base .service-panel-tile {
+    display: grid !important;
+    gap: 12px !important;
+    justify-items: center !important;
+    align-content: start !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 220px !important;
+    margin: 0 auto !important;
   }
-  
-  .services-split .services-visual {
-    display: none;
+
+  body.ipad-base .service-panel-icon {
+    width: 130px !important;
+    height: 130px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    transform: none !important;
   }
-  
-  .service-row {
-    gap: 30px;
-    margin-bottom: 60px;
-    padding: 0;
-    flex-direction: column;
-    align-items: center;
+
+  body.ipad-base .service-panel-title {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    max-width: 14ch !important;
+    margin: 0 auto !important;
   }
-  
-  .service-row[data-side="left"],
-  .service-row[data-side="right"] {
-    flex-direction: column;
+
+  /* Center last BI tile */
+  body.ipad-base .service-panel-card:first-of-type .service-panel-tile:last-child {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+    max-width: 220px !important;
   }
-  
-  .service-image {
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto 20px;
-  }
-  
-  .service-text {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .service-image img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-  }
-  
-  /* ===== TYPOGRAPHY ===== */
-  h1, h2 {
-    font-size: 2.4rem;
-  }
-  
-  h3 {
-    font-size: 1.4rem;
-  }
-  
-  p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-  
-  /* ===== CONTACT HERO ===== */
-  .contact-hero {
-    height: 75vh;
-  }
-  
-  .contact-hero h1 {
-    font-size: 2.8rem;
-  }
-  
-  .contact-hero-content {
-    padding: 0 30px;
-  }
-  
-  /* ===== FOOTER ===== */
-  .site-footer {
-    padding: 60px 40px;
-    position: relative;
-    bottom: auto;
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  /* Remove body padding that might be causing issues */
-  body {
-    padding-bottom: 0;
-  }
-  
-  /* Ensure sections don't have excessive bottom padding */
-  .contact-section,
-  .inquiry-section,
-  .executive-section,
-  .light-section,
-  .section {
-    padding-bottom: 80px;
-  }
-  
-  /* ===== DROPDOWNS ===== */
-  .dropdown {
-    min-width: 220px;
-  }
-  
-  .dropdown a {
-    padding: 12px 20px;
-    font-size: 0.9rem;
-  }
-  
-  /* ===== CLIENT GAINS SECTION ===== */
-  .client-gains {
-    padding: 80px 40px;
-  }
-  
-  .client-gains h2 {
-    font-size: 2.2rem;
-    margin-bottom: 80px;
-  }
-  
-  .gains-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px 40px;
-    max-width: 100%;
-  }
-  
-  .gain-card {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .gain-card img {
-    width: 100%;
-    max-width: 180px;
-    height: auto;
-    margin-bottom: 30px;
-    object-fit: contain;
-  }
-  
-  .gain-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    letter-spacing: 0.05em;
-  }
-  
-  .gain-card p {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.85);
-  }
-  
-  /* ===== EXECUTIVE TEAM IMAGES ===== */
-  .executive-team {
-    padding: 80px 40px;
-  }
-  
-  .team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-  
-  .team-member {
-    text-align: center;
-  }
-  
-  .team-member img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 20px;
-  }
-  
-  .team-member h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-  }
-  
-  .team-member p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-  
-  /* ===== GENERAL IMAGE FIXES ===== */
-  img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
+
 }

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{.Title}}</title>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Gudea:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+<!-- GLOBAL CSS -->
+<link rel="stylesheet" href="/static/css/main.css" />
+<link rel="stylesheet" href="/static/css/service-panels.css?v=20260219">
+<!-- PAGE CSS -->
+{{ if eq .Page "services" }}
+<link rel="stylesheet" href="/static/css/services.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "Revenue & Customer Analytics | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/revenue.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "Custom Website Build | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/custom.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "Data Visibility Audit | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/audit.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "Executive Dashboards & Reporting | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/executive.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "Forecasting & Decision Modeling | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/forecasting.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "Private Client Analytics | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/private.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "Template-Based Build | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/template.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "Website Redesign | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/redesign.css?v=20260219" />
+{{ end }}
+{{ if eq .Title "UX/UI Design | Marault Intelligence" }}
+<link rel="stylesheet" href="/static/css/uxui.css?v=20260219" />
+{{ end }}
+{{ if eq .Page "contact" }}
+<link rel="stylesheet" href="/static/css/contact.css?v=20260219" />
+{{ end }}
+{{ if eq .Page "inquire" }}
+<link rel="stylesheet" href="/static/css/inquire.css?v=20260219" />
+{{ end }}
+{{ if eq .Page "approach" }}
+<link rel="stylesheet" href="/static/css/approach.css?v=20260219" />
+{{ end }}
+{{ if eq .Page "philosophy" }}
+<link rel="stylesheet" href="/static/css/philosophy.css?v=20260312-1" />
+{{ end }}
+{{ if eq .Page "executive-team" }}
+<link rel="stylesheet" href="/static/css/executive-team.css?v=20260219" />
+{{ end }}
+<!-- IPAD CSS -->
+<link rel="stylesheet" href="/static/css/ipad.css?v=20260323-1" />
+<!-- Chatbot Styles -->
+<link rel="stylesheet" href="/static/css/chatbot.css" />
+</head>
+<body class="ipad-base">
+<!-- =========================
+IPAD HEADER
+========================= -->
+<header class="ipad-site-header">
+  <nav class="ipad-nav">
+    <div class="ipad-nav-top">
+      <a href="/" class="ipad-logo">
+        <img src="/static/images/logo-shiny.png" alt="Marault Intelligence Logo" />
+        <span>Marault Intelligence</span>
+      </a>
+      <button
+        class="ipad-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="ipadNavMenu"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="ipad-nav-menu" id="ipadNavMenu">
+      <a href="/">HOME</a>
+      <div class="ipad-nav-item has-ipad-dropdown">
+        <div class="ipad-nav-row">
+          <a href="/services" class="ipad-nav-link">SERVICES</a>
+          <button
+            class="ipad-nav-caret"
+            type="button"
+            aria-expanded="false"
+            aria-label="Open services menu"
+          >
+            ▾
+          </button>
+        </div>
+        <div class="ipad-dropdown">
+          <div class="ipad-dropdown-group">
+            <div class="ipad-dropdown-group-label">Business Intelligence</div>
+            <a class="ipad-dropdown-link" href="/services/data-visibility-audit">Data Visibility Audit</a>
+            <a class="ipad-dropdown-link" href="/services/executive-dashboards-reporting">Executive Dashboards &amp; Reporting</a>
+            <a class="ipad-dropdown-link" href="/services/revenue-customer-analytics">Revenue &amp; Customer Analytics</a>
+            <a class="ipad-dropdown-link" href="/services/forecasting-decision-modeling">Forecasting &amp; Decision Modeling</a>
+            <a class="ipad-dropdown-link" href="/services/private-client-analytics">Private Client Analytics</a>
+          </div>
+          <div class="ipad-dropdown-group ipad-dropdown-group--web">
+            <div class="ipad-dropdown-group-label">Web</div>
+            <a class="ipad-dropdown-link" href="/services/custom-website-build">Custom Website Build</a>
+            <a class="ipad-dropdown-link" href="/services/template-based-build">Template-Based Build</a>
+            <a class="ipad-dropdown-link" href="/services/website-redesign">Website Redesign</a>
+            <a class="ipad-dropdown-link" href="/services/ux-ui-design">UX / UI Design</a>
+          </div>
+        </div>
+      </div>
+      <a href="/approach">THE MARAULT APPROACH</a>
+      <a href="/executive-team">EXECUTIVE TEAM</a>
+      <a href="/contact">CONTACT</a>
+      <a href="/inquire" class="btn-inquire ipad-nav-cta">INQUIRE</a>
+    </div>
+  </nav>
+</header>
+
+
+<script>
+(function() {
+  function addIpadParam(url) {
+    if (!url || url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return url;
+    if (url.indexOf('device=ipad') !== -1) return url;
+    var sep = url.indexOf('?') !== -1 ? '&' : '?';
+    return url + sep + 'device=ipad';
+  }
+  document.querySelectorAll('a[href]').forEach(function(a) {
+    var href = a.getAttribute('href');
+    a.setAttribute('href', addIpadParam(href));
+  });
+})();
+</script>
+
+
+<!-- =========================
+PAGE CONTENT
+========================= -->
+<div class="ipad-screen">
+  <main class="page ipad-page">
+    {{ template "content" . }}
+  </main>
+  <div class="footer-separator"></div>
+  <footer class="site-footer">
+  </footer>
+</div>
+
+<div class="footer-cta">
+  <div class="footer-cta-inner">
+    <div class="footer-cta-brand">
+      <img src="/static/images/logo-shiny.png" alt="Marault Intelligence Logo" class="footer-cta-logo" />
+      <div class="footer-cta-text">
+        <h3>MARAULT INTELLIGENCE</h3>
+        <p>Clarity in Analysis. Confidence in Action.</p>
+      </div>
+    </div>
+    <div class="footer-cta-action">
+      <a href="/inquire" class="btn-inquire">Inquire</a>
+    </div>
+  </div>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-main">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services#analytics-foundations">Analytics Foundations</a></li>
+        <li><a href="/services#executive-reporting">Executive Reporting</a></li>
+        <li><a href="/services#revenue-intelligence">Revenue &amp; Customer Intelligence</a></li>
+        <li><a href="/services#forecasting">Forecasting &amp; Decision Support</a></li>
+        <li><a href="/services#web-design">Web Design &amp; Digital Experience</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Approach</h4>
+      <ul>
+        <li><a href="/approach">The Marault Approach</a></li>
+        <li><a href="/philosophy">Data Philosophy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/executive-team">Executive Team</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-inquire">
+      <h4>Inquire</h4>
+      <p>Start a conversation about your data, strategy, or digital presence.</p>
+      <a href="/inquire" class="footer-inquire-link">Get in touch →</a>
+    </div>
+  </div>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-legal">
+  <div class="footer-legal-inner">
+    © 2026 Marault Intelligence. All rights reserved.
+  </div>
+</div>
+
+<!-- =========================
+SCRIPTS
+========================= -->
+<script src="/static/js/network.js"></script>
+<script src="/static/js/scroll-fade.js"></script>
+<script src="/static/js/ipad-nav.js?v=20260323-1"></script>
+<script src="/static/js/chatbot.js"></script>
+{{ template "chatbot.html" }}
+{{ block "page_js" . }}{{ end }}
+
+<style>
+  html body.ipad-base .services-tiles {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 26px 18px !important;
+    justify-items: center !important;
+  }
+  html body.ipad-base .service-tile {
+    max-width: 180px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    justify-items: center !important;
+    text-align: center !important;
+  }
+  html body.ipad-base .service-tile-icon {
+    width: 118px !important;
+    height: 118px !important;
+    transform: none !important;
+  }
+  html body.ipad-base .service-tile-title {
+    font-size: 0.82rem !important;
+    max-width: 12ch !important;
+    text-align: center !important;
+  }
+  html body.ipad-base .services-card--bi .service-tile:last-child {
+    grid-column: 1 / -1 !important;
+    justify-self: center !important;
+  }
+
+  html body.ipad-base .services-grid-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  html body.ipad-base .services-card,
+  html body.ipad-base .services-card--bi {
+    width: 92% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Approach page — shrink the signpost image */
+  html body.ipad-base .approach-break-image,
+  html body.ipad-base .approach-visual-break img {
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* Approach page — fix bullet spacing in comparison cards */
+  html body.ipad-base .comparison-left ul,
+  html body.ipad-base .comparison-right ul {
+    padding-left: 0 !important;
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  html body.ipad-base .comparison-left li,
+  html body.ipad-base .comparison-right li {
+    padding-left: 20px !important;
+    position: relative !important;
+    text-align: left !important;
+    width: fit-content !important;
+    max-width: 90% !important;
+  }
+
+  html body.ipad-base .comparison-left li::before {
+    position: absolute !important;
+    left: 0 !important;
+  }
+
+  html body.ipad-base .comparison-right li::before {
+    position: absolute !important;
+    left: 0 !important;
+  }
+
+  /* Approach page — fix divider lines */
+  html body.ipad-base .approach-divider,
+  html body.ipad-base .panel-divider,
+  html body.ipad-base .dva-rule,
+  html body.ipad-base .dva-intro-rule {
+    width: 80% !important;
+    max-width: 400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+
+  /* Data Philosophy page — fix icon size */
+  html body.ipad-base .philosophy-icon {
+    width: 320px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  /* Data Philosophy page — fix divider lines */
+  html body.ipad-base .philosophy-divider {
+    width: 80% !important;
+    max-width: 400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+
+  /* Service exec cards — all 9 pages */
+  html body.ipad-base .rev-exec-card,
+  html body.ipad-base .dva-exec-card,
+  html body.ipad-base .ed-exec-card,
+  html body.ipad-base .fc-exec-card,
+  html body.ipad-base .pc-exec-card,
+  html body.ipad-base .custom-exec-card,
+  html body.ipad-base .template-exec-card,
+  html body.ipad-base .redesign-exec-card,
+  html body.ipad-base .uxui-exec-card {
+    padding: 40px 28px !important;
+    border-radius: 22px !important;
+  }
+
+  html body.ipad-base .rev-exec-grid,
+  html body.ipad-base .dva-exec-grid,
+  html body.ipad-base .ed-exec-grid,
+  html body.ipad-base .fc-exec-grid,
+  html body.ipad-base .pc-exec-grid,
+  html body.ipad-base .custom-exec-grid,
+  html body.ipad-base .template-exec-grid,
+  html body.ipad-base .redesign-exec-grid,
+  html body.ipad-base .uxui-exec-grid {
+    display: grid !important;
+    grid-template-columns: 1.1fr 0.9fr !important;
+    gap: 32px !important;
+    align-items: center !important;
+  }
+
+  html body.ipad-base .rev-exec-copy,
+  html body.ipad-base .dva-exec-copy,
+  html body.ipad-base .ed-exec-copy,
+  html body.ipad-base .fc-exec-copy,
+  html body.ipad-base .pc-exec-copy,
+  html body.ipad-base .custom-exec-copy,
+  html body.ipad-base .template-exec-copy,
+  html body.ipad-base .redesign-exec-copy,
+  html body.ipad-base .uxui-exec-copy {
+    text-align: left !important;
+  }
+
+  html body.ipad-base .rev-exec-copy h2,
+  html body.ipad-base .dva-exec-copy h2,
+  html body.ipad-base .ed-exec-copy h2,
+  html body.ipad-base .fc-exec-copy h2,
+  html body.ipad-base .pc-exec-copy h2,
+  html body.ipad-base .custom-exec-copy h2,
+  html body.ipad-base .template-exec-copy h2,
+  html body.ipad-base .redesign-exec-copy h2,
+  html body.ipad-base .uxui-exec-copy h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 14px !important;
+  }
+
+  html body.ipad-base .rev-exec-copy ul,
+  html body.ipad-base .dva-exec-copy ul,
+  html body.ipad-base .ed-exec-copy ul,
+  html body.ipad-base .fc-exec-copy ul,
+  html body.ipad-base .pc-exec-copy ul,
+  html body.ipad-base .custom-exec-copy ul,
+  html body.ipad-base .template-exec-copy ul,
+  html body.ipad-base .redesign-exec-copy ul,
+  html body.ipad-base .uxui-exec-copy ul {
+    text-align: left !important;
+    padding-left: 18px !important;
+  }
+
+  html body.ipad-base .rev-exec-media,
+  html body.ipad-base .dva-exec-media,
+  html body.ipad-base .ed-exec-media,
+  html body.ipad-base .fc-exec-media,
+  html body.ipad-base .pc-exec-media,
+  html body.ipad-base .custom-exec-media,
+  html body.ipad-base .template-exec-media,
+  html body.ipad-base .redesign-exec-media,
+  html body.ipad-base .uxui-exec-media {
+    min-height: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  html body.ipad-base .rev-exec-image-wrap,
+  html body.ipad-base .dva-exec-image-wrap,
+  html body.ipad-base .ed-exec-image-wrap,
+  html body.ipad-base .fc-exec-image-wrap,
+  html body.ipad-base .pc-exec-image-wrap,
+  html body.ipad-base .custom-exec-image-wrap,
+  html body.ipad-base .template-exec-image-wrap,
+  html body.ipad-base .redesign-exec-image-wrap,
+  html body.ipad-base .uxui-exec-image-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  html body.ipad-base .rev-exec-image,
+  html body.ipad-base .dva-exec-image,
+  html body.ipad-base .ed-exec-image,
+  html body.ipad-base .fc-exec-image,
+  html body.ipad-base .pc-exec-image,
+  html body.ipad-base .custom-exec-image,
+  html body.ipad-base .template-exec-image,
+  html body.ipad-base .redesign-exec-image,
+  html body.ipad-base .uxui-exec-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+
+</style>
+</body>
+</html>

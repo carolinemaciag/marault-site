@@ -435,8 +435,7 @@
 
 /* CHECKLIST */
 .pc-page .pc-checklist-wrap{
-  background: #f7f5f0;
-  padding: 0px 0 120px;  /* was 100px */
+  padding: 0px 0 120px;
 }
 
 .pc-page .pc-checklist{

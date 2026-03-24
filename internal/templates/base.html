@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{.Title}}</title>
 
+ <script>
+  (function() {
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var larger = Math.max(w, h);
+    var smaller = Math.min(w, h);
+    var isIpadSize = larger >= 768 && larger <= 1366 && smaller >= 768;
+    var alreadyTagged = window.location.search.indexOf('device=ipad') !== -1;
+    if (isIpadSize && !alreadyTagged) {
+      var sep = window.location.search ? '&' : '?';
+      window.location.replace(window.location.href + sep + 'device=ipad');
+    }
+  })();
+ </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,21 +90,19 @@
   {{ if eq .Page "approach" }}
     <link rel="stylesheet" href="/static/css/approach.css?v=20260219" />
   {{ end }}
-  
-   {{ if eq .Page "executive-team" }}
+
+  {{ if eq .Page "executive-team" }}
     <link rel="stylesheet" href="/static/css/executive-team.css?v=20260219" />
   {{ end }}
-   {{ if eq .Page "philosophy" }}
+
+  {{ if eq .Page "philosophy" }}
   <link rel="stylesheet" href="/static/css/philosophy.css?v=20260312" />
   {{ end }}
-  
+
   <!-- Chatbot Styles -->
   <link rel="stylesheet" href="/static/css/chatbot.css" />
-  
-   {{ block "page_css" . }}{{ end }}
 
-  
-  
+  {{ block "page_css" . }}{{ end }}
 
 </head>
 

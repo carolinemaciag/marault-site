@@ -447,11 +447,8 @@
    CHECKLIST
 ========================= */
 .redesign-page .redesign-checklist-wrap{
-  background: #f7f5f0;
-  padding: 20px 0 120px; /* ↓ reduced top padding */
-
+  padding: 100px 0 120px;
 }
-
 
 .redesign-page .redesign-checklist{
   display: grid;
