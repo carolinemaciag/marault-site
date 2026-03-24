@@ -1845,7 +1845,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-    port = "4000"
+    port = "8080"
 	}
 	log.Println("Starting server on 0.0.0.0:" + port)
 	log.Fatal(http.ListenAndServe("0.0.0.0:"+port, mux))
