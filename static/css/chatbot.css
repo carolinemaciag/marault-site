@@ -552,15 +552,11 @@
 /* Service Links in Chat Messages */
 .chat-service-link {
   display: inline-block;
-  color: #2a3f5f;
+  color: #DCC9A3; /* ✅ gold */
   text-decoration: none;
   font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 6px;
-  background-color: transparent;
-  border: none;
   margin: 4px 4px 4px 0;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   cursor: pointer;
   white-space: nowrap;
 }
@@ -597,8 +593,7 @@
 }
 
 .message-content strong {
-  font-weight: 600;
-  color: #2a3f5f;
+  color: #DCC9A3;
 }
 
 .message-content a {
@@ -611,6 +606,37 @@
   text-decoration: underline;
 }
 
+/* =========================
+   CHAT LINK — PREMIUM STYLE
+========================= */
+
+.chat-service-link {
+  color: #DCC9A3;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  position: relative;
+}
+
+.chat-service-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #DCC9A3, transparent);
+  opacity: 0.6;
+}
+
+.chat-service-link:hover {
+  opacity: 0.85;
+}
+
+.chat-message .message-content a.chat-service-link {
+  color: #DCC9A3 !important;
+}
+
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .chat-window,
@@ -621,4 +647,8 @@
     transition: none;
     animation: none;
   }
+}
+
+.chat-message .message-content .chat-service-link {
+  color: #DCC9A3 !important;
 }

@@ -63,7 +63,7 @@
 <!-- IPAD CSS -->
 <link rel="stylesheet" href="/static/css/ipad.css?v=20260323-1" />
 <!-- Chatbot Styles -->
-<link rel="stylesheet" href="/static/css/chatbot.css" />
+<link rel="stylesheet" href="/static/css/chatbot.css?v=3">
 </head>
 <body class="ipad-base">
 <!-- =========================
@@ -443,6 +443,14 @@ SCRIPTS
     object-fit: cover !important;
     object-position: center !important;
     display: block !important;
+  }
+
+  /* Portrait — client gains images */
+  @media (orientation: portrait) {
+    html body.ipad-base .gain-item img {
+      max-width: 260px !important;
+      min-height: auto !important;
+    }
   }
 
 </style>
