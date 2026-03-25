@@ -1,15 +1,10 @@
 {{ define "content" }}
 <section class="inquire-hero">
   <div class="inquire-hero-overlay"></div>
-  <div class="inquire-hero-content">
-    <h1>Thank You</h1>
-    <p class="inquire-subtitle">Your inquiry has been received. We'll be in touch within 24 hours.</p>
-  </div>
-</section>
-
-<section class="inquire-section">
-  <div class="inquire-container" style="text-align: center; padding: 60px 20px;">
-    <a href="/" class="btn-inquire">Return Home</a>
+  <div class="inquire-hero-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; text-align: center;">
+    <h1 style="margin-bottom: 20px;">Thank You</h1>
+    <p class="inquire-subtitle">Your inquiry has been received.<br>We'll be in touch within 24 hours.</p>
+    <a href="/" class="btn-inquire" style="margin-top: 40px;">Return Home</a>
   </div>
 </section>
 {{ end }}
