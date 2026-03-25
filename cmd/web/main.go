@@ -2092,8 +2092,8 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 =========================
 */
 func sendInquiryEmail(name, email, company, services, message string) error {
-	from := os.Getenv("GMAIL_ADDRESS")
-	password := os.Getenv("GMAIL_PASSWORD")
+	from := "caroline@maraultintelligence.com"
+	password := "ljblmutreemgdd"
 
 	to := []string{
 		"caroline@maraultintelligence.com",
@@ -2116,6 +2116,8 @@ func sendInquiryEmail(name, email, company, services, message string) error {
 
 	return smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, []byte(msg))
 }
+
+
 func philosophyHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles(
 		getBaseTemplate(r),
