@@ -80,8 +80,16 @@ body.mobile-base {
   overflow-x: hidden;
   padding-bottom: 200px;
   -webkit-overflow-scrolling: touch;
-  -webkit-user-select: none;
-  user-select: none;
+}
+
+body.mobile-base input,
+body.mobile-base textarea,
+body.mobile-base select {
+  -webkit-user-select: text;
+  user-select: text;
+  pointer-events: auto;
+  touch-action: manipulation;
+  font-size: 16px;
 }
 
 body.mobile-base.mobile-menu-open {
@@ -122,6 +130,12 @@ body.mobile-base video {
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   will-change: position;
+  pointer-events: none;
+}
+
+.mobile-base .site-footer a,
+.mobile-base .footer-main a,
+.mobile-base .footer-cta a {
   pointer-events: auto;
 }
 

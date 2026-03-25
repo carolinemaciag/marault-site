@@ -32,7 +32,20 @@ function setupChatbot() {
   const toggleBtn = document.getElementById('chat-toggle');
   const closeBtn = document.getElementById('close-chat');
   const container = document.getElementById('chatbot-container');
+  const chatWindow = document.getElementById('chat-window');
   const form = document.getElementById('chat-form');
+
+  // Always start closed
+  if (container) {
+    container.classList.add('chatbot-closed');
+    container.classList.remove('chat-open');
+  }
+
+  // Force chat window hidden on start
+  if (chatWindow) {
+    chatWindow.style.display = 'none';
+    chatWindow.style.pointerEvents = 'none';
+  }
 
   if (toggleBtn) {
     const handleToggleClick = function(e) {
@@ -42,6 +55,10 @@ function setupChatbot() {
       }
       container.classList.remove('chatbot-closed');
       container.classList.add('chat-open');
+      if (chatWindow) {
+        chatWindow.style.display = 'flex';
+        chatWindow.style.pointerEvents = 'auto';
+      }
       setTimeout(() => {
         const input = document.getElementById('chat-input');
         if (input) input.focus();
@@ -60,6 +77,10 @@ function setupChatbot() {
       e.stopPropagation();
       container.classList.add('chatbot-closed');
       container.classList.remove('chat-open');
+      if (chatWindow) {
+        chatWindow.style.display = 'none';
+        chatWindow.style.pointerEvents = 'none';
+      }
       clearChatMemory();
     };
     closeBtn.addEventListener('click', handleClose);
@@ -70,7 +91,6 @@ function setupChatbot() {
     form.addEventListener('submit', sendMessage);
   }
 }
-
 
 async function sendMessage(event) {
   if (event && event.preventDefault) {
@@ -83,25 +103,37 @@ async function sendMessage(event) {
   addMessage(message, 'user');
   input.value = '';
 
-  let response = checkGreeting(message) 
+  let response = checkGreeting(message)
   || checkDataProblem(message)
   || checkPricing(message)
-  || checkExperience(message)        // ✅ ADD
-  || checkDifferentiation(message)   // ✅ ADD
-  || checkGoodbye(message) 
-  || checkQualifications(message) 
-  || checkSecurity(message) 
-  || checkTimeline(message) 
-  || checkWhatDoDo(message) 
-  || checkServiceDescription(message) 
-  || checkServiceRecommendation(message) 
-  || checkCompanyInfo(message) 
-  || checkInappropriate(message) 
+  || checkExperience(message)
+  || checkDifferentiation(message)
+  || checkGoodbye(message)
+  || checkQualifications(message)
+  || checkSecurity(message)
+  || checkTimeline(message)
+  || checkWhatDoDo(message)
+  || checkServiceDescription(message)
+  || checkServiceRecommendation(message)
+  || checkCompanyInfo(message)
+  || checkInappropriate(message)
   || checkOffTopic(message);
 
   if (response) {
     setTimeout(() => addMessage(response, 'bot', true), 600);
-    if (checkGoodbye(message)) setTimeout(() => { document.getElementById('chatbot-container').classList.add('chatbot-closed'); clearChatMemory(); }, 2100);
+    if (checkGoodbye(message)) {
+      setTimeout(() => {
+        const container = document.getElementById('chatbot-container');
+        const chatWindow = document.getElementById('chat-window');
+        container.classList.add('chatbot-closed');
+        container.classList.remove('chat-open');
+        if (chatWindow) {
+          chatWindow.style.display = 'none';
+          chatWindow.style.pointerEvents = 'none';
+        }
+        clearChatMemory();
+      }, 2100);
+    }
     return;
   }
 
@@ -132,80 +164,43 @@ function checkGreeting(msg) {
 
 function checkDataProblem(msg) {
   const m = msg.toLowerCase();
-
-  if (
-    /messy data|data.*messy|clean.*data|fix.*data|data.*fix|data.*problem|bad data|data quality|data is wrong|data is broken/.test(m)
-  ) {
-    return '<p>Yes — that’s exactly what we specialize in.</p>' +
+  if (/messy data|data.*messy|clean.*data|fix.*data|data.*fix|data.*problem|bad data|data quality|data is wrong|data is broken/.test(m)) {
+    return '<p>Yes — that\'s exactly what we specialize in.</p>' +
            '<p>We help clean, structure, and transform messy data into a clear, decision-ready system.</p>' +
-           '<p>This typically starts with our ' +
-           createServiceLink('data-visibility-audit', 'Data Visibility Audit') +
-           '.</p>';
+           '<p>This typically starts with our ' + createServiceLink('data-visibility-audit', 'Data Visibility Audit') + '.</p>';
   }
-
   return null;
 }
 
 function checkPricing(msg) {
   const m = msg.toLowerCase();
-
-  if (
-    m.includes('price') ||
-    m.includes('cost') ||
-    m.includes('how much') ||
-    m.includes('pricing') ||
-    m.includes('fee') ||
-    m.includes('budget') ||
-    m.includes('rate')
-  ) {
+  if (m.includes('price') || m.includes('cost') || m.includes('how much') || m.includes('pricing') || m.includes('fee') || m.includes('budget') || m.includes('rate')) {
     return '<p>Our pricing structure depends on the scale and scope of your project.</p>' +
            '<p>We begin with a conversation to understand your data, goals, and where we can create the most value.</p>' +
            '<p>' + createServiceLink('inquire', 'Get in touch with us for a consultation and tailored quote') + '.</p>';
   }
-
   return null;
 }
 
 function checkExperience(msg) {
   const m = msg.toLowerCase();
-
-  if (
-    m.includes('worked with') ||
-    m.includes('clients') ||
-    m.includes('companies') ||
-    m.includes('experience') ||
-    m.includes('who have you worked with') ||
-    m.includes('types of clients') ||
-    m.includes('large companies')
-  ) {
+  if (m.includes('worked with') || m.includes('clients') || m.includes('companies') || m.includes('experience') || m.includes('who have you worked with') || m.includes('types of clients') || m.includes('large companies')) {
     return '<p>We work with both growing companies and more established organizations, across a range of industries.</p>' +
-           '<p>Our focus is less on company size, and more on solving meaningful data problems — whether that’s improving visibility, building decision systems, or creating more clarity for leadership.</p>' +
-           '<p>' + createServiceLink('inquire', 'We’re happy to discuss your specific situation here') + '.</p>';
+           '<p>Our focus is less on company size, and more on solving meaningful data problems — whether that\'s improving visibility, building decision systems, or creating more clarity for leadership.</p>' +
+           '<p>' + createServiceLink('inquire', 'We\'re happy to discuss your specific situation here') + '.</p>';
   }
-
   return null;
 }
 
 function checkDifferentiation(msg) {
   const m = msg.toLowerCase();
-
-  if (
-    m.includes('why choose') ||
-    m.includes('why you') ||
-    m.includes('difference') ||
-    m.includes('better than') ||
-    m.includes('vs') ||
-    m.includes('versus') ||
-    m.includes('competitor') ||
-    m.includes('compare')
-  ) {
+  if (m.includes('why choose') || m.includes('why you') || m.includes('difference') || m.includes('better than') || m.includes('vs') || m.includes('versus') || m.includes('competitor') || m.includes('compare')) {
     return '<p>We focus on clarity and decision-making — not just building models or dashboards for the sake of it.</p>' +
            '<p>Our work is designed to be practical, interpretable, and directly tied to how you run your business.</p>' +
            '<p>We also take a more tailored approach than many firms — every engagement is built around your specific data, goals, and constraints.</p>' +
-           '<p>In short, we don’t just deliver analysis — we help you make better decisions with confidence.</p>' +
+           '<p>In short, we don\'t just deliver analysis — we help you make better decisions with confidence.</p>' +
            '<p>' + createServiceLink('approach', 'You can learn more about how we work here') + '.</p>';
   }
-
   return null;
 }
 
@@ -267,7 +262,6 @@ function checkWhatDoDo(msg) {
 
 function checkServiceDescription(msg) {
   const m = msg.toLowerCase().trim();
-
   const auditMatch = m === 'audit' || m === '1' || /data visibility audit|data audit|what.*audit|tell.*audit|describe.*audit|info.*audit/.test(m);
   const revenueMatch = m === 'revenue' || m === '2' || /revenue|customer analytics|what.*revenue|tell.*revenue|describe.*revenue|info.*revenue/.test(m);
   const executiveMatch = m === 'executive' || m === '3' || /executive|dashboards|reporting|what.*executive|tell.*executive|describe.*executive|describe.*dashboards|info.*executive/.test(m);
@@ -285,7 +279,6 @@ function checkServiceDescription(msg) {
   if (customMatch) return '<p><strong>Custom Website Builds</strong> - Fully custom-built websites tailored to your exact specifications and business goals. ' + createServiceLink('custom-build', 'Learn more') + '</p>';
   if (templateMatch) return '<p><strong>Template-Based Builds</strong> - Fast, cost-effective website solutions built on proven templates. ' + createServiceLink('template-build', 'Learn more') + '</p>';
   if (uxMatch) return '<p><strong>UX/UI Design</strong> - We design intuitive, beautiful user experiences that engage customers and drive conversions. ' + createServiceLink('ux-ui-design', 'Learn more') + '</p>';
-
   return null;
 }
 

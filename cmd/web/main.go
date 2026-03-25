@@ -2092,8 +2092,8 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 =========================
 */
 func sendInquiryEmail(name, email, company, services, message string) error {
-	from := "caroline@maraultintelligence.com"
-	password := "fxhiauwzwnrqhrhk"
+	from := os.Getenv("GMAIL_ADDRESS")
+	password := os.Getenv("GMAIL_PASSWORD")
 
 	to := []string{
 		"caroline@maraultintelligence.com",

@@ -1,7 +1,22 @@
 <!-- Chatbot Widget -->
+<style>
+#chatbot-container.chatbot-closed {
+  pointer-events: none !important;
+  height: 60px !important;
+  top: auto !important;
+}
+#chatbot-container.chatbot-closed .chat-window {
+  display: none !important;
+  pointer-events: none !important;
+}
+#chatbot-container.chatbot-closed .chat-toggle-btn {
+  pointer-events: auto !important;
+}
+</style>
+
 <div id="chatbot-container" class="chatbot-closed">
   <!-- Chat Window -->
-  <div id="chat-window" class="chat-window" role="complementary" aria-label="Chat assistant">
+  <div id="chat-window" class="chat-window" role="complementary" aria-label="Chat assistant" style="display:none; pointer-events:none;">
     <!-- Header -->
     <div class="chat-header">
       <div class="chat-header-content">
@@ -15,7 +30,6 @@
         </svg>
       </button>
     </div>
-
     <!-- Messages Container -->
     <div id="chat-messages" class="chat-messages" role="log" aria-live="polite">
       <div class="chat-message bot-message">
@@ -24,7 +38,6 @@
         </div>
       </div>
     </div>
-
     <!-- Input Area -->
     <div class="chat-input-area">
       <form id="chat-form" role="search">
@@ -45,7 +58,6 @@
       </form>
     </div>
   </div>
-
   <!-- Toggle Button -->
   <button id="chat-toggle" class="chat-toggle-btn" aria-label="Open chat" type="button">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
