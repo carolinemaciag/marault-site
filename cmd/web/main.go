@@ -2116,8 +2116,6 @@ func sendInquiryEmail(name, email, company, services, message string) error {
 
 	return smtp.SendMail(smtpHost+":"+smtpPort, auth, from, to, []byte(msg))
 }
-
-
 func philosophyHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl, err := template.ParseFiles(
 		getBaseTemplate(r),
