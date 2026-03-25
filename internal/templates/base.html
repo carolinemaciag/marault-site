@@ -83,8 +83,8 @@
     <link rel="stylesheet" href="/static/css/contact.css?v=20260219" />
   {{ end }}
 
-  {{ if eq .Page "inquire" }}
-    <link rel="stylesheet" href="/static/css/inquire.css?v=20260219" />
+  {{ if or (eq .Page "inquire") (eq .Page "thankyou") }}
+   <link rel="stylesheet" href="/static/css/inquire.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Page "approach" }}
