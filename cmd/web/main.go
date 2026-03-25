@@ -2093,7 +2093,7 @@ func inquireHandler(w http.ResponseWriter, r *http.Request) {
 */
 func sendInquiryEmail(name, email, company, services, message string) error {
 	from := "caroline@maraultintelligence.com"
-	password := "ljblmutreemgdd"
+	password := "jpvpfcwcxjdivpbb"
 
 	to := []string{
 		"caroline@maraultintelligence.com",
