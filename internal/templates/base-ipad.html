@@ -61,7 +61,7 @@
 <link rel="stylesheet" href="/static/css/executive-team.css?v=20260219" />
 {{ end }}
 <!-- IPAD CSS -->
-<link rel="stylesheet" href="/static/css/ipad.css?v=20260323-1" />
+<link rel="stylesheet" href="/static/css/ipad.css?v=20260326-1" />
 <!-- Chatbot Styles -->
 <link rel="stylesheet" href="/static/css/chatbot.css?v=3">
 </head>
@@ -454,5 +454,27 @@ SCRIPTS
   }
 
 </style>
+
+<script>
+  // Force video autoplay on iPad
+  document.addEventListener('DOMContentLoaded', function() {
+    var videos = document.querySelectorAll('video[autoplay]');
+    videos.forEach(function(video) {
+      video.setAttribute('playsinline', '');
+      video.setAttribute('muted', '');
+      video.muted = true;
+      var playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function() {
+          // Try again on first user interaction
+          document.addEventListener('touchstart', function() {
+            video.play();
+          }, { once: true });
+        });
+      }
+    });
+  });
+</script>
+
 </body>
 </html>

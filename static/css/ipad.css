@@ -1751,3 +1751,107 @@ body.ipad-base .uxui-section-head h2 {
   }
 
 }
+
+/* =========================
+   SERVICES NAV ITEM FIX
+========================= */
+body.ipad-base .ipad-nav-menu > .ipad-nav-item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.ipad-base .ipad-nav-row {
+  position: relative !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body.ipad-base .ipad-nav-link {
+  padding: 10px 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+body.ipad-base .ipad-nav-caret {
+  position: absolute !important;
+  right: calc(50% - 80px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: auto !important;
+}
+
+body.ipad-base .ipad-nav-menu > .ipad-nav-item {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+body.ipad-base .ipad-nav-row {
+  position: relative !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+body.ipad-base .ipad-nav-link {
+  padding: 10px 0 !important;
+  text-align: center !important;
+}
+
+body.ipad-base .ipad-nav-caret {
+  position: absolute !important;
+  right: calc(50% - 80px) !important;
+  padding: 0 !important;
+  height: auto !important;
+  line-height: 1 !important;
+}
+
+body.ipad-base .ipad-dropdown {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* =========================
+   IPAD NAV SERVICES FIX — FINAL
+========================= */
+body.ipad-base .ipad-nav-menu > .ipad-nav-item,
+.ipad-nav-item {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+body.ipad-base .ipad-nav-row,
+.ipad-nav-row {
+  position: relative !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+body.ipad-base .ipad-nav-link,
+.ipad-nav-link {
+  padding: 10px 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
+  line-height: 1.4 !important;
+}
+
+body.ipad-base .ipad-nav-caret,
+.ipad-nav-caret {
+  position: absolute !important;
+  left: calc(50% + 55px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: auto !important;
+  line-height: 1 !important;
+}
+
+body.ipad-base .ipad-dropdown,
+.ipad-dropdown {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
