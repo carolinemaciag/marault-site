@@ -2301,33 +2301,42 @@ body.mobile-base .footer-legal-inner {
 }
 
 /* =========================================
-   FORCE BIGGER MOBILE LOGO (FINAL FIX)
+   MOBILE LOGO — DEVICE SIZE TIERS
 ========================================= */
+
+/* Small phones — iPhone 15, 16, 17 (390px) */
 @media (max-width: 900px) {
+  body.mobile-base .mobile-site-header .mobile-logo img {
+    height: 64px !important;
+    width: auto !important;
+  }
+  body.mobile-base .mobile-site-header .mobile-logo span {
+    font-size: 1.02rem !important;
+    letter-spacing: 0.08em !important;
+  }
+}
+
+/* Pro phones — iPhone 15 Pro, 16 Pro, 17 Pro (393px) */
+@media (min-width: 391px) {
+  body.mobile-base .mobile-site-header .mobile-logo img {
+    height: 64px !important;
+    width: auto !important;
+  }
+  body.mobile-base .mobile-site-header .mobile-logo span {
+    font-size: 1.02rem !important;
+    letter-spacing: 0.10em !important;
+  }
+}
+
+/* Pro Max phones — iPhone 14/15/16/17 Pro Max (430px+) */
+@media (min-width: 420px) {
   body.mobile-base .mobile-site-header .mobile-logo img {
     height: 70px !important;
     width: auto !important;
   }
-
   body.mobile-base .mobile-site-header .mobile-logo span {
-    font-size: 1.08rem !important;
+    font-size: 1.09rem !important;
     letter-spacing: 0.12em !important;
-  }
-}
-
-@media (max-width: 393px) {
-  body.mobile-base .mobile-site-header .mobile-nav .mobile-logo img {
-    height: 32px !important;
-    width: auto !important;
-  }
-
-  body.mobile-base .mobile-site-header .mobile-nav .mobile-logo span {
-    font-size: 0.78rem !important;
-    letter-spacing: 0.05em !important;
-  }
-
-  body.mobile-base .mobile-site-header .mobile-nav .mobile-logo {
-    gap: 6px !important;
   }
 }
 
