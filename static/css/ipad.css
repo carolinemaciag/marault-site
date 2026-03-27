@@ -1290,7 +1290,7 @@ body.ipad-base .uxui-section-head h2 {
   }
 
   body.ipad-base .footer-cta-logo {
-    height: 78px !important;
+    height: 168px !important;
     transform: none !important;
   }
 
@@ -1854,4 +1854,13 @@ body.ipad-base .ipad-dropdown,
 .ipad-dropdown {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+
+body.ipad-base .footer-cta-logo {
+  height: 78px !important;
+  width: 78px !important;
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  transform: none !important;
+  margin: 0 !important;
 }

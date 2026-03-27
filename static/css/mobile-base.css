@@ -519,12 +519,15 @@ body.mobile-base video {
 .mobile-base .footer-cta-brand {
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 4px;
 }
 
 .mobile-base .footer-cta-logo {
-  height: 78px;
-  transform: none;
+  height: 134px !important;
+  transform: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
 }
 
 .mobile-base .footer-grid {
@@ -4194,4 +4197,24 @@ body.mobile-base .mobile-nav-menu > .mobile-nav-item {
 body.mobile-base .mobile-dropdown {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+
+/* =========================
+   FOOTER LOGO SPACING FIX
+========================= */
+body.mobile-base .footer-cta-logo {
+  margin-bottom: 0 !important;
+}
+
+body.mobile-base .footer-cta-brand {
+  gap: 8px !important;
+}
+
+body.mobile-base .footer-cta-logo {
+  height: 78px !important;
+  width: 78px !important;
+  object-fit: cover !important;
+  object-position: center 30% !important;
+  transform: none !important;
+  margin: 0 !important;
 }
