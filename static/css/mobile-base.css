@@ -2315,6 +2315,22 @@ body.mobile-base .footer-legal-inner {
   }
 }
 
+@media (max-width: 393px) {
+  body.mobile-base .mobile-site-header .mobile-nav .mobile-logo img {
+    height: 32px !important;
+    width: auto !important;
+  }
+
+  body.mobile-base .mobile-site-header .mobile-nav .mobile-logo span {
+    font-size: 0.78rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  body.mobile-base .mobile-site-header .mobile-nav .mobile-logo {
+    gap: 6px !important;
+  }
+}
+
 /* =========================================
    PUSH PAGE / FULL SCREEN MOBILE MENU
 ========================================= */
@@ -4219,22 +4235,3 @@ body.mobile-base .footer-cta-logo {
   margin: 0 !important;
 }
 
-/* =========================
-   IPHONE SMALLER
-========================= */
-
-@media (max-width: 393px) {
-  body.mobile-base .mobile-site-header .mobile-logo img {
-    height: 32px !important;
-    width: auto !important;
-  }
-
-  body.mobile-base .mobile-site-header .mobile-logo span {
-    font-size: 0.78rem !important;
-    letter-spacing: 0.05em !important;
-  }
-
-  body.mobile-base .mobile-logo {
-    gap: 6px !important;
-  }
-}
