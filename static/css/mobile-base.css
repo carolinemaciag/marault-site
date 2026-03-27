@@ -106,6 +106,11 @@ body.mobile-base video {
   height: auto;
 }
 
+body.mobile-base .hero video {
+  height: 100% !important;
+  max-width: none !important;
+}
+
 .mobile-base .page,
 .mobile-base .hero,
 .mobile-base .hero-content,
