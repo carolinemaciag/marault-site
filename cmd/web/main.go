@@ -1743,6 +1743,9 @@ func main() {
     ========================= */
     fileServer := http.FileServer(http.Dir("./static"))
     mux.Handle("/static/", http.StripPrefix("/static", fileServer))
+
+	mux.Handle("/sitemap.xml", http.FileServer(http.Dir("./static")))
+
     /* =========================
        Debug
     ========================= */
