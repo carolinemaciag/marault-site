@@ -894,6 +894,32 @@ body {
   font-size: 0.98rem;
 }
 
+.footer-social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.footer-social-links a {
+  display: inline-flex;
+  width: auto;
+}
+
+.footer-social-icon {
+  width: 29px;
+  height: 29px;
+  max-width: 29px;
+  flex-shrink: 0;
+  opacity: 0.75;
+  filter: brightness(0) saturate(100%) invert(75%) sepia(30%) saturate(400%) hue-rotate(5deg) brightness(105%);
+  transition: opacity 0.2s;
+}
+
+.footer-social-links a:hover .footer-social-icon {
+  opacity: 1;
+}
+
 .footer-col a:hover {
   color: #ffffff;
   text-decoration: underline;

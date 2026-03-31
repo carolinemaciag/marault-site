@@ -45,6 +45,9 @@
   margin: 0 auto;
 }
 
+.contact-thankyou-hero {
+  background-image: url('/static/images/contact-hero.png') !important;
+}
 
 
 /* =========================

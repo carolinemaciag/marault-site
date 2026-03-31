@@ -1,21 +1,20 @@
 {{ define "content" }}
-<section class="inquire-hero">
-  <div class="inquire-hero-overlay"></div>
-  <div class="inquire-hero-content">
-    <h1>Thank You</h1>
-    <p class="inquire-subtitle">
+<section class="{{ if eq .Page "contact-thankyou" }}contact-hero{{ else }}inquire-hero{{ end }}">
+<div class="{{ if eq .Page "contact-thankyou" }}contact-hero-overlay{{ else }}inquire-hero-overlay{{ end }}"></div>
+<div class="{{ if eq .Page "contact-thankyou" }}contact-hero-content{{ else }}inquire-hero-content{{ end }}">
+<h1>Thank You</h1>
+<p class="{{ if eq .Page "contact-thankyou" }}contact-subtitle{{ else }}inquire-subtitle{{ end }}">
       Your inquiry has been received. We'll be in touch within 24 hours.
-    </p>
-  </div>
+</p>
+</div>
 </section>
-
 <section class="inquire-section">
-  <div class="inquire-container" style="text-align: center; padding: 80px 20px;">
-    <h2 class="inquire-form-title">We'll Be In Touch</h2>
-    <p style="margin-bottom: 40px;">Our team responds personally and promptly to every inquiry.</p>
-    <div class="inquire-form" style="align-items: center;">
-      <a href="/" class="inquire-submit">Return Home</a>
-    </div>
-  </div>
+<div class="inquire-container" style="text-align: center; padding: 80px 20px;">
+<h2 class="inquire-form-title">We'll Be In Touch</h2>
+<p style="margin-bottom: 40px;">Our team responds personally and promptly to every inquiry.</p>
+<div class="inquire-form" style="align-items: center;">
+<a href="/" class="inquire-submit" style="align-self:center;text-decoration:none;margin-left:auto;margin-right:auto;">Return Home</a>
+</div>
+</div>
 </section>
 {{ end }}

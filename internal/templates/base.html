@@ -44,7 +44,7 @@
   <!-- =========================
        GLOBAL STYLES
   ========================== -->
-  <link rel="stylesheet" href="/static/css/main.css" />
+  <link rel="stylesheet" href="/static/css/main.css?v=20260331" />
   <link rel="stylesheet" href="/static/css/ipad.css?v=20260317" />
   <link rel="stylesheet" href="/static/css/service-panels.css?v=20260219">
 
@@ -92,12 +92,12 @@
   <link rel="stylesheet" href="/static/css/uxui.css?v=20260219" />
   {{ end }}
 
-  {{ if eq .Page "contact" }}
-    <link rel="stylesheet" href="/static/css/contact.css?v=20260219" />
+  {{ if or (eq .Page "contact") (eq .Page "contact-thankyou") }}
+  <link rel="stylesheet" href="/static/css/contact.css?v=20260331" />
   {{ end }}
 
-  {{ if or (eq .Page "inquire") (eq .Page "thankyou") }}
-   <link rel="stylesheet" href="/static/css/inquire.css?v=20260219" />
+  {{ if or (eq .Page "inquire") (eq .Page "thankyou") (eq .Page "contact-thankyou") }}
+  <link rel="stylesheet" href="/static/css/inquire.css?v=20260219" />
   {{ end }}
 
   {{ if eq .Page "approach" }}
@@ -191,88 +191,82 @@
 <!-- =========================
      FOOTER
 ========================= -->
-
 <div class="footer-separator"></div>
-
 <footer class="site-footer">
-
-  <div class="footer-cta">
-    <div class="footer-cta-inner">
-
-      <div class="footer-cta-brand">
-        <img
-          src="/static/images/logo-shiny.png"
-          alt="Marault Intelligence Logo"
-          class="footer-cta-logo"
-        />
-
-        <div class="footer-cta-text">
-          <h3>MARAULT INTELLIGENCE</h3>
-          <p>Clarity in Analysis. Confidence in Action.</p>
-        </div>
-      </div>
-
-      <div class="footer-cta-action">
-        <a href="/inquire" class="btn-inquire">Inquire</a>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="footer-divider"></div>
-
-  <div class="footer-main">
-    <div class="footer-grid">
-
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/services/data-visibility-audit">Analytics Foundations</a></li>
-          <li><a href="/services/executive-dashboards-reporting">Executive Reporting</a></li>
-          <li><a href="/services/revenue-customer-analytics">Revenue &amp; Customer Intelligence</a></li>
-          <li><a href="/services/forecasting-decision-modeling">Forecasting &amp; Decision Support</a></li>
-          <li><a href="/services/private-client-analytics">Private Client Analytics</a></li>
-          <li><a href="/services">Web Design &amp; Digital Experience</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Approach</h4>
-        <ul>
-          <li><a href="/approach">The Marault Approach</a></li>
-          <li><a href="/philosophy">Data Philosophy</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/executive-team">Executive Team</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-inquire">
-        <h4>Inquire</h4>
-        <p>
+<div class="footer-cta">
+<div class="footer-cta-inner">
+<div class="footer-cta-brand">
+<img
+src="/static/images/logo-shiny.png"
+alt="Marault Intelligence Logo"
+class="footer-cta-logo"
+/>
+<div class="footer-cta-text">
+<h3>MARAULT INTELLIGENCE</h3>
+<p>Clarity in Analysis. Confidence in Action.</p>
+</div>
+</div>
+<div class="footer-cta-action">
+<a href="/inquire" class="btn-inquire">Inquire</a>
+</div>
+</div>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-main">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>Services</h4>
+<ul>
+<li><a href="/services/data-visibility-audit">Analytics Foundations</a></li>
+<li><a href="/services/executive-dashboards-reporting">Executive Reporting</a></li>
+<li><a href="/services/revenue-customer-analytics">Revenue &amp; Customer Intelligence</a></li>
+<li><a href="/services/forecasting-decision-modeling">Forecasting &amp; Decision Support</a></li>
+<li><a href="/services/private-client-analytics">Private Client Analytics</a></li>
+<li><a href="/services">Web Design &amp; Digital Experience</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Approach</h4>
+<ul>
+<li><a href="/approach">The Marault Approach</a></li>
+<li><a href="/philosophy">Data Philosophy</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<ul>
+<li><a href="/executive-team">Executive Team</a></li>
+<li><a href="/contact">Contact</a></li>
+</ul>
+<div class="footer-social-links" style="display:flex;flex-direction:row;gap:12px;margin-top:6px;">
+  <a href="https://www.instagram.com/maraultintelligence/" target="_blank" aria-label="Instagram">
+    <img src="/static/images/instagram.png" alt="Instagram" class="footer-social-icon" style="width:29px;height:29px;max-width:29px;display:block;filter:brightness(0) saturate(100%) invert(95%) sepia(20%) saturate(300%) hue-rotate(5deg) brightness(102%);">
+  </a>
+  <a href="https://www.facebook.com/p/Marault-Intelligence-61577498090862/" target="_blank" aria-label="Facebook">
+    <img src="/static/images/facebook.png" alt="Facebook" class="footer-social-icon" style="width:29px;height:29px;max-width:29px;display:block;filter:brightness(0) saturate(100%) invert(95%) sepia(20%) saturate(300%) hue-rotate(5deg) brightness(102%);">
+  </a>
+  <a href="https://linkedin.com/company/marault-intelligence/" target="_blank" aria-label="LinkedIn">
+    <img src="/static/images/linkedin.png" alt="LinkedIn" class="footer-social-icon" style="width:29px;height:29px;max-width:29px;display:block;filter:brightness(0) saturate(100%) invert(95%) sepia(20%) saturate(300%) hue-rotate(5deg) brightness(102%);">
+  </a>
+</div>
+</div>
+<div class="footer-col footer-inquire">
+<h4>Inquire</h4>
+<p>
           Start a conversation about your data, strategy, or digital presence.
-        </p>
-        <a href="/inquire" class="footer-inquire-link">
+</p>
+<a href="/inquire" class="footer-inquire-link">
           Get in touch →
-        </a>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="footer-divider"></div>
-
-  <div class="footer-legal">
-    <div class="footer-legal-inner">
+</a>
+</div>
+</div>
+</div>
+<div class="footer-divider"></div>
+<div class="footer-legal">
+<div class="footer-legal-inner">
       © 2026 Marault Intelligence. All rights reserved.
-    </div>
-  </div>
-
+</div>
+</div>
 </footer>
 
 <!-- =========================

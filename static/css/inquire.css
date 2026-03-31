@@ -159,25 +159,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  align-self: flex-start;   /* critical in flex column */
-
+  align-self: center;
   margin-top: 36px;
   padding: 14px 34px;
-
   font-family: "Castoro Titling", serif;
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-
   color: #c9b27c;
   background: transparent;
-
   border: 1.95px solid rgba(220, 201, 163, 0.85);
   border-radius: 2px;
-
   cursor: pointer;
-
+  text-decoration: none;
   transition:
     color 200ms ease,
     border-color 200ms ease,

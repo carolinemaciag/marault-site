@@ -1990,27 +1990,64 @@ func servicesHandler(w http.ResponseWriter, r *http.Request) {
 =========================
 */
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles(
-		getBaseTemplate(r),
-		"./internal/templates/contact.html",
-		"./internal/templates/chatbot.html",
-	)
-	if err != nil {
-		log.Println(err)
-		http.Error(w, "Server error", http.StatusInternalServerError)
+	if r.Method == http.MethodGet {
+		tmpl, err := template.ParseFiles(
+			getBaseTemplate(r),
+			"./internal/templates/contact.html",
+			"./internal/templates/chatbot.html",
+		)
+		if err != nil {
+			log.Println(err)
+			http.Error(w, "Server error", http.StatusInternalServerError)
+			return
+		}
+		data := struct {
+			Title string
+			Page  string
+		}{
+			Title: "Contact | Marault Intelligence",
+			Page:  "contact",
+		}
+		if err := tmpl.Execute(w, data); err != nil {
+			log.Println(err)
+		}
 		return
 	}
 
-	data := struct {
-		Title string
-		Page  string
-	}{
-		Title: "Contact | Marault Intelligence",
-		Page:  "contact",
-	}
+	if r.Method == http.MethodPost {
+		name := r.FormValue("name")
+		email := r.FormValue("email")
+		company := r.FormValue("company")
+		message := r.FormValue("message")
 
-	if err := tmpl.Execute(w, data); err != nil {
-		log.Println(err)
+		err := sendInquiryEmail(name, email, company, "", message)
+		if err != nil {
+			log.Println(err)
+			http.Error(w, "Unable to send message", http.StatusInternalServerError)
+			return
+		}
+
+		tmpl, err := template.ParseFiles(
+			getBaseTemplate(r),
+			"./internal/templates/thankyou.html",
+			"./internal/templates/chatbot.html",
+		)
+		if err != nil {
+			log.Println(err)
+			http.Error(w, "Server error", http.StatusInternalServerError)
+			return
+		}
+
+		data := struct {
+			Title string
+			Page  string
+		}{
+			Title: "Thank You | Marault Intelligence",
+			Page:  "contact-thankyou",
+		}
+		if err := tmpl.Execute(w, data); err != nil {
+			log.Println(err)
+		}
 	}
 }
 
